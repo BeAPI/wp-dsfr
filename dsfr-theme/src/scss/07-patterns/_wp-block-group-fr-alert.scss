@@ -1,0 +1,7 @@
+.wp-block-group {
+    $el: &;
+
+    &.fr-alert {
+        @extend %block-spacing-sm;
+    }
+}

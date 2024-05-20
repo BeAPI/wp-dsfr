@@ -1,0 +1,13 @@
+%figcaption {
+    @extend %text-xs;
+
+    max-width: $container-wide;
+    margin-top: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+}
+
+figcaption {
+    @extend %figcaption;
+}

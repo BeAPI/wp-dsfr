@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "dsfr/fr-accordion",
+	"parent": ["dsfr/fr-accordions-group"],
+	"version": "1.0.0",
+	"title": "Accordion",
+	"category": "widgets",
+	"icon": "button",
+	"description": "DSFR accordion block.",
+	"supports": {
+		"html": false,
+		"anchor": false,
+		"align": false,
+		"reusable": false,
+		"color": {
+			"background": false,
+			"text": false
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"providesContext": {
+		"dsfr/fr-accordion--id": "id"
+	},
+	"textdomain": "dsfr-native-blocks",
+	"editorScript": "file:./index.js"
+}

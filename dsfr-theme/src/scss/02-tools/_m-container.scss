@@ -1,0 +1,10 @@
+/**
+ * Container
+ */
+
+@mixin container {
+    width: $container-wide;
+    max-width: calc(100% - var(--external-gutter) * 2);
+    margin-right: auto;
+    margin-left: auto;
+}

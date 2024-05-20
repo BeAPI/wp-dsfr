@@ -1,0 +1,9 @@
+.fr-accordion {
+    .fr-collapse {
+        > div {
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

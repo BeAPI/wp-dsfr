@@ -1,0 +1,18 @@
+@use "sass:list";
+@use "sass:string";
+
+/**
+ * Assign inputs
+ */
+
+@function assign-inputs($inputs, $pseudo: null) {
+    $list: ();
+
+    @each $input in $inputs {
+        $input: string.unquote($input);
+        $input: if($pseudo, $input + ":" + $pseudo, $input);
+        $list: list.append($list, $input, comma);
+    }
+
+    @return $list;
+}

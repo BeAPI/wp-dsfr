@@ -1,0 +1,189 @@
+@use "sass:map";
+
+/**
+ * Variables
+ */
+
+// ==========
+// Colors
+// ==========
+
+// ----
+// Dark/Light colors
+// ----
+$color-light: #fff;
+$color-dark: #000;
+$color-dark-010: rgba(0, 0, 0, .1);
+$color-dark-005: rgba(0, 0, 0, .05);
+
+// ==========
+// Sizes
+// ==========
+$column-preset: (
+    /* preset for desktop */
+    d : (
+        column-width: 78,
+        gutter-width: 24,
+        total-column: 12
+    ),
+);
+
+// ----
+// Containers
+// ----
+$container-default-column-length: 8;
+$container-default: (
+    map.get(map.get($column-preset, d), column-width) * $container-default-column-length + map.get(map.get($column-preset, d), gutter-width) * ($container-default-column-length - 1)
+) * 1px;
+$container-wide: (
+    map.get(map.get($column-preset, d), column-width) * map.get(map.get($column-preset, d), total-column) + map.get(map.get($column-preset, d), gutter-width) * (map.get(map.get($column-preset, d), total-column) - 1)
+) * 1px;
+$external-gutter-mobile: 16px;
+$external-gutter-desktop: 24px;
+
+// ----
+// Breakpoints
+// ----
+$breakpoints: (
+    xxs: 375,
+    xs: 576,
+    s: 601,         // 601px is a wordpress breakpoint (admin-bar become sticky)
+    sm: 768,
+    admin-bar: 784, // admin bar height change
+    md: 992,
+    lg: $container-wide + $external-gutter-desktop,
+);
+
+// ----
+// spacing
+// ----
+$spacing-1: 2px;
+$spacing-2: 4px;
+$spacing-3: 8px;
+$spacing-4: 12px;
+$spacing-5: 16px;
+$spacing-6: 24px;
+$spacing-7: 32px;
+$spacing-8: 40px;
+$spacing-9: 48px;
+$spacing-10: 56px;
+$spacing-11: 64px;
+$spacing-12: 72px;
+$spacing-13: 96px;
+$spacing-14: 120px;
+
+// ==========
+// Fonts
+// ==========
+// ----
+// Font Size
+// ----
+$font-size-base: 16px;
+
+// ==========
+// DSFR
+// ==========
+$font-family-title: "Marianne", arial, sans-serif;
+$font-family-content: "Spectral", georgia, serif;
+
+// dsfr color names
+$dsfr-color-names: (
+    "blue-france",
+    "red-marianne",
+    "green-tilleul-verveine",
+    "green-bourgeon",
+    "green-emeraude",
+    "green-menthe",
+    "green-archipel",
+    "blue-ecume",
+    "blue-cumulus",
+    "purple-glycine",
+    "pink-macaron",
+    "pink-tuile",
+    "yellow-tournesol",
+    "yellow-moutarde",
+    "orange-terre-battue",
+    "brown-cafe-creme",
+    "brown-caramel",
+    "brown-opera",
+    "beige-gris-galet"
+);
+
+// title
+$h1-font-size-mobile: 32px;
+$h1-line-height-mobile: 40px;
+$h1-font-size-desktop: 40px;
+$h1-line-height-desktop: 48px;
+
+$h2-font-size-mobile: 28px;
+$h2-line-height-mobile: 36px;
+$h2-font-size-desktop: 32px;
+$h2-line-height-desktop: 40px;
+
+$h3-font-size-mobile: 24px;
+$h3-line-height-mobile: 32px;
+$h3-font-size-desktop: 28px;
+$h3-line-height-desktop: 36px;
+
+$h4-font-size-mobile: 22px;
+$h4-line-height-mobile: 28px;
+$h4-font-size-desktop: 24px;
+$h4-line-height-desktop: 32px;
+
+$h5-font-size-mobile: 20px;
+$h5-line-height-mobile: 28px;
+$h5-font-size-desktop: 22px;
+$h5-line-height-desktop: 28px;
+
+$h6-font-size-mobile: 18px;
+$h6-line-height-mobile: 24px;
+$h6-font-size-desktop: 20px;
+$h6-line-height-desktop: 28px;
+
+$title-spacing: 24px;
+
+// title alt
+$display-xl-font-size-mobile: 72px;
+$display-xl-line-height-mobile: 80px;
+$display-xl-font-size-desktop: 80px;
+$display-xl-line-height-desktop: 88px;
+
+$display-lg-font-size-mobile: 64px;
+$display-lg-line-height-mobile: 72px;
+$display-lg-font-size-desktop: 72px;
+$display-lg-line-height-desktop: 80px;
+
+$display-md-font-size-mobile: 56px;
+$display-md-line-height-mobile: 64px;
+$display-md-font-size-desktop: 64px;
+$display-md-line-height-desktop: 72px;
+
+$display-sm-font-size-mobile: 48px;
+$display-sm-line-height-mobile: 56px;
+$display-sm-font-size-desktop: 56px;
+$display-sm-line-height-desktop: 64px;
+
+$display-xs-font-size-mobile: 40px;
+$display-xs-line-height-mobile: 48px;
+$display-xs-font-size-desktop: 48px;
+$display-xs-line-height-desktop: 56px;
+
+$display-spacing: 32px;
+
+// paragraph
+$paragraph-xs-font-size: 12px;
+$paragraph-xs-line-height: 20px;
+
+$paragraph-sm-font-size: 14px;
+$paragraph-sm-line-height: 24px;
+
+$paragraph-md-font-size: 16px;
+$paragraph-md-line-height: 24px;
+
+$paragraph-lg-font-size: 18px;
+$paragraph-lg-line-height: 28px;
+
+$paragraph-xl-font-size: 20px;
+$paragraph-xl-line-height: 32px;
+
+$text-spacing: 24px;

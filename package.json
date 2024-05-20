@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "env": "wp-env"
+  },
+  "dependencies": {
+    "@wordpress/env": "^9.8.0"
+  },
+  "volta": {
+    "node": "20.13.1"
+  }
+}

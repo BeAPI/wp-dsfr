@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "dsfr/fr-tabs-list",
+	"version": "1.0.2",
+	"title": "Tabs list",
+	"category": "widgets",
+	"icon": "menu",
+	"description": "DSFR tabs list block.",
+	"parent": ["dsfr/fr-tabs"],
+	"supports": {
+		"html": false,
+		"anchor": false,
+		"align": false,
+		"lock": false,
+		"reusable": false
+	},
+	"usesContext": ["dsfr/fr-tabs"],
+	"textdomain": "dsfr-native-blocks",
+	"editorScript": "file:./index.js"
+}

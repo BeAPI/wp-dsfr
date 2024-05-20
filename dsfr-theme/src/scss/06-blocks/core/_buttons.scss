@@ -1,0 +1,58 @@
+.wp-block {
+    &-buttons {
+        gap: 4px;
+        margin-bottom: $text-spacing;
+    }
+
+    // ----
+    // button
+    // ----
+    &-button {
+        position: relative;
+
+        .wp-block-button__link {
+            display: inline;
+            padding: 0;
+            font: inherit;
+            color: inherit;
+            background: none;
+            border: none;
+            border-radius: 0;
+        }
+
+        a::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+        }
+
+        &.has-custom-font-size .wp-block-button__link {
+            font-size: inherit;
+        }
+
+        // style button block
+        &:is(
+        :not([class*="is-style"]),
+        .is-style-fill,
+        .is-style-secondary,
+        .is-style-tertiary) {
+            @extend %fr-btn;
+        }
+
+        &.is-style-secondary {
+            @extend %fr-btn-secondary;
+        }
+
+        &.is-style-tertiary {
+            @extend %fr-btn-tertiary;
+        }
+
+        // style link
+        &.is-style-link {
+            @extend %fr-link;
+        }
+    }
+}

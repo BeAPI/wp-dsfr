@@ -1,0 +1,15 @@
+.wp-block-gallery {
+    --wp--style--unstable-gallery-gap: var(--column-gap) !important;
+
+    @extend %block-spacing-sm;
+
+    gap: var(--row-gap) var(--column-gap) !important;
+
+    #{context-selector("&.alignwide", "[data-align='wide'] > &")} {
+        @extend %block-spacing-md;
+    }
+
+    #{context-selector("&.alignfull", "[data-align='full'] > &")} {
+        @extend %block-spacing-lg;
+    }
+}

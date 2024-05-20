@@ -1,0 +1,34 @@
+#{context-selector('.blocks-container', '.is-root-container')} {
+    ul:where(:not([class*="fr-"])),
+    ol {
+        margin-bottom: $text-spacing;
+
+        // Utility classes
+        &.aligncenter {
+            padding: 0;
+            list-style-position: inside;
+        }
+
+        &.alignright {
+            padding: 0;
+            text-align: right;
+            list-style-position: inside;
+        }
+    }
+
+    ul {
+        &:not([class*="is-style-"], .no-list-style, [class*="fr-"]) {
+            list-style-type: disc;
+        }
+    }
+
+    ol {
+        &:not([class*="is-style-"]) {
+            list-style-type: decimal;
+        }
+    }
+
+    dd {
+        margin: 0;
+    }
+}

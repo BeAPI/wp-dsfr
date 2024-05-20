@@ -1,0 +1,12 @@
+.page-top {
+    > div {
+        @include container;
+
+        max-width: var(--responsive--aligndefault-width);
+        margin-top: $spacing-10;
+
+        @include breakpoints(md) {
+            margin-top: $spacing-12;
+        }
+    }
+}

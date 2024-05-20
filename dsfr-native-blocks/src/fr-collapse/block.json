@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "dsfr/fr-collapse",
+	"parent": ["dsfr/fr-accordion"],
+	"version": "1.0.0",
+	"title": "Collapse",
+	"category": "widgets",
+	"icon": "text-page",
+	"description": "DSFR collapse block.",
+	"supports": {
+		"html": false,
+		"anchor": false,
+		"align": false,
+		"reusable": false,
+		"color": {
+			"background": false,
+			"text": false
+		}
+	},
+	"attributes": {
+		"id": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"usesContext": ["dsfr/fr-accordion--id"],
+	"textdomain": "dsfr-native-blocks",
+	"editorScript": "file:./index.js"
+}

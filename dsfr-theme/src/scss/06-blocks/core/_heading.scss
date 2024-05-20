@@ -1,0 +1,42 @@
+/**
+ * Headings
+ */
+%title-base-style {
+    margin-bottom: $title-spacing;
+    font-family: $font-family-title;
+    font-weight: 700;
+    color: var(--text-title-grey);
+}
+
+@for $i from 1 through 6 {
+    %title-h#{$i} {
+        @extend %title-base-style;
+
+        font-size: var(--title--font-size-h#{$i});
+        line-height: var(--title--line-height-h#{$i});
+    }
+
+    .has-h-#{$i}-font-size {
+        @extend %title-h#{$i};
+    }
+}
+
+%display-base-style {
+    margin-bottom: $display-spacing;
+    font-family: $font-family-title;
+    font-weight: 700;
+    color: var(--text-title-grey);
+}
+
+@each $size in (xl, lg, md, sm, xs) {
+    %display-#{$size} {
+        @extend %display-base-style;
+
+        font-size: var(--display--font-size-#{$size});
+        line-height: var(--display--line-height-#{$size});
+    }
+
+    .has-display-#{$size}-font-size {
+        @extend %display-#{$size};
+    }
+}

@@ -1,0 +1,4 @@
+{
+	"plugins": ["./dsfr-native-blocks"],
+	"themes": [ "./dsfr-theme" ]
+}

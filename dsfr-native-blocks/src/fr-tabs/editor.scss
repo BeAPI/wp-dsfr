@@ -1,0 +1,15 @@
+/* editor */
+.fr-tabs {
+    &::before { 
+        content: "";
+    }
+
+    .fr-tabs__panel {
+        display: none !important;
+        border: 1px solid var(--border-default-grey) !important;
+
+        &--selected {
+            display: block !important;
+        }
+    }
+}

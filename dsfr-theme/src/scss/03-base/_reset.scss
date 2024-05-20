@@ -1,0 +1,9 @@
+html {
+    // Scroll resets
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+*[id] {
+    scroll-margin-top: $spacing-6;
+}

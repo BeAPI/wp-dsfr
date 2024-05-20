@@ -1,0 +1,15 @@
+.wp-block-video {
+    @extend %block-spacing-sm;
+
+    #{context-selector("&.alignwide", "[data-align='wide'] > &")} {
+        @extend %block-spacing-md;
+    }
+
+    #{context-selector("&.alignfull", "[data-align='full'] > &")} {
+        @extend %block-spacing-lg;
+    }
+}
+
+* > figure > video {
+    vertical-align: middle;
+}

@@ -1,0 +1,22 @@
+import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
+import dsfrClassName from '../utils/dsfrClassName';
+
+export default function Edit() {
+	const blockProps = useBlockProps();
+	const innerBlocksProps = useInnerBlocksProps(blockProps, {
+		allowedBlocks: ['dsfr/fr-tabs-list-item'],
+		__experimentalDirectInsert: false,
+		orientation: 'horizontal',
+		templateLock: false,
+		template: new Array(3).fill([
+			'dsfr/fr-tabs-list-item',
+			{ lock: { move: true, remove: true } },
+		]),
+		templateInsertUpdatesSelection: true,
+		renderAppender: false,
+	});
+
+	dsfrClassName(innerBlocksProps, 'fr-tabs-list', 'fr-tabs__list');
+
+	return <ul {...innerBlocksProps} role="tablist" />;
+}

@@ -1,0 +1,45 @@
+<?php
+/**
+ * Title: Mise en avant - informations
+ * Slug: dsfr/callout-informations
+ * categories: callout
+ */
+?>
+<!-- wp:group {"className":"wp-block-group--how-to-use fr-icon-information-line","layout":{"type":"constrained"}} -->
+<div class="wp-block-group wp-block-group--how-to-use fr-icon-information-line">
+	<!-- wp:heading {"level":3} -->
+	<h3 class="wp-block-heading">Informations sur la composition "Mise en avant"</h3>
+	<!-- /wp:heading -->
+
+	<!-- wp:paragraph -->
+	<p>Par défaut, la couleur de la bordure est "default-blue-france". Vous pouvez utiliser les classes css suivantes pour définir la couleur de la bordure :</p>
+	<!-- /wp:paragraph -->
+
+	<?php
+	$available_classes = Beapi\Theme\Dsfr\Helpers\DSFR\get_dsfr_colors( 'fr-callout--' );
+
+	foreach ( $available_classes as $available_class ) :
+		?>
+		<!-- wp:paragraph -->
+		<p><code><?php echo esc_html( $available_class ); ?></code> :</p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:group {"className":"fr-callout fr-icon-information-line <?php echo esc_attr( $available_class ); ?>","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group fr-callout fr-icon-information-line <?php echo esc_attr( $available_class ); ?>">
+			<!-- wp:heading {"className":"fr-callout__title","level":3,"placeholder":"Ajouter un titre"} -->
+			<h3 class="wp-block-heading fr-callout__title"></h3>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"placeholder":"Ajouter un texte","fontSize":"lg"} -->
+			<p class="has-lg-font-size"></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:buttons -->
+			<div class="wp-block-buttons"><!-- wp:button /--></div>
+			<!-- /wp:buttons -->
+		</div>
+		<!-- /wp:group -->
+		<?php
+	endforeach;
+	?>
+</div>

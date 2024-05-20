@@ -1,0 +1,11 @@
+/**
+ * Heading mixins
+ */
+
+@mixin heading($name: h1, $style: default) {
+    margin-bottom: $title-spacing;
+    font-size: var(--title--font-size-#{$name});
+    font-weight: 700;
+    line-height: var(--title--line-height-#{$name});
+    color: var(--text-title-grey);
+}

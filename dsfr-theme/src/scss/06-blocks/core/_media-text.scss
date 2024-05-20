@@ -1,0 +1,83 @@
+.wp-block-media-text {
+    $el: &;
+
+    --c1: #{column(4, 3, 8)};
+    --c2: #{column(4, 3, 8)};
+
+    @extend %block-spacing-sm;
+
+    grid-template-columns: var(--c1) var(--c2) !important;
+    justify-content: space-between;
+
+    #{$el}__content {
+        padding: 0;
+    }
+
+    &.has-media-on-the-right {
+        grid-template-columns: var(--c2) var(--c1) !important;
+    }
+
+    #{context-selector("&.alignwide", "[data-align='wide'] > &")} {
+        @extend %block-spacing-md;
+    }
+
+    #{context-selector("&.alignfull", "[data-align='full'] > &")} {
+        @extend %block-spacing-lg;
+    }
+
+    @include breakpoints(md, max) {
+        &.is-stacked-on-mobile {
+            grid-template-columns: 100% !important;
+
+            #{$el}__media {
+                grid-row: 1;
+                grid-column: 1;
+                margin-bottom: $spacing-6 !important;
+            }
+
+            #{$el}__content {
+                grid-row: 2;
+                grid-column: 1;
+            }
+        }
+
+        #{context-selector("&.alignfull", "[data-align='full'] > &")} {
+            #{$el}__content {
+                max-width: var(--responsive--aligndefault-width);
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+    }
+
+    @include breakpoints(md) {
+        #{context-selector("&.alignwide", "[data-align='wide'] > &")} {
+            --c1: #{column(5)};
+            --c2: #{column(6)};
+        }
+
+        #{context-selector("&.alignfull", "[data-align='full'] > &")} {
+            --c1: calc((100% - var(--external-gutter)) * #{column-factor(5)} + var(--external-gutter));
+            --c2: calc((100% - var(--external-gutter)) * #{column-factor(6)});
+
+            column-gap: column(1, 2);
+            max-width: calc(100% - var(--external-gutter));
+            margin-left: 0;
+
+            &.has-media-on-the-right {
+                margin-right: 0;
+                margin-left: auto;
+            }
+        }
+    }
+
+    @include breakpoints(lg) {
+        #{context-selector("&.alignfull", "[data-align='full'] > &")} {
+            --c1: auto;
+            --c2: #{column-px(6)};
+
+            column-gap: column-px(1, 2);
+            max-width: calc(#{$container-wide} + (100% - #{$container-wide}) / 2);
+        }
+    }
+}

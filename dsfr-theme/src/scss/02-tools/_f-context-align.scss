@@ -1,0 +1,38 @@
+/**
+ * Align
+ *
+ * examples :
+ *
+ *      #{ context-align("wide") } .block#{ context-align() } {
+ *          ... your css
+ *      }
+ *
+  *      return for style.scss :
+ *          .block.alignwide {
+ *              ... your css
+ *          }
+ *
+ *      return for editor.scss :
+ *          [data-align="wide"] > .block {
+ *              ... your css
+ *          }
+ *
+ */
+
+$function-context-align-last-value: "";
+
+@function context-align($value: null, $suffix: " > ") {
+    @if not $value {
+        @if ($entry-file-name == "style") {
+            @return ".align" + $function-context-align-last-value;
+        }
+    } @else {
+        $function-context-align-last-value: $value !global;
+
+        @if ($entry-file-name == "editor") {
+            @return "[data-align=\"" + $value + "\"]" + $suffix;
+        }
+    }
+
+    @return "";
+}

@@ -1,0 +1,39 @@
+.wp-block-group {
+    $el: &;
+
+    display: flow-root;
+
+    &.has-background {
+        padding: $spacing-6 var(--external-gutter);
+    }
+
+    &__inner-container {
+        > * {
+            max-width: none;
+        }
+    }
+
+    #{context-selector("&.alignfull", "[data-align='full'] > &")} {
+        padding-right: 0;
+        padding-left: 0;
+
+        &.has-background {
+            @extend %block-spacing-lg;
+
+            & + & {
+                @extend %block-spacing-lg-reverse;
+            }
+        }
+
+        #{$el}__inner-container {
+            @include container;
+        }
+    }
+
+    @include breakpoints(md) {
+        &.has-background {
+            padding-top: $spacing-7;
+            padding-bottom: $spacing-7;
+        }
+    }
+}

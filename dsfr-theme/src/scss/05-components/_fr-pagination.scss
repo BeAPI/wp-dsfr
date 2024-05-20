@@ -1,0 +1,9 @@
+.fr-pagination {
+    $el: &;
+
+    margin-top: $spacing-8;
+
+    &__list {
+        justify-content: center;
+    }
+}

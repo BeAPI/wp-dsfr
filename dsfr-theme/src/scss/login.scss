@@ -1,0 +1,126 @@
+/**
+ * Imports
+ */
+
+@import "./01-abstract/abstract";
+@import "./02-tools/tools";
+
+// SCSS variables to customise the login page styles
+// The CSS file generated in dist/ by webpack is called automatically thanks to the WP Login Page mu-plugin present in the WP Skeleton.
+
+$login-logo-path: "../../src/img/static/logo-marianne.svg";
+$login-logo-size: 204px 72px;
+$login-logo-height: 144px;
+$login-body-bg-color: #fff;
+$login-text-color: #fff;
+$login-link-color: var(--text-default-grey);
+$login-link-hover-color: var(--text-default-grey);
+
+// Except for specific needs, it is not necessary to modify the SCSS rules below (modification of the SCSS variables is sufficient)
+
+html,
+body {
+    &::before,
+    &::after {
+        display: none;
+    }
+}
+
+body.login {
+    // screen background color
+    background: $login-body-bg-color;
+
+    /* stylelint-disable-next-line selector-id-pattern */
+    #login_error {
+        border: 1px solid var(--border-plain-error) !important;
+        box-shadow: none;
+    }
+
+    #login form {
+        border: 1px solid #ccc !important;
+        box-shadow: none;
+    }
+
+    // logo (before login form) path and size
+    #login h1 a {
+        display: block;
+        width: 100%;
+        height: $login-logo-height;
+        background-image: url(#{$login-logo-path});
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: $login-logo-size;
+    }
+
+    // default link styles
+    a {
+        color: $login-link-color;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: $login-link-hover-color;
+        }
+    }
+
+    // notice block border-left colo
+    /* stylelint-disable-next-line selector-id-pattern */
+    #login_error,
+    .message,
+    .success {
+        border-left-color: $login-text-color;
+    }
+
+    // remember input checkbox check color
+    input[type="text"],
+    input[type="password"] {
+        --idle: transparent;
+        --hover: var(--background-contrast-grey-hover);
+        --active: var(--background-contrast-grey-active);
+        display: block;
+        width: 100%;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #161616;
+        color: var(--text-label-grey);
+        background-color: #eee;
+        background-color: var(--background-contrast-grey);
+        border: none;
+        border-radius: .25rem .25rem 0 0;
+        box-shadow: inset 0 -2px 0 0 #3a3a3a;
+        box-shadow: inset 0 -2px 0 0 var(--border-plain-grey);
+    }
+
+    input[type="checkbox"]:checked::before {
+        content: none;
+    }
+
+    // link after login form styles
+    #nav,
+    #backtoblog {
+        a {
+            color: $login-link-color;
+
+            &:focus,
+            &:hover {
+                color: $login-link-hover-color;
+            }
+        }
+    }
+
+    #language-switcher select {
+        height: 40px;
+        border: 1px solid var(--border-default-grey);
+        border-radius: 0;
+    }
+
+    .button[type="submit"] {
+        @include fr-btn;
+
+        margin-bottom: 0;
+        background-color: var(--background-action-high-blue-france) !important;
+        border: none;
+        border-radius: 0;
+    }
+}

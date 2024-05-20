@@ -1,0 +1,14 @@
+# Configuration
+.idea
+
+# Repository
+/node_modules
+
+# DSFR Theme
+/dsfr-theme/node_modules
+/dsfr-theme/dist-dsfr
+/dsfr-theme/dist
+
+# DSFR Plugin
+/dsfr-native-blocks/node_modules
+/dsfr-native-blocks/build

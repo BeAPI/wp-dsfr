@@ -1,0 +1,33 @@
+@mixin fr-link {
+    --underline-img: linear-gradient(0deg, currentColor, currentColor);
+    --text-spacing: 0;
+    --title-spacing: 0;
+
+    z-index: 1;
+    display: inline;
+    padding: 0;
+    font-size: $paragraph-md-font-size;
+    line-height: $paragraph-md-line-height;
+    color: var(--text-action-high-blue-france);
+    background-image: var(--underline-img), var(--underline-img);
+    background-repeat: no-repeat, no-repeat;
+    background-position: var(--underline-x) 100%, var(--underline-x) calc(100% - var(--underline-thickness));
+    background-size: var(--underline-hover-width) calc(var(--underline-thickness) *2), var(--underline-idle-width) var(--underline-thickness);
+    transition: background-size 0s;
+
+    @include hover {
+        --underline-hover-width: 100%;
+    }
+
+    &.fr-link--sm {
+        padding: 0;
+        font-size: $paragraph-sm-font-size;
+        line-height: $paragraph-sm-line-height;
+    }
+
+    &.fr-link--lg {
+        padding: 0;
+        font-size: $paragraph-lg-font-size;
+        line-height: $paragraph-lg-line-height;
+    }
+}

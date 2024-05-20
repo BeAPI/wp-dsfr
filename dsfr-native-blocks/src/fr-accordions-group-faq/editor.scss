@@ -1,0 +1,81 @@
+/* editor */
+.fr-accordions-group {
+    .fr-accordion__editor-title-wrapper {
+        position: relative;
+    }
+
+    .fr-accordion__editor-btns-group {
+        position: absolute;
+        top: 50%;
+        right: 50px;
+        display: none;
+        margin-top: -18px;
+        overflow: hidden;
+        background: #1e1e1e;
+        border-radius: 5px;
+
+        .fr-accordion__editor-btn {
+            border-radius: 0;
+        }
+    }
+
+    .fr-accordion__editor-btn {
+        color: #fff;
+        background: #1e1e1e;
+        border-radius: 5px;
+
+        svg {
+            color: currentColor;
+        }
+
+        &:hover {
+            background-color: var(--wp-admin-theme-color) !important;
+        }
+    }
+
+    .fr-accordion + .fr-accordion__editor-btn {
+        gap: 8px;
+        display: none;
+        margin-top: 24px;
+    }
+
+    .fr-accordion__btn {
+        justify-content: space-between !important;
+
+        span {
+            flex-grow: 1;
+        }
+
+        &::after {
+            margin-left: 130px !important;
+        }
+    }
+
+    .fr-collapse {
+        > div {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+
+    &.is-selected {
+        .fr-accordion + .fr-accordion__editor-btn {
+            display: inline-flex;
+        }
+    }
+
+    .fr-accordion.has-child-selected {
+        .fr-accordion__editor-btns-group {
+            display: flex;
+        }
+
+        .fr-collapse {
+            max-height: none;
+            visibility: visible;
+
+            &::before {
+                margin-top: 0;
+            }
+        }
+    }
+}

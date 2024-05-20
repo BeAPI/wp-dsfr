@@ -1,0 +1,33 @@
+/* Search Page
+-------------------------------------------------------------- */
+.search {
+    &__columns {
+        > div {
+            &:first-child {
+                > *:not(:last-child) {
+                    margin-bottom: 32px;
+                }
+            }
+        }
+    }
+
+    @include breakpoints(md) {
+        &__columns {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            > div {
+                &:first-child {
+                    position: sticky;
+                    top: 72px;
+                    width: column(3, 3);
+                }
+
+                &:last-child {
+                    width: column(8);
+                }
+            }
+        }
+    }
+}

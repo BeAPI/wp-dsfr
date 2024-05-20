@@ -1,0 +1,16 @@
+.fr-card {
+    // add svg support for fr-card__header
+    &__img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 80%;
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: contain;
+            fill: var(--artwork-major-red-marianne);
+        }
+    }
+}

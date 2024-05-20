@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "dsfr/fr-tabs-panel",
+	"version": "1.0.2",
+	"title": "Panel",
+	"category": "widgets",
+	"icon": "layout",
+	"description": "DSFR tabs panel block",
+	"parent": ["dsfr/fr-tabs"],
+	"supports": {
+		"html": false,
+		"anchor": false,
+		"align": false,
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"lock": false,
+		"reusable": false
+	},
+	"attributes": {
+		"index": {
+			"type": "integer",
+			"default": 0
+		},
+		"labelledby": {
+			"type": "string",
+			"default": ""
+		},
+		"id": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"usesContext": ["dsfr/fr-tabs--id", "dsfr/fr-tabs--active-tab-index"],
+	"textdomain": "dsfr-native-blocks",
+	"editorScript": "file:./index.js"
+}

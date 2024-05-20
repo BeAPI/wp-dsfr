@@ -1,0 +1,9 @@
+.wp-block-file {
+    $el: &;
+
+    @extend %block-spacing-xs;
+
+    #{$el}__button {
+        @extend %fr-btn;
+    }
+}

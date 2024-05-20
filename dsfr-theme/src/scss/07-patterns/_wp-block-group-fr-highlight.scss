@@ -1,0 +1,25 @@
+.wp-block-group {
+    $el: &;
+
+    &.fr-highlight {
+        --wp-block-group-fr-highlight-width: var(--responsive--aligndefault-width);
+
+        @extend %block-spacing-sm;
+
+        position: relative;
+        left: 16px;
+        max-width: calc(var(--wp-block-group-fr-highlight-width) - 32px);
+
+        #{$el}__inner-container {
+            @extend %no-first-and-last-child-vertical-margin;
+        }
+
+        #{context-selector("&.alignwide", "[data-align='wide'] &")} {
+            --wp-block-group-fr-highlight-width: var(--responsive--alignwide-width);
+        }
+
+        #{context-selector("&.alignfull", "[data-align='full'] &")} {
+            --wp-block-group-fr-highlight-width: var(--responsive--alignfull-width);
+        }
+    }
+}

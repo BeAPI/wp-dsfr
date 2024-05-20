@@ -1,0 +1,25 @@
+.wp-block-columns {
+    gap: var(--row-gap) var(--column-gap);
+
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+
+    #{context-selector("&.alignwide", "[data-align='wide'] > &")} {
+        @extend %block-spacing-md;
+    }
+
+    #{context-selector("&.alignfull", "[data-align='full'] > &")} {
+        @extend %block-spacing-lg;
+    }
+
+    @include breakpoints(md, max) {
+        &:not(.is-not-stacked-on-mobile) {
+            flex-wrap: wrap !important;
+
+            .wp-block-column {
+                flex-basis: 100% !important;
+            }
+        }
+    }
+}

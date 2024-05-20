@@ -1,0 +1,16 @@
+.wp-block-image {
+    @extend %block-spacing-sm;
+
+    > img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #{context-selector("&.alignwide", "[data-align='wide'] > &")} {
+        @extend %block-spacing-md;
+    }
+
+    #{context-selector("&.alignfull", "[data-align='full'] > &")} {
+        @extend %block-spacing-lg;
+    }
+}

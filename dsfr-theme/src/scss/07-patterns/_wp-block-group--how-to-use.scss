@@ -1,0 +1,66 @@
+.wp-block-group {
+    $el: &;
+
+    &--how-to-use {
+        @extend %block-spacing-sm;
+
+        padding: 24px;
+        background: var(--background-raised-grey);
+        border: 1px solid var(--grey-625-425);
+
+        &::before {
+            margin-bottom: 12px;
+        }
+
+        p {
+            code {
+                display: inline-block;
+                padding: 2px 5px;
+                font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+                font-size: .75em;
+                color: #000;
+                vertical-align: middle;
+                background: #eee;
+                border-radius: 5px;
+            }
+
+            span[class*="fr-icon"] + code {
+                margin-bottom: 4px;
+                vertical-align: middle;
+
+            }
+        }
+
+        .list-icons {
+            p {
+                columns: 2;
+                column-gap: 12px;
+            }
+        }
+
+        @include style-only {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                &:empty {
+                    &::before {
+                        content: "Titre";
+                    }
+                }
+            }
+
+            p,
+            th,
+            td {
+                &:empty {
+                    &::before {
+                        content: "Texte";
+                    }
+                }
+            }
+        }
+    }
+}

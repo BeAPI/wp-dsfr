@@ -1,0 +1,19 @@
+.wp-block-group {
+    $el: &;
+
+    &.fr-callout {
+        @extend %block-spacing-sm;
+
+        #{$el}__inner-container {
+            @extend %no-first-and-last-child-vertical-margin;
+
+            p {
+                margin-bottom: 8px;
+            }
+
+            .wp-block-buttons {
+                margin-top: 16px;
+            }
+        }
+    }
+}

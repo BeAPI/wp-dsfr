@@ -1,0 +1,46 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--row-gap) var(--column-gap);
+
+    > * {
+        width: 100%;
+        min-width: 0;
+    }
+
+    @include breakpoints(xs, sm) {
+        &[data-grid-size]:not([data-grid-size="1"]) {
+            grid-template-columns: repeat(2, 1fr);
+
+            .fr-tile--horizontal {
+                grid-column: 1/3;
+            }
+        }
+    }
+
+    @include breakpoints(sm, md) {
+        &[data-grid-size]:not([data-grid-size="1"]) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &--fr-card-post {
+            .fr-card--horizontal {
+                grid-column: 1/3;
+            }
+        }
+    }
+
+    @include breakpoints(md) {
+        @for $i from 2 through 6 {
+            &[data-grid-size="#{$i}"] {
+                grid-template-columns: repeat(#{$i}, 1fr);
+            }
+        }
+
+        &--fr-card-post {
+            .fr-card--horizontal {
+                grid-column: 1/4;
+            }
+        }
+    }
+}

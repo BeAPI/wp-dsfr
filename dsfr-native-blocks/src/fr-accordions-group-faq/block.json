@@ -1,0 +1,21 @@
+{
+	"apiVersion": 2,
+	"name": "dsfr/fr-accordions-group-faq",
+	"version": "0.1.0",
+	"title": "Accordions group (FAQ)",
+	"category": "widgets",
+	"icon": "format-chat",
+	"description": "DSFR accordions group block with structured data.",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"questions": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"textdomain": "faq-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}

@@ -1,0 +1,33 @@
+.fr-quote {
+    $el: &;
+
+    @extend %block-spacing-md;
+
+    figcaption {
+        margin-bottom: 0 !important;
+        margin-left: 0;
+    }
+
+    #{$el}__author {
+        color: var(--text-default-grey);
+    }
+
+    #{$el}__source {
+        margin-bottom: 0;
+    }
+
+    #{$el}__image {
+        img {
+            object-fit: cover;
+        }
+    }
+
+    @include breakpoints(sm) {
+        padding-left: 248px;
+        background-position: 216px top;
+
+        #{$el}__image {
+            left: 0;
+        }
+    }
+}

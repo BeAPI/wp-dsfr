@@ -1,0 +1,142 @@
+:root {
+    /*
+     * Heading
+     */
+    // Font size
+    --title--font-size-h1: #{$h1-font-size-mobile};
+    --title--font-size-h2: #{$h2-font-size-mobile};
+    --title--font-size-h3: #{$h3-font-size-mobile};
+    --title--font-size-h4: #{$h4-font-size-mobile};
+    --title--font-size-h5: #{$h5-font-size-mobile};
+    --title--font-size-h6: #{$h6-font-size-mobile};
+
+    // Line height
+    --title--line-height-h1: #{$h1-line-height-mobile};
+    --title--line-height-h2: #{$h2-line-height-mobile};
+    --title--line-height-h3: #{$h3-line-height-mobile};
+    --title--line-height-h4: #{$h4-line-height-mobile};
+    --title--line-height-h5: #{$h5-line-height-mobile};
+    --title--line-height-h6: #{$h6-line-height-mobile};
+
+    // Font size
+    --display--font-size-xl: #{$display-xl-font-size-mobile};
+    --display--font-size-lg: #{$display-lg-font-size-mobile};
+    --display--font-size-md: #{$display-md-font-size-mobile};
+    --display--font-size-sm: #{$display-sm-font-size-mobile};
+    --display--font-size-xs: #{$display-xs-font-size-mobile};
+
+    // Line height
+    --display--line-height-xl: #{$display-xl-line-height-mobile};
+    --display--line-height-lg: #{$display-lg-line-height-mobile};
+    --display--line-height-md: #{$display-md-line-height-mobile};
+    --display--line-height-sm: #{$display-sm-line-height-mobile};
+    --display--line-height-xs: #{$display-xs-line-height-mobile};
+
+    /*
+     * Alignments
+     */
+    --external-gutter: #{$external-gutter-mobile};
+    --responsive--aligndefault-width: calc(100% - var(--external-gutter) * 2);
+    --responsive--alignwide-width: calc(100% - var(--external-gutter) * 2);
+    --responsive--alignfull-width: 100%;
+
+    /*
+     * gap
+     */
+    --row-gap: 24px;
+    --column-gap: 24px;
+
+    /*
+     * Animation speeds
+     */
+    --speed: 1s;
+
+    /*
+     * Admin bar
+     */
+    --wp-admin-bar-height: 0rem;
+
+    .admin-bar {
+        --wp-admin-bar-height: 46px;
+    }
+
+    /*
+     * A11y reduced motion
+     */
+    @include reduced-motion {
+        --speed: 0s;
+    }
+
+    /*
+     * Global breakpoints
+     */
+
+    @include breakpoints(s, max) {
+        /*
+         * Admin bar become not sticky
+         */
+        &:not(.scroll-top) {
+            .admin-bar {
+                --wp-admin-bar-height: 0rem;
+            }
+        }
+    }
+
+    @include breakpoints(admin-bar) {
+        /*
+         * Admin bar
+         */
+        .admin-bar {
+            --wp-admin-bar-height: 32px;
+        }
+    }
+
+    @include breakpoints(md) {
+        /*
+        * Heading
+        */
+        // Font size
+        --title--font-size-h1: #{$h1-font-size-desktop};
+        --title--font-size-h2: #{$h2-font-size-desktop};
+        --title--font-size-h3: #{$h3-font-size-desktop};
+        --title--font-size-h4: #{$h4-font-size-desktop};
+        --title--font-size-h5: #{$h5-font-size-desktop};
+        --title--font-size-h6: #{$h6-font-size-desktop};
+
+        // Line height
+        --title--line-height-h1: #{$h1-line-height-desktop};
+        --title--line-height-h2: #{$h2-line-height-desktop};
+        --title--line-height-h3: #{$h3-line-height-desktop};
+        --title--line-height-h4: #{$h4-line-height-desktop};
+        --title--line-height-h5: #{$h5-line-height-desktop};
+        --title--line-height-h6: #{$h6-line-height-desktop};
+
+        // Font size
+        --display--font-size-xl: #{$display-xl-font-size-desktop};
+        --display--font-size-lg: #{$display-lg-font-size-desktop};
+        --display--font-size-md: #{$display-md-font-size-desktop};
+        --display--font-size-sm: #{$display-sm-font-size-desktop};
+        --display--font-size-xs: #{$display-xs-font-size-desktop};
+
+        // Line height
+        --display--line-height-xl: #{$display-xl-line-height-desktop};
+        --display--line-height-lg: #{$display-lg-line-height-desktop};
+        --display--line-height-md: #{$display-md-line-height-desktop};
+        --display--line-height-sm: #{$display-sm-line-height-desktop};
+        --display--line-height-xs: #{$display-xs-line-height-desktop};
+
+        /*
+         * Alignments
+         */
+        --external-gutter: #{$external-gutter-desktop};
+        --responsive--aligndefault-width: #{column-full($container-default-column-length)};
+    }
+
+    @include breakpoints(lg) {
+        /*
+         * Alignments
+         */
+        --responsive--aligndefault-width: #{column-px($container-default-column-length)};
+        --responsive--alignwide-width: #{column-px(12)};
+    }
+}

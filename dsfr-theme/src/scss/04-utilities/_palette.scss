@@ -1,0 +1,20 @@
+@use "sass:map";
+
+$palette-slugs: (
+    "text-title-grey",
+    "text-default-grey",
+    "background-action-high-blue-france",
+    "background-alt-blue-france",
+);
+
+@each $slug in $palette-slugs {
+    $color: var(--#{$slug});
+
+    .has-#{$slug}-color {
+        color: $color;
+    }
+
+    .has-#{$slug}-background-color {
+        background-color: $color;
+    }
+}

@@ -1,0 +1,87 @@
+/**
+ * Button
+ */
+@mixin fr-btn {
+    // DSFR STYLE
+    --text-spacing: 0;
+    --title-spacing: 0;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    min-height: 40px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--text-inverted-blue-france);
+    background-color: var(--background-action-high-blue-france);
+
+    --underline-img: none;
+    --hover-tint: var(--hover);
+
+    --idle: transparent;
+    --hover: var(--background-action-high-blue-france-hover);
+    --active: var(--background-action-high-blue-france-active);
+
+    &[class^="fr-icon-"]:not([class*="fr-btn--icon-"]),
+    &[class*=" fr-icon-"]:not([class*="fr-btn--icon-"]),
+    &[class^="fr-fi-"]:not([class*="fr-btn--icon-"]),
+    &[class*=" fr-fi-"]:not([class*="fr-btn--icon-"]) {
+        max-width: 40px;
+        max-height: 40px;
+        padding-right: 8px;
+        padding-left: 8px;
+        overflow: hidden;
+        white-space: nowrap;
+
+        &::before {
+            --icon-size: 24px;
+            margin-right: 8px;
+            margin-left: 0;
+        }
+    }
+
+    &:hover {
+        background-color: var(--hover) !important;
+    }
+
+    &:active {
+        background-color: var(--active) !important;
+    }
+
+    &.fr-btn--sm {
+        min-height: 32px;
+        padding: 4px 12px;
+        font-size: $paragraph-sm-font-size;
+        line-height: 24px;
+    }
+
+    &.fr-btn--lg {
+        min-height: 48px;
+        padding: 8px 18px;
+        font-size: $paragraph-lg-font-size;
+        line-height: 28px;
+    }
+}
+
+@mixin fr-btn-secondary {
+    // DSFR STYLE
+    --hover: #{$color-dark-005};
+    --active: #{$color-dark-010};
+
+    color: var(--text-action-high-blue-france);
+    background: transparent;
+    box-shadow: inset 0 0 0 1px var(--border-action-high-blue-france);
+}
+
+@mixin fr-btn-tertiary {
+    // DSFR STYLE
+    --hover: #{$color-dark-005};
+    --active: #{$color-dark-010};
+
+    color: var(--text-action-high-blue-france);
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--border-default-grey);
+}

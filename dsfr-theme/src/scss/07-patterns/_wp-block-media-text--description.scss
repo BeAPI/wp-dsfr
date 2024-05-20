@@ -1,0 +1,11 @@
+.wp-block-media-text {
+    $el: &;
+
+    &--description {
+        @include breakpoints(md) {
+            .wp-block-buttons:last-child {
+                margin-top: $spacing-8;
+            }
+        }
+    }
+}

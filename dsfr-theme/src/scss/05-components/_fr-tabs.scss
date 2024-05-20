@@ -1,0 +1,9 @@
+.fr-tabs {
+    margin-bottom: $text-spacing;
+
+    &__panel {
+        > div {
+            @extend %no-first-and-last-child-vertical-margin;
+        }
+    }
+}

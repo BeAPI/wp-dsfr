@@ -1,0 +1,112 @@
+@include editor-only {
+    // ----
+    // Post title style
+    // ----
+    .editor-post-title {
+
+        @include heading(h1);
+
+        max-width: var(--responsive--aligndefault-width);
+        margin-bottom: $spacing-9;
+    }
+
+    .is-root-container {
+        padding-bottom: $spacing-9;
+    }
+}
+
+#{context-selector(".blocks-container", ".is-root-container")} {
+    // ----
+    // common
+    // ----
+    figcaption {
+        @extend %figcaption;
+    }
+
+    #{context-selector(".alignfull", "[data-align='full']")} figcaption {
+        text-align: center;
+    }
+
+    // ----
+    // Alignements horizontaux
+    // ----
+    > * {
+        max-width: var(--responsive--aligndefault-width);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    #{context-selector(".alignwide", "[data-align='wide']")} {
+        max-width: var(--responsive--alignwide-width);
+    }
+
+    #{context-selector(".alignfull", "[data-align='full']")} {
+        max-width: var(--responsive--alignfull-width);
+    }
+
+    // ----
+    // Alignements verticaux
+    // ----
+    #{context-selector(":first-child:where(:not(:is(.blocks-container [class*="fr-"] *)))", ":first-child:where(:not(:is([data-align]:not(:first-child) > *, .is-root-container [class*="fr-"] *))), [data-align]:first-child > *")} {
+        margin-top: 0 !important;
+    }
+
+    #{context-selector(":last-child:where(:not(:is(.blocks-container [class*="fr-"] *)))", ":last-child:where(:not(:is([data-align]:not(:last-child) > *, .is-root-container [class*="fr-"] *))), [data-align]:last-child > *")} {
+        margin-bottom: 0 !important;
+    }
+}
+
+// ----
+// Alignements verticaux
+// ----
+%no-first-and-last-child-vertical-margin {
+    :first-child:where(:not(:is([class*="fr-"] :first-child))) {
+        margin-top: 0;
+    }
+
+    :last-child:where(:not(:is([class*="fr-"] :last-child))) {
+        margin-bottom: 0;
+    }
+}
+
+%block-spacing-xs {
+    margin-bottom: $spacing-6;
+}
+
+%block-spacing-sm {
+    margin-top: $spacing-6;
+    margin-bottom: $spacing-6;
+
+    @include breakpoints(md) {
+        margin-top: $spacing-8;
+        margin-bottom: $spacing-8;
+    }
+}
+
+%block-spacing-md {
+    margin-top: $spacing-10;
+    margin-bottom: $spacing-10;
+
+    @include breakpoints(md) {
+        margin-top: $spacing-12;
+        margin-bottom: $spacing-12;
+    }
+}
+
+%block-spacing-lg {
+    margin-top: $spacing-12;
+    margin-bottom: $spacing-12;
+
+    @include breakpoints(md) {
+        margin-top: $spacing-14;
+        margin-bottom: $spacing-14;
+    }
+}
+
+%block-spacing-lg-reverse {
+    margin-top: -$spacing-12;
+
+    @include breakpoints(md) {
+        margin-top: -$spacing-14;
+    }
+}

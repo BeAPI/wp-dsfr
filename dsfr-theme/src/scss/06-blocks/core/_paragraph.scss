@@ -1,0 +1,71 @@
+/**
+ * Paragraph
+ */
+%text-base-style {
+    margin-bottom: $text-spacing;
+    font-family: $font-family-title;
+    font-weight: normal;
+    color: var(--text-default-grey);
+}
+
+%text-xs {
+    @extend %text-base-style;
+
+    font-size: $paragraph-xs-font-size;
+    line-height: $paragraph-xs-line-height;
+    color: var(--text-mention-grey);
+}
+
+%text-sm {
+    @extend %text-base-style;
+
+    font-size: $paragraph-sm-font-size;
+    line-height: $paragraph-sm-line-height;
+}
+
+%text-md {
+    @extend %text-base-style;
+
+    font-size: $paragraph-md-font-size;
+    line-height: $paragraph-md-line-height;
+}
+
+%text-lg {
+    @extend %text-base-style;
+
+    font-size: $paragraph-lg-font-size;
+    line-height: $paragraph-lg-line-height;
+}
+
+%text-xl {
+    @extend %text-base-style;
+
+    font-size: $paragraph-xl-font-size;
+    line-height: $paragraph-xl-line-height;
+}
+
+p {
+    &.has-background {
+        padding: 20px;
+    }
+}
+
+.has-xs-font-size {
+    @extend %text-xs;
+}
+
+.has-sm-font-size {
+    @extend %text-sm;
+}
+
+.has-md-font-size {
+    @extend %text-md;
+}
+
+.has-lg-font-size {
+    @extend %text-lg;
+}
+
+.has-xl-font-size {
+    @extend %text-xl;
+}
