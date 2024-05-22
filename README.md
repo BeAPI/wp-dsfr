@@ -1,4 +1,4 @@
-# DSFR
+# 🇫🇷 DSFR
 
 ## Tooling
 

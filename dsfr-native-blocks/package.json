@@ -2,7 +2,7 @@
 	"name": "dsfr-native-blocks",
 	"version": "0.1.0",
 	"description": "DSFR Gutenberg blocks for dsfr-theme",
-	"author": "The WordPress Contributors",
+	"author": "BeAPI",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
