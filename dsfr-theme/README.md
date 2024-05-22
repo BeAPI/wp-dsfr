@@ -68,10 +68,6 @@ Next, go to your theme folder (in the following example, I didn't rename `beapi-
 $ cd wp-content/themes/beapi-frontend-framework
 ```
 
-Then install node dependencies with Yarn.
-```bash
-$ yarn
-```
 Alternatively, you can use NPM.
 ```bash
 $ npm install
@@ -104,13 +100,13 @@ Then, run the following command from the theme :
 
 
 ```bash
-$ yarn start
+$ npm start
 ```
 BrowserSync will proxy your lando'server based on the name defined in your `.lando.yml`.
 ### Build
 
 ```bash
-$ yarn build
+$ npm run build
 ```
 
 ### Bundle report
@@ -118,5 +114,5 @@ $ yarn build
 You can launch a bundle report with the following command :
 
 ```bash
-$ yarn bundle-report
+$ npm run bundle-report
 ```
