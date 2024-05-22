@@ -221,7 +221,7 @@ class Editor implements Service {
 		 * Do not enqueue a inexistant file on admin
 		 */
 		if ( is_file( \get_template_directory() . '/dist/' . $file ) ) {
-			add_editor_style( get_template_directory_uri() . '/dist/' . $file );
+			add_editor_style( 'dist/' . $file );
 		}
 	}
 
