@@ -356,7 +356,7 @@
 				'fr-icon-virus-line',
 			],
 
-			'Logo' => [
+			'Logos' => [
 				'fr-icon-dailymotion-fill',
 				'fr-icon-dailymotion-line',
 				'fr-icon-tiktok-fill',
@@ -395,6 +395,10 @@
 				'fr-icon-telegram-line',
 				'fr-icon-twitch-fill',
 				'fr-icon-twitch-line',
+				'fr-icon-twitter-x-fill',
+				'fr-icon-twitter-x-line',
+				'fr-icon-threads-fill',
+				'fr-icon-threads-line',
 				'fr-icon-twitter-fill',
 				'fr-icon-twitter-line',
 				'fr-icon-vimeo-fill',
@@ -489,7 +493,6 @@
 				'fr-icon-play-circle-line',
 				'fr-icon-stop-circle-fill',
 				'fr-icon-stop-circle-line',
-				'fr-icon-transcription',
 				'fr-icon-volume-down-fill',
 				'fr-icon-volume-down-line',
 				'fr-icon-volume-mute-fill',
@@ -662,7 +665,8 @@
 				'fr-icon-flashlight-line',
 				'fr-icon-moon-fill',
 				'fr-icon-moon-line',
-			]
+				'fr-icon-file-pdf-line',
+			],
 		];
 
 		foreach ( $available_icons as $category => $classes ) :

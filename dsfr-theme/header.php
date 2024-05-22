@@ -26,5 +26,6 @@
 	wp_body_open();
 	get_template_part( 'components/parts/common/skip-links' );
 	get_template_part( 'components/parts/header/header' );
+	get_template_part( 'components/parts/common/breadcrumb' );
 	?>
 	<main id="content" role="main" tabindex="-1" aria-label="Contenu principal">

@@ -16,7 +16,6 @@
   "license": "GPL-2.0",
   "dependencies": {
     "@gouvfr/dsfr": "1.10.1",
-    "lazysizes": "^5.3.2",
     "oneloop.js": "^5.0.2"
   },
   "devDependencies": {

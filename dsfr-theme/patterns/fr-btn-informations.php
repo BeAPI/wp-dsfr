@@ -33,7 +33,7 @@
 
 
 	<!-- wp:heading {"level":4,"placeholder":"Ajouter un titre"} -->
-	<h4 class="wp-block-heading">Ajout et positionnement d'une icône :</h3>
+	<h4 class="wp-block-heading">Ajout et positionnement d'une icône :</h4>
 	<!-- /wp:heading -->
 	<?php
 	$available_classes = [
@@ -60,7 +60,7 @@
 	?>
 
 	<!-- wp:heading {"level":4,"placeholder":"Ajouter un titre"} -->
-	<h4 class="wp-block-heading">Variantes de taille :</h3>
+	<h4 class="wp-block-heading">Variantes de taille :</h4>
 	<!-- /wp:heading -->
 	<?php
 	$available_classes = [

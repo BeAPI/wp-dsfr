@@ -38,6 +38,7 @@ class Editor_Patterns implements Service {
 		 */
 		$pattern_categories = [
 			'alert'     => [ 'label' => 'Alerte' ],
+			'badge'     => [ 'label' => 'Badge' ],
 			'btn'       => [ 'label' => 'Bouton' ],
 			'callout'   => [ 'label' => 'Mise en avant' ],
 			'highlight' => [ 'label' => 'Mise en exergue' ],

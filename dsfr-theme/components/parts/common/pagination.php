@@ -117,7 +117,7 @@ foreach ( $items as $i => $item ) {
 		$href = str_replace( '%_%', $format, $pagenum_link );
 		$href = str_replace( '%#%', $page_number, $href );
 
-		if ( $url_query_args ) {
+		if ( isset( $url_query_args ) ) {
 			$href = add_query_arg( $url_query_args, $href );
 		}
 

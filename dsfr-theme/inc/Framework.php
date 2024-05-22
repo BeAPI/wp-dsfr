@@ -3,8 +3,6 @@
 namespace Beapi\Theme\Dsfr;
 
 use Beapi\Theme\Dsfr\Services\Assets;
-use Beapi\Theme\Dsfr\Services\Performance;
-use Beapi\Theme\Dsfr\Services\Assets_JS_Async;
 use Beapi\Theme\Dsfr\Services\Editor;
 use Beapi\Theme\Dsfr\Services\Editor_Patterns;
 use Beapi\Theme\Dsfr\Services\Menu;
@@ -12,6 +10,7 @@ use Beapi\Theme\Dsfr\Services\Sidebar;
 use Beapi\Theme\Dsfr\Services\Svg;
 use Beapi\Theme\Dsfr\Services\Theme;
 use Beapi\Theme\Dsfr\Services\Customizer;
+use Beapi\Theme\Dsfr\Services\Yoast;
 use Beapi\Theme\Dsfr\Tools\Body_Class;
 use Beapi\Theme\Dsfr\Tools\Template_Parts;
 
@@ -37,6 +36,8 @@ class Framework {
 		Editor_Patterns::class,
 		Svg::class,
 		Menu::class,
+		Customizer::class,
+		Yoast::class,
 	];
 
 	/**
