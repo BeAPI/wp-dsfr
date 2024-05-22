@@ -9,24 +9,24 @@ $picto_system_path = $picto_path . 'system/';
 			<div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
 				<div class="fr-modal__body">
 					<div class="fr-modal__header">
-						<button class="fr-btn--close fr-btn" aria-controls="fr-theme-modal" title="Fermer">
-							Fermer
+						<button class="fr-btn--close fr-btn" aria-controls="fr-theme-modal" title="<?php esc_attr_e( 'Fermer', 'dsfr-theme' ); ?>">
+							<?php esc_html_e( 'Fermer', 'dsfr-theme' ); ?>
 						</button>
 					</div>
 					<div class="fr-modal__content">
 						<h1 id="fr-theme-modal-title" class="fr-modal__title">
-							Paramètres d’affichage
+							<?php esc_html_e( 'Paramètres d’affichage', 'dsfr-theme' ); ?>
 						</h1>
 						<div id="fr-display" class="fr-display">
 							<fieldset class="fr-fieldset" id="display-fieldset">
 								<legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="display-fieldset-legend">
-									Choisissez un thème pour personnaliser l’apparence du site.
+									<?php esc_html_e( 'Choisissez un thème pour personnaliser l’apparence du site.', 'dsfr-theme' ); ?>
 								</legend>
 								<div class="fr-fieldset__element">
 									<div class="fr-radio-group fr-radio-rich">
 										<input value="light" type="radio" id="fr-radios-theme-light" name="fr-radios-theme">
 										<label class="fr-label" for="fr-radios-theme-light">
-											Thème clair
+											<?php esc_html_e( 'Thème clair', 'dsfr-theme' ); ?>
 										</label>
 										<div class="fr-radio-rich__img">
 											<svg aria-hidden="true" class="fr-artwork" viewBox="0 0 80 80" width="80px" height="80px">
@@ -41,7 +41,7 @@ $picto_system_path = $picto_path . 'system/';
 									<div class="fr-radio-group fr-radio-rich">
 										<input value="dark" type="radio" id="fr-radios-theme-dark" name="fr-radios-theme">
 										<label class="fr-label" for="fr-radios-theme-dark">
-											Thème sombre
+											<?php esc_html_e( 'Thème sombre', 'dsfr-theme' ); ?>
 										</label>
 										<div class="fr-radio-rich__img">
 											<svg aria-hidden="true" class="fr-artwork" viewBox="0 0 80 80" width="80px" height="80px">
@@ -56,8 +56,8 @@ $picto_system_path = $picto_path . 'system/';
 									<div class="fr-radio-group fr-radio-rich">
 										<input value="system" type="radio" id="fr-radios-theme-system" name="fr-radios-theme">
 										<label class="fr-label" for="fr-radios-theme-system">
-											Système
-											<span class="fr-hint-text">Utilise les paramètres système</span>
+											<?php esc_html_e( 'Système', 'dsfr-theme' ); ?>
+											<span class="fr-hint-text"><?php esc_html_e( 'Utilise les paramètres système', 'dsfr-theme' ); ?></span>
 										</label>
 										<div class="fr-radio-rich__img">
 											<svg aria-hidden="true" class="fr-artwork" viewBox="0 0 80 80" width="80px" height="80px">

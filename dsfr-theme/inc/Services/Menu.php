@@ -104,11 +104,11 @@ class Menu implements Service {
 	 */
 	public function register_menus(): void {
 		$nav_menu = [
-			'menu-header-tools'   => 'Menu entête de page outils',
-			'menu-main'           => 'Menu principal',
-			'menu-footer-top'     => 'Menu pied de page haut',
-			'menu-footer-content' => 'Menu pied de page contenu',
-			'menu-footer-bottom'  => 'Menu pied de page bas',
+			'menu-header-tools'   => __( 'Menu entête de page outils', 'dsfr-theme' ),
+			'menu-main'           => __( 'Menu principal', 'dsfr-theme' ),
+			'menu-footer-top'     => __( 'Menu pied de page haut', 'dsfr-theme' ),
+			'menu-footer-content' => __( 'Menu pied de page contenu', 'dsfr-theme' ),
+			'menu-footer-bottom'  => __( 'Menu pied de page bas', 'dsfr-theme' ),
 		];
 		register_nav_menus( $nav_menu );
 	}

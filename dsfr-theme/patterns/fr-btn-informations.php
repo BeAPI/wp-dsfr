@@ -8,32 +8,32 @@
 <!-- wp:group {"className":"wp-block-group--how-to-use fr-icon-information-line","layout":{"type":"constrained"}} -->
 <div class="wp-block-group wp-block-group--how-to-use fr-icon-information-line">
 	<!-- wp:heading {"level":3} -->
-	<h3 class="wp-block-heading">Informations sur les boutons</h3>
+	<h3 class="wp-block-heading"><?php esc_html_e( 'Informations sur les boutons', 'dsfr-theme' ); ?></h3>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
-	<p>Trois types de boutons sont disponibles via la sélection de style de WordPress :</p>
+	<p><?php esc_html_e( 'Trois types de boutons sont disponibles via la sélection de style de WordPress :', 'dsfr-theme' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons -->
 	<div class="wp-block-buttons">
 		<!-- wp:button {"className":"is-style-fill"} -->
-		<div class="wp-block-button is-style-fill"><a class="wp-block-button__link wp-element-button">bouton</a></div>
+		<div class="wp-block-button is-style-fill"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'bouton', 'dsfr-theme' ); ?></a></div>
 		<!-- /wp:button -->
 
 		<!-- wp:button {"className":"is-style-secondary"} -->
-		<div class="wp-block-button is-style-secondary"><a class="wp-block-button__link wp-element-button">bouton</a></div>
+		<div class="wp-block-button is-style-secondary"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'bouton', 'dsfr-theme' ); ?></a></div>
 		<!-- /wp:button -->
 
 		<!-- wp:button {"className":"is-style-tertiary"} -->
-		<div class="wp-block-button is-style-tertiary"><a class="wp-block-button__link wp-element-button">bouton</a></div>
+		<div class="wp-block-button is-style-tertiary"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'bouton', 'dsfr-theme' ); ?></a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->
 
 
-	<!-- wp:heading {"level":4,"placeholder":"Ajouter un titre"} -->
-	<h4 class="wp-block-heading">Ajout et positionnement d'une icône :</h4>
+	<!-- wp:heading {"level":4} -->
+	<h4 class="wp-block-heading"><?php esc_html_e( 'Ajout et positionnement d\'une icône :', 'dsfr-theme' ); ?></h4>
 	<!-- /wp:heading -->
 	<?php
 	$available_classes = [
@@ -59,8 +59,8 @@
 	endforeach;
 	?>
 
-	<!-- wp:heading {"level":4,"placeholder":"Ajouter un titre"} -->
-	<h4 class="wp-block-heading">Variantes de taille :</h4>
+	<!-- wp:heading {"level":4} -->
+	<h4 class="wp-block-heading"><?php esc_html_e( 'Variantes de taille :', 'dsfr-theme' ); ?></h4>
 	<!-- /wp:heading -->
 	<?php
 	$available_classes = [
@@ -77,7 +77,7 @@
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons">
 			<!-- wp:button {"className":"is-style-fill <?php echo esc_html( $available_class ); ?>"} -->
-			<div class="wp-block-button is-style-fill <?php echo esc_html( $available_class ); ?>"><a class="wp-block-button__link wp-element-button">bouton</a></div>
+			<div class="wp-block-button is-style-fill <?php echo esc_html( $available_class ); ?>"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'bouton', 'dsfr-theme' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

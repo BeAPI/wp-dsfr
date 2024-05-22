@@ -44,9 +44,9 @@ class Customizer implements Service {
 			[
 				'section'     => 'title_tagline',
 				'field_name'  => 'fr_logo_official_title',
-				'label'       => 'Logo Marque - Intitulé officiel',
-				'default'     => 'Intitulé officiel',
-				'description' => 'L\'intitulé officiel ne doit pas dépasser six lignes.',
+				'label'       => __( 'Logo Marque - Intitulé officiel', 'dsfr-theme' ),
+				'default'     => __( 'Intitulé officiel', 'dsfr-theme' ),
+				'description' => __( 'L\'intitulé officiel ne doit pas dépasser six lignes.', 'dsfr-theme' ),
 				'priority'    => 1,
 			]
 		);
@@ -56,7 +56,7 @@ class Customizer implements Service {
 			[
 				'section'    => 'title_tagline',
 				'field_name' => 'fr_site_logo',
-				'label'      => 'Logo du site',
+				'label'      => __( 'Logo du site', 'dsfr-theme' ),
 				'priority'   => 5,
 			]
 		);
@@ -66,7 +66,7 @@ class Customizer implements Service {
 			[
 				'section'    => 'title_tagline',
 				'field_name' => 'fr_footer_content_desc',
-				'label'      => 'Texte du footer',
+				'label'      => __( 'Texte du footer', 'dsfr-theme' ),
 				'priority'   => 20,
 			]
 		);
@@ -74,7 +74,7 @@ class Customizer implements Service {
 		$wp_customize->add_section(
 			'social_network',
 			[
-				'title'      => 'Résaux sociaux',
+				'title'      => __( 'Résaux sociaux', 'dsfr-theme' ),
 				'priority'   => 30,
 			]
 		);
@@ -84,7 +84,7 @@ class Customizer implements Service {
 			[
 				'section'    => 'social_network',
 				'field_name' => 'fr_footer_follow_title',
-				'label'      => 'Titre des réseaux sociaux',
+				'label'      => __( 'Titre des réseaux sociaux', 'dsfr-theme' ),
 			]
 		);
 

@@ -50,7 +50,7 @@ function get_share_link( string $name, string $link_to_share, array $share_attri
 	$networks = [
 		'facebook'  => [
 			'attributes' => [
-				'title' => __( 'Share on Facebook', 'dsfr' ),
+				'title' => __( 'Partager sur Facebook', 'dsfr-theme' ),
 				'href'  => 'http://www.facebook.com/sharer.php',
 				'class' => 'share__link',
 			],
@@ -61,7 +61,7 @@ function get_share_link( string $name, string $link_to_share, array $share_attri
 		],
 		'twitter'   => [
 			'attributes' => [
-				'title' => __( 'Share on Twitter', 'dsfr' ),
+				'title' => __( 'Partager sur Twitter', 'dsfr-theme' ),
 				'href'  => 'https://twitter.com/intent/tweet',
 				'class' => 'share__link',
 			],
@@ -72,7 +72,7 @@ function get_share_link( string $name, string $link_to_share, array $share_attri
 		],
 		'linkedin'  => [
 			'attributes' => [
-				'title' => __( 'Share on Linkedin', 'dsfr' ),
+				'title' => __( 'Partager sur Linkedin', 'dsfr-theme' ),
 				'href'  => 'https://www.linkedin.com/shareArticle',
 				'class' => 'share__link',
 			],
@@ -83,7 +83,7 @@ function get_share_link( string $name, string $link_to_share, array $share_attri
 		],
 		'instagram' => [
 			'attributes' => [
-				'title' => __( 'Share on Instagram', 'dsfr' ),
+				'title' => __( 'Partager sur Instagram', 'dsfr-theme' ),
 				'href'  => 'https://www.instagram.com/',
 				'class' => 'share__link',
 			],
@@ -94,7 +94,7 @@ function get_share_link( string $name, string $link_to_share, array $share_attri
 		],
 		'xing'      => [
 			'attributes' => [
-				'title' => __( 'Share on Xing', 'dsfr' ),
+				'title' => __( 'Partager sur Xing', 'dsfr-theme' ),
 				'href'  => 'https://www.xing.com/spi/shares/new',
 				'class' => 'share__link',
 			],
@@ -105,7 +105,7 @@ function get_share_link( string $name, string $link_to_share, array $share_attri
 		],
 		'email'     => [
 			'attributes' => [
-				'title' => __( 'Share on Email', 'dsfr' ),
+				'title' => __( 'Partager par email', 'dsfr-theme' ),
 				'href'  => 'mailto:',
 				'class' => 'share__link',
 			],

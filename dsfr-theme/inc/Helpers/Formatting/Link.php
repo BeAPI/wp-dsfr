@@ -141,7 +141,7 @@ function get_the_link( array $attributes, array $settings = [] ): string {
 	// For security reason if target _blank add rel noopener
 	if ( '_blank' === $attributes['target'] ) {
 		$attributes['rel']      = 'noopener';
-		$settings['new_window'] = ! empty( $settings['new_window'] ) ? $settings['new_window'] : '<span class="sr-only">Nouvelle fenêtre</span>';
+		$settings['new_window'] = ! empty( $settings['new_window'] ) ? $settings['new_window'] : '<span class="sr-only">' . __( 'Nouvelle fenêtre', 'dsfr-theme' ) . '</span>';
 	}
 
 	$attributes = apply_filters( 'bea_theme_framework_link_attributes', $attributes, $settings );
@@ -202,7 +202,7 @@ function get_the_link( array $attributes, array $settings = [] ): string {
 	// Escape content for display purposes
 	$label = $settings['content'] ? escape_content_value( $settings['content'], $settings['escape']['content'] ?? 'wp_kses_post' ) : '';
 
-	$link_markup = sprintf( '<a %s>%s%s</a>', $attributes_escaped, $label, $settings['new_window'] );
+	$link_markup = sprintf( $link_markup, $attributes_escaped, $label, $settings['new_window'] );
 	/**************************************** END MARKUP LINK ****************************************/
 
 	$link_markup = apply_filters( 'bea_theme_framework_link_markup', $link_markup, $attributes, $settings );

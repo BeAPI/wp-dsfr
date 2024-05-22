@@ -28,4 +28,4 @@
 	get_template_part( 'components/parts/header/header' );
 	get_template_part( 'components/parts/common/breadcrumb' );
 	?>
-	<main id="content" role="main" tabindex="-1" aria-label="Contenu principal">
+	<main id="content" role="main" tabindex="-1" aria-label="<?php esc_attr_e( 'Contenu principal', 'dsfr-theme' ); ?>">

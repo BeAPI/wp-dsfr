@@ -5,6 +5,6 @@
  * categories: badge
  */
 ?>
-<!-- wp:paragraph {"className":"fr-badge","placeholder":"Ajouter un texte"} -->
+<!-- wp:paragraph {"className":"fr-badge","placeholder":"<?php esc_attr_e( 'Ajouter un texte', 'dsfr-theme' ); ?>"} -->
 <p class="fr-badge"></p>
 <!-- /wp:paragraph -->

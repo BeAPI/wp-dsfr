@@ -13,7 +13,7 @@ $post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_terms_name( get_the_ID
 			the_title( '<h1 class="hero__title">', '</h1>' );
 			?>
 			<div class="hero__metas">
-				<p class="hero__date">Publié le <time datetime="<?php echo esc_attr( get_the_date( 'd-m-Y' ) ); ?>"><?php the_date( 'd F Y' ); ?></time></p>
+				<p class="hero__date"><?php printf( esc_html__( 'Publié le %s', 'dsfr-theme' ), '<time datetime="' . esc_attr( get_the_date( 'Y-m-d' ) ) . '">' . get_the_date( __( 'd F Y', 'dsfr-theme' ) ) . '</time>' ); ?></p>
 				<?php
 				if ( ! empty( $post_tags ) ) :
 					?>
@@ -45,7 +45,7 @@ $post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_terms_name( get_the_ID
 				);
 			endif;
 
-			get_template_part( 'components/parts/common/share', '', [ 'title' => 'Partager l\'actualité' ] );
+			get_template_part( 'components/parts/common/share', '', [ 'title' => __( 'Partager l\'actualité', 'dsfr-theme' ) ] );
 			?>
 		</div>
 		<?php

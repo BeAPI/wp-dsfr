@@ -8,11 +8,11 @@
 <!-- wp:group {"className":"wp-block-group--how-to-use fr-icon-information-line","layout":{"type":"constrained"}} -->
 <div class="wp-block-group wp-block-group--how-to-use fr-icon-information-line">
 	<!-- wp:heading {"level":3} -->
-	<h3 class="wp-block-heading">Informations sur les icônes</h3>
+	<h3 class="wp-block-heading"><?php esc_html_e( 'Informations sur les icônes', 'dsfr-theme' ); ?></h3>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
-	<p>Les classes css suivantes peuvent être utilisées sur les boutons, les compositions "Mise en avant", les compositions "Mise en exergue", ... :</p>
+	<p><?php esc_html_e( 'Les classes css suivantes peuvent être utilisées sur les boutons, les compositions "Mise en avant", les compositions "Mise en exergue", ... :', 'dsfr-theme' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:group {"className":"list-icons","layout":{"type":"constrained"}} -->
