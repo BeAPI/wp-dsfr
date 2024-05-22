@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       DSFR Native Blocks
- * Description:       Example block scaffolded with Create Block tool.
+ * Description:       DSFR Gutenberg blocks for dsfr-theme
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0
