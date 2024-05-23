@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" <?php language_attributes(); ?>>
+<html class="no-js" data-fr-scheme="light" <?php language_attributes(); ?>>
 <head>
 	<script type="text/javascript">
 		//<![CDATA[

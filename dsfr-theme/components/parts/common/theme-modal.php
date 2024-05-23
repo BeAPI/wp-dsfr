@@ -3,7 +3,7 @@ $picto_path        = get_template_directory_uri() . '/dist-dsfr/artwork/pictogra
 $picto_env_path    = $picto_path . 'environment/';
 $picto_system_path = $picto_path . 'system/';
 ?>
-<dialog id="fr-theme-modal" class="fr-modal" role="dialog" aria-labelledby="fr-theme-modal-title">
+<dialog id="fr-theme-modal" class="fr-modal" aria-labelledby="fr-theme-modal-title">
 	<div class="fr-container fr-container--fluid fr-container-md">
 		<div class="fr-grid-row fr-grid-row--center">
 			<div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
@@ -28,7 +28,7 @@ $picto_system_path = $picto_path . 'system/';
 										<label class="fr-label" for="fr-radios-theme-light">
 											<?php esc_html_e( 'Thème clair', 'dsfr-theme' ); ?>
 										</label>
-										<div class="fr-radio-rich__img">
+										<div class="fr-radio-rich__pictogram">
 											<svg aria-hidden="true" class="fr-artwork" viewBox="0 0 80 80" width="80px" height="80px">
 												<use class="fr-artwork-decorative" href="<?php echo esc_url( $picto_env_path ); ?>sun.svg#artwork-decorative"></use>
 												<use class="fr-artwork-minor" href="<?php echo esc_url( $picto_env_path ); ?>sun.svg#artwork-minor"></use>
@@ -43,7 +43,7 @@ $picto_system_path = $picto_path . 'system/';
 										<label class="fr-label" for="fr-radios-theme-dark">
 											<?php esc_html_e( 'Thème sombre', 'dsfr-theme' ); ?>
 										</label>
-										<div class="fr-radio-rich__img">
+										<div class="fr-radio-rich__pictogram">
 											<svg aria-hidden="true" class="fr-artwork" viewBox="0 0 80 80" width="80px" height="80px">
 												<use class="fr-artwork-decorative" href="<?php echo esc_url( $picto_env_path ); ?>moon.svg#artwork-decorative"></use>
 												<use class="fr-artwork-minor" href="<?php echo esc_url( $picto_env_path ); ?>moon.svg#artwork-minor"></use>
@@ -59,7 +59,7 @@ $picto_system_path = $picto_path . 'system/';
 											<?php esc_html_e( 'Système', 'dsfr-theme' ); ?>
 											<span class="fr-hint-text"><?php esc_html_e( 'Utilise les paramètres système', 'dsfr-theme' ); ?></span>
 										</label>
-										<div class="fr-radio-rich__img">
+										<div class="fr-radio-rich__pictogram">
 											<svg aria-hidden="true" class="fr-artwork" viewBox="0 0 80 80" width="80px" height="80px">
 												<use class="fr-artwork-decorative" href="<?php echo esc_url( $picto_system_path ); ?>system.svg#artwork-decorative"></use>
 												<use class="fr-artwork-minor" href="<?php echo esc_url( $picto_system_path ); ?>system.svg#artwork-minor"></use>

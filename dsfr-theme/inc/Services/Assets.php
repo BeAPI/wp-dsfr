@@ -273,7 +273,7 @@ class Assets implements Service {
 	 * @return string
 	 */
 	private function get_dsfr_version(): string {
-		return '1.10.0';
+		return '1.11.2';
 	}
 
 	/**
