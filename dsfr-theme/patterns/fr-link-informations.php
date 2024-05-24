@@ -8,23 +8,23 @@
 <!-- wp:group {"className":"wp-block-group\u002d\u002dhow-to-use fr-icon-information-line","layout":{"type":"constrained"}} -->
 <div class="wp-block-group wp-block-group--how-to-use fr-icon-information-line">
 	<!-- wp:heading {"level":3} -->
-	<h3 class="wp-block-heading">Informations sur les liens</h3>
+	<h3 class="wp-block-heading"><?php esc_html_e( 'Informations sur les liens', 'dsfr-theme' ); ?></h3>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
-	<p>Le lien simple est disponible via la sélection de style de WordPress :</p>
+	<p><?php esc_html_e( 'Le lien simple est disponible via la sélection de style de WordPress :', 'dsfr-theme' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons -->
 	<div class="wp-block-buttons">
 		<!-- wp:button {"className":"is-style-link"} -->
-		<div class="wp-block-button is-style-link"><a class="wp-block-button__link wp-element-button">Lien</a></div>
+		<div class="wp-block-button is-style-link"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Lien', 'dsfr-theme' ); ?></a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->
 
-	<!-- wp:heading {"level":4,"placeholder":"Ajouter un titre"} -->
-	<h4 class="wp-block-heading">Ajout et positionnement d'une icône :</h4>
+	<!-- wp:heading {"level":4} -->
+	<h4 class="wp-block-heading"><?php esc_html_e( 'Ajout et positionnement d\'une icône :', 'dsfr-theme' ); ?></h4>
 	<!-- /wp:heading -->
 
 	<?php
@@ -50,8 +50,8 @@
 	endforeach;
 	?>
 
-	<!-- wp:heading {"level":4,"placeholder":"Ajouter un titre"} -->
-	<h4 class="wp-block-heading">Variantes de taille :</h3>
+	<!-- wp:heading {"level":4} -->
+	<h4 class="wp-block-heading"><?php esc_html_e( 'Variantes de taille :', 'dsfr-theme' ); ?></h4>
 	<!-- /wp:heading -->
 	<?php
 	$available_classes = [

@@ -3,12 +3,12 @@
 ?>
 <div class="fr-header__menu fr-modal" id="header-navigation" aria-labelledby="button-2598" tabindex="-1">
 	<div class="fr-container">
-		<button class="fr-btn--close fr-btn" aria-controls="header-navigation" title="Fermer">
-			Fermer
+		<button class="fr-btn--close fr-btn" aria-controls="header-navigation" title="<?php esc_attr_e( 'Fermer', 'dsfr-theme' ); ?>">
+			<?php esc_html_e( 'Fermer', 'dsfr-theme' ); ?>
 		</button>
 		<div class="fr-header__menu-links">
 		</div>
-		<nav class="fr-nav" role="navigation" aria-label="Menu principal">
+		<nav class="fr-nav" role="navigation" aria-label="<?php esc_attr_e( 'Menu principal', 'dsfr-theme' ); ?>">
 			<?php
 			wp_nav_menu(
 				[

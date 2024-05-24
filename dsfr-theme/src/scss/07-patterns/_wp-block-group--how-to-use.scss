@@ -8,6 +8,10 @@
         background: var(--background-raised-grey);
         border: 1px solid var(--grey-625-425);
 
+        &:focus::after {
+            content: none !important;
+        }
+
         &::before {
             margin-bottom: 12px;
         }
@@ -36,6 +40,10 @@
                 columns: 2;
                 column-gap: 12px;
             }
+        }
+
+        p.fr-badge {
+            --text-spacing: 0 0 1.5rem;
         }
 
         @include style-only {

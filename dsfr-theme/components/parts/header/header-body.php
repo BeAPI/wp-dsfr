@@ -11,8 +11,8 @@
 				?>
 				<div class="fr-header__search fr-modal" id="header-search" tabindex="-1">
 					<div class="fr-container fr-container-lg--fluid">
-						<button class="fr-btn--close fr-btn" aria-controls="header-search" title="Fermer">
-							Fermer
+						<button class="fr-btn--close fr-btn" aria-controls="header-search" title="<?php esc_attr_e( 'Fermer', 'dsfr-theme' ); ?>">
+							<?php esc_html_e( 'Fermer', 'dsfr-theme' ); ?>
 						</button>
 						<?php echo get_search_form(); ?>
 					</div>

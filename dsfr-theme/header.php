@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" <?php language_attributes(); ?>>
+<html class="no-js" data-fr-scheme="light" <?php language_attributes(); ?>>
 <head>
 	<script type="text/javascript">
 		//<![CDATA[
@@ -26,5 +26,6 @@
 	wp_body_open();
 	get_template_part( 'components/parts/common/skip-links' );
 	get_template_part( 'components/parts/header/header' );
+	get_template_part( 'components/parts/common/breadcrumb' );
 	?>
-	<main id="content" role="main" tabindex="-1" aria-label="Contenu principal">
+	<main id="content" role="main" tabindex="-1" aria-label="<?php esc_attr_e( 'Contenu principal', 'dsfr-theme' ); ?>">

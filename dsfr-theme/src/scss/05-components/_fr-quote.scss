@@ -23,8 +23,10 @@
     }
 
     @include breakpoints(sm) {
-        padding-left: 248px;
-        background-position: 216px top;
+        &--column {
+            padding-left: 248px;
+            background-position: 216px top;
+        }
 
         #{$el}__image {
             left: 0;

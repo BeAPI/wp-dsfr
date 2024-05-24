@@ -53,14 +53,14 @@ $items      = [];
 $items[] = [
 	'page_number' => 1,
 	'class'       => 'fr-pagination__link fr-pagination__link--first',
-	'content'     => 'Première page',
+	'content'     => esc_html__( 'Première page', 'dsfr-theme' ),
 ];
 
 // previous page link
 $items[] = [
 	'page_number' => max( $current_page - 1, 1 ),
 	'class'       => 'fr-pagination__link fr-pagination__link--prev fr-pagination__link--lg-label',
-	'content'     => 'Page précédente',
+	'content'     => esc_html__( 'Page précédente', 'dsfr-theme' ),
 ];
 
 // intermediate link
@@ -68,7 +68,8 @@ for ( $i = $start_page; $i <= $end_page; $i++ ) {
 	$items[] = [
 		'page_number' => $i,
 		'class'       => 'fr-pagination__link',
-		'title'       => 'Page ' . $i,
+		/* translators: numéro de page */
+		'title'       => sprintf( esc_html__( 'Page %s', 'dsfr-theme' ), $i ),
 		'content'     => $i,
 	];
 }
@@ -77,14 +78,14 @@ for ( $i = $start_page; $i <= $end_page; $i++ ) {
 $items[] = [
 	'page_number' => min( $current_page + 1, $total_pages ),
 	'class'       => 'fr-pagination__link fr-pagination__link--next fr-pagination__link--lg-label',
-	'content'     => 'Page suivante',
+	'content'     => esc_html__( 'Page suivante', 'dsfr-theme' ),
 ];
 
 // last link
 $items[] = [
 	'page_number' => $total_pages,
 	'class'       => 'fr-pagination__link fr-pagination__link--last',
-	'content'     => 'Dernière page',
+	'content'     => esc_html__( 'Dernière page', 'dsfr-theme' ),
 ];
 
 // if first intermediate link isn't page 1 link
@@ -117,7 +118,7 @@ foreach ( $items as $i => $item ) {
 		$href = str_replace( '%_%', $format, $pagenum_link );
 		$href = str_replace( '%#%', $page_number, $href );
 
-		if ( $url_query_args ) {
+		if ( isset( $url_query_args ) ) {
 			$href = add_query_arg( $url_query_args, $href );
 		}
 

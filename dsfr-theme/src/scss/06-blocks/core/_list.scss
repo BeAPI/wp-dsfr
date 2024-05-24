@@ -1,6 +1,6 @@
 #{context-selector('.blocks-container', '.is-root-container')} {
     ul:where(:not([class*="fr-"])),
-    ol {
+    ol:where(:not([class*="fr-"])) {
         margin-bottom: $text-spacing;
 
         // Utility classes
@@ -23,7 +23,7 @@
     }
 
     ol {
-        &:not([class*="is-style-"]) {
+        &:not([class*="is-style-"], .no-list-style, [class*="fr-"]) {
             list-style-type: decimal;
         }
     }

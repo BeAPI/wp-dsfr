@@ -6,12 +6,12 @@ get_header();
 <div class="fr-container">
 	<div class="fr-my-7w fr-mt-md-12w fr-mb-md-10w fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-grid-row--center">
 		<div class="fr-py-0 fr-col-12 fr-col-md-6">
-			<h1>Page non trouvée</h1>
-			<p class="fr-text--sm fr-mb-3w">Erreur 404</p>
-			<p class="fr-text--lead fr-mb-3w">La page que vous cherchez est introuvable. Excusez-nous pour la gène occasionnée.</p>
-			<p class="fr-text--sm fr-mb-5w">Si vous avez tapé l'adresse web dans le navigateur, vérifiez qu'elle est correcte. La page n’est peut-être plus disponible. <br>Dans ce cas, pour continuer votre visite vous pouvez consulter notre page d’accueil, ou effectuer une recherche avec notre moteur de recherche en haut de page. <br>Sinon contactez-nous pour que l’on puisse vous rediriger vers la bonne information.</p>
+			<h1><?php esc_html_e( 'Page non trouvée', 'dsfr-theme' ); ?></h1>
+			<p class="fr-text--sm fr-mb-3w"><?php esc_html_e( 'Erreur 404', 'dsfr-theme' ); ?></p>
+			<p class="fr-text--lead fr-mb-3w"><?php esc_html_e( 'La page que vous cherchez est introuvable. Excusez-nous pour la gène occasionnée.', 'dsfr-theme' ); ?></p>
+			<p class="fr-text--sm fr-mb-5w"><?php esc_html_e( 'Si vous avez tapé l\'adresse web dans le navigateur, vérifiez qu\'elle est correcte. La page n’est peut-être plus disponible. <br>Dans ce cas, pour continuer votre visite vous pouvez consulter notre page d’accueil, ou effectuer une recherche avec notre moteur de recherche en haut de page. <br>Sinon contactez-nous pour que l’on puisse vous rediriger vers la bonne information.', 'dsfr-theme' ); ?></p>
 			<ul class="fr-btns-group fr-btns-group--inline-md">
-				<li><a class="fr-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>">Page d'accueil</a></li>
+				<li><a class="fr-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Page d\'accueil', 'dsfr-theme' ); ?></a></li>
 			</ul>
 		</div>
 		<div class="fr-col-12 fr-col-md-3 fr-col-offset-md-1 fr-px-6w fr-px-md-0 fr-py-0">

@@ -34,10 +34,11 @@ class Editor_Patterns implements Service {
 	public function register_categories(): void {
 
 		/**
-		 * usage : 'common' => [ 'label' => __( 'Common', 'dsfr' ) ]
+		 * usage : 'common' => [ 'label' => __( 'Common', 'dsfr-theme' ) ]
 		 */
 		$pattern_categories = [
 			'alert'     => [ 'label' => 'Alerte' ],
+			'badge'     => [ 'label' => 'Badge' ],
 			'btn'       => [ 'label' => 'Bouton' ],
 			'callout'   => [ 'label' => 'Mise en avant' ],
 			'highlight' => [ 'label' => 'Mise en exergue' ],
@@ -128,7 +129,7 @@ class Editor_Patterns implements Service {
 							'_register_theme_block_patterns',
 							sprintf(
 							/* translators: %s: file name. */
-								esc_html__( 'Could not register file "%s" as a block pattern ("Slug" field missing)', 'dsfr' ),
+								esc_html__( 'Could not register file "%s" as a block pattern ("Slug" field missing)', 'dsfr-theme' ),
 								esc_html( $file )
 							),
 							'6.0.0'
@@ -141,7 +142,7 @@ class Editor_Patterns implements Service {
 							'_register_theme_block_patterns',
 							sprintf(
 							/* translators: %1s: file name; %2s: slug value found. */
-								esc_html__( 'Could not register file "%1$s" as a block pattern (invalid slug "%2$s")', 'dsfr' ),
+								esc_html__( 'Could not register file "%1$s" as a block pattern (invalid slug "%2$s")', 'dsfr-theme' ),
 								esc_html( $file ),
 								esc_html( $pattern_data['slug'] )
 							),
@@ -158,7 +159,7 @@ class Editor_Patterns implements Service {
 							'_register_theme_block_patterns',
 							sprintf(
 							/* translators: %1s: file name; %2s: slug value found. */
-								esc_html__( 'Could not register file "%s" as a block pattern ("Title" field missing)', 'dsfr' ),
+								esc_html__( 'Could not register file "%s" as a block pattern ("Title" field missing)', 'dsfr-theme' ),
 								esc_html( $file )
 							),
 							'6.0.0'

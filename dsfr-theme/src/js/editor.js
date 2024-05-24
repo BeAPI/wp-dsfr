@@ -1,19 +1,8 @@
-import lazySizes from 'lazysizes'
-import 'lazysizes/plugins/native-loading/ls.native-loading'
-import 'lazysizes/plugins/object-fit/ls.object-fit'
 import domReady from '@wordpress/dom-ready'
 import { addFilter } from '@wordpress/hooks'
 import { unregisterBlockStyle, getBlockVariations, unregisterBlockVariation } from '@wordpress/blocks'
 
 import GutenbergBlockWrapper from './classes/GutenbergBlockWrapper'
-
-/**
- * LazySizes configuration
- * https://github.com/aFarkas/lazysizes/#js-api---options
- */
-lazySizes.cfg.nativeLoading = {
-  setLoadingAttribute: false,
-}
 
 // Native Gutenberg
 domReady(() => {
@@ -75,6 +64,35 @@ function getDsfrColors(prefix) {
 
   return colors
 }
+
+// ----
+// PARAGRAPH / LIST-ITEM BADGE
+// ----
+const blockListItemBadge = new GutenbergBlockWrapper('core/list-item', {
+  blockFilter: function (name, attributes) {
+    return /fr-badge/g.test(attributes.className)
+  },
+})
+
+blockListItemBadge.addSidebarPanelBody('dsfr-panel', { title: 'DSFR' })
+
+blockListItemBadge.addSidebarClassSelector('dsfr-panel', {
+  label: 'Classe css de couleur',
+  options: getDsfrColors('fr-badge--'),
+})
+
+const blockParagraphBadge = new GutenbergBlockWrapper('core/paragraph', {
+  blockFilter: function (name, attributes) {
+    return /fr-badge/g.test(attributes.className)
+  },
+})
+
+blockParagraphBadge.addSidebarPanelBody('dsfr-panel', { title: 'DSFR' })
+
+blockParagraphBadge.addSidebarClassSelector('dsfr-panel', {
+  label: 'Classe css de couleur',
+  options: getDsfrColors('fr-badge--'),
+})
 
 // ----
 // GROUP FR-CALLOUT

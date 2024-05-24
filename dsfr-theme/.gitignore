@@ -51,12 +51,6 @@ sftp-config-alt*.json
 node_modules/
 bower_components/
 .pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
 
 ### PictureFill/Retina images/Timthumb ###
 ### on dev need to specify themes path like : wp-content/themes/name_of_your_theme/assets/img/sample/cache ###
@@ -77,7 +71,7 @@ dist/
 dist-dsfr/
 src/conf-img/*.csv
 
-### NPM (use Yarn instead)
+### NPM
 package-lock.json
 
 ### config

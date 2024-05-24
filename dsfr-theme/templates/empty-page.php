@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: Page vide
+*/
 get_header();
 
 if ( have_posts() ) :

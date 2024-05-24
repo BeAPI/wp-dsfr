@@ -8,11 +8,11 @@
 <!-- wp:group {"className":"wp-block-group--how-to-use fr-icon-information-line","layout":{"type":"constrained"}} -->
 <div class="wp-block-group wp-block-group--how-to-use fr-icon-information-line">
 	<!-- wp:heading {"level":3} -->
-	<h3 class="wp-block-heading">Informations sur les icônes</h3>
+	<h3 class="wp-block-heading"><?php esc_html_e( 'Informations sur les icônes', 'dsfr-theme' ); ?></h3>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
-	<p>Les classes css suivantes peuvent être utilisées sur les boutons, les compositions "Mise en avant", les compositions "Mise en exergue", ... :</p>
+	<p><?php esc_html_e( 'Les classes css suivantes peuvent être utilisées sur les boutons, les compositions "Mise en avant", les compositions "Mise en exergue", ... :', 'dsfr-theme' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:group {"className":"list-icons","layout":{"type":"constrained"}} -->
@@ -356,7 +356,7 @@
 				'fr-icon-virus-line',
 			],
 
-			'Logo' => [
+			'Logos' => [
 				'fr-icon-dailymotion-fill',
 				'fr-icon-dailymotion-line',
 				'fr-icon-tiktok-fill',
@@ -395,6 +395,10 @@
 				'fr-icon-telegram-line',
 				'fr-icon-twitch-fill',
 				'fr-icon-twitch-line',
+				'fr-icon-twitter-x-fill',
+				'fr-icon-twitter-x-line',
+				'fr-icon-threads-fill',
+				'fr-icon-threads-line',
 				'fr-icon-twitter-fill',
 				'fr-icon-twitter-line',
 				'fr-icon-vimeo-fill',
@@ -489,7 +493,6 @@
 				'fr-icon-play-circle-line',
 				'fr-icon-stop-circle-fill',
 				'fr-icon-stop-circle-line',
-				'fr-icon-transcription',
 				'fr-icon-volume-down-fill',
 				'fr-icon-volume-down-line',
 				'fr-icon-volume-mute-fill',
@@ -662,7 +665,8 @@
 				'fr-icon-flashlight-line',
 				'fr-icon-moon-fill',
 				'fr-icon-moon-line',
-			]
+				'fr-icon-file-pdf-line',
+			],
 		];
 
 		foreach ( $available_icons as $category => $classes ) :

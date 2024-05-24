@@ -1,3 +1,26 @@
 %fr-link {
     @include fr-link;
 }
+
+// fix for download link
+// see FRLinkDownload.js and https://github.com/GouvernementFR/dsfr/issues/902
+.fr-link--download {
+    &.has-js-fr-download-link-icon {
+        &::after {
+            content: none;
+        }
+    }
+
+    .fr-link__icon {
+        --icon-size: 1rem;
+        display: inline-block;
+        width: var(--icon-size);
+        height: var(--icon-size);
+        margin: 0 -.125rem 0 0;
+        vertical-align: calc((.75em - var(--icon-size)) * .5);
+        content: "";
+        background-color: currentColor;
+        mask-size: 100% 100%;
+        mask-image: get-svg-url(download, "");
+    }
+}

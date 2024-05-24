@@ -8,11 +8,11 @@
 <!-- wp:group {"className":"wp-block-group--how-to-use fr-icon-information-line","layout":{"type":"constrained"}} -->
 <div class="wp-block-group wp-block-group--how-to-use fr-icon-information-line">
 	<!-- wp:heading {"level":3} -->
-	<h3 class="wp-block-heading">Informations sur les tableaux</h3>
+	<h3 class="wp-block-heading"><?php esc_html_e( 'Informations sur les tableaux', 'dsfr-theme' ); ?></h3>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
-	<p>Par défaut, les tableaux sont gris. Vous pouvez utiliser les classes css suivantes pour définir la couleur des tableaux :</p>
+	<p><?php esc_html_e( 'Par défaut, les tableaux sont gris. Vous pouvez utiliser les classes css suivantes pour définir la couleur des tableaux :', 'dsfr-theme' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<?php

@@ -17,7 +17,7 @@ if ( ! $posts_query->have_posts() ) {
 ?>
 <section class="latest-posts">
 	<div class="fr-container">
-		<h2 class="latest-posts__title">Nos autres actualités</h2>
+		<h2 class="latest-posts__title"><?php esc_html_e( 'Nos autres actualités', 'dsfr-theme' ); ?></h2>
 		<?php
 		the_link(
 			[
@@ -25,7 +25,7 @@ if ( ! $posts_query->have_posts() ) {
 				'class' => 'fr-link fr-icon-arrow-right-line fr-link--icon-right',
 			],
 			[
-				'content' => 'Voir toute l’actualité',
+				'content' => __( 'Voir toute l’actualité', 'dsfr-theme' ),
 				'before'  => '<p class="latest-posts__link">',
 				'after'   => '</p>',
 			]

@@ -8,7 +8,8 @@ get_header();
 				<?php
 				echo esc_html(
 					sprintf(
-						'Résultat(s) de recherche pour "%s"',
+						/* translators: terme(s) recherché(s) */
+						__( 'Résultat(s) de recherche pour "%s"', 'dsfr-theme' ),
 						get_search_query( false )
 					)
 				);
