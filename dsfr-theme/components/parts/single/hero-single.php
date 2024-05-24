@@ -13,7 +13,10 @@ $post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_terms_name( get_the_ID
 			the_title( '<h1 class="hero__title">', '</h1>' );
 			?>
 			<div class="hero__metas">
-				<p class="hero__date"><?php printf( esc_html__( 'Publié le %s', 'dsfr-theme' ), '<time datetime="' . esc_attr( get_the_date( 'Y-m-d' ) ) . '">' . get_the_date( __( 'd F Y', 'dsfr-theme' ) ) . '</time>' ); ?></p>
+				<p class="hero__date"><?php printf(
+					/* translators: date de publication */
+					esc_html__( 'Publié le %s', 'dsfr-theme' ), '<time datetime="' . esc_attr( get_the_date( 'Y-m-d' ) ) . '">' . get_the_date( __( 'd F Y', 'dsfr-theme' ) ) . '</time>' );
+				?></p>
 				<?php
 				if ( ! empty( $post_tags ) ) :
 					?>

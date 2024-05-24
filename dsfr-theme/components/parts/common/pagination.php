@@ -68,6 +68,7 @@ for ( $i = $start_page; $i <= $end_page; $i++ ) {
 	$items[] = [
 		'page_number' => $i,
 		'class'       => 'fr-pagination__link',
+		/* translators: numéro de page */
 		'title'       => sprintf( esc_html__( 'Page %s', 'dsfr-theme' ), $i ),
 		'content'     => $i,
 	];
