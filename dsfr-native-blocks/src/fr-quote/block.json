@@ -44,7 +44,7 @@
 		"sources": {
 			"type": "string",
 			"default": "",
-			"source": "text",
+			"source": "html",
 			"selector": ".fr-quote__source li"
 		},
 		"displayImage": {

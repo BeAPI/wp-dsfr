@@ -32,7 +32,12 @@ export default function save({ attributes }) {
 					value={attributes.author}
 				/>
 				{attributes.sources ? (
-					<ul className="fr-quote__source">{attributes.sources}</ul>
+					<ul className="fr-quote__source">
+            <RichText.Content
+              tagName="li"
+              value={attributes.sources}
+            />
+          </ul>
 				) : (
 					''
 				)}

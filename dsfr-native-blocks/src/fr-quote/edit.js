@@ -135,6 +135,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<ul className="fr-quote__source">
 						<RichText
 							tagName="li"
+              value={attributes.sources}
 							placeholder={__('Add source')}
 							onChange={(sources) => setAttributes({ sources })}
 							allowedFormats={['core/link']}
