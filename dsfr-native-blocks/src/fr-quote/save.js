@@ -41,7 +41,7 @@ export default function save({ attributes }) {
 						<img
 							className="fr-responsive-img"
 							src={attributes.imageUrl}
-							alt=""
+							alt={attributes.imageAlt}
 						/>
 					</div>
 				)}

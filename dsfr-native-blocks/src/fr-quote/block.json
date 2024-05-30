@@ -56,7 +56,18 @@
 			"default": 0
 		},
 		"imageUrl": {
-			"type": "string"
+			"type": "string",
+			"default": "",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "src"
+		},
+		"imageAlt": {
+			"type": "string",
+			"default": "",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "alt"
 		}
 	},
 	"textdomain": "dsfr-native-blocks",

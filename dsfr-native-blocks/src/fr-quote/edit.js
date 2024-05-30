@@ -34,7 +34,8 @@ export default function Edit({ attributes, setAttributes }) {
 		console.log(media);
 		setAttributes({
 			imageId: media.id,
-			imageUrl: media.url,
+			imageUrl: media.sizes.medium.url,
+      imageAlt: media.alt,
 		});
 	}
 
@@ -153,7 +154,7 @@ export default function Edit({ attributes, setAttributes }) {
 												<img
 													className="fr-responsive-img"
 													src={attributes.imageUrl}
-													alt=""
+													alt={attributes.imageAlt}
 												/>
 											) : (
 												__(
