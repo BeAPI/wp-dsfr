@@ -31,13 +31,16 @@ export default function save({ attributes }) {
 					className="fr-quote__author"
 					value={attributes.author}
 				/>
-				{attributes.sources ? (
+				{attributes.sources.length ? (
 					<ul className="fr-quote__source">
-            <RichText.Content
-              tagName="li"
-              value={attributes.sources}
-            />
-          </ul>
+						{attributes.sources.map((source) =>
+							source ? (
+								<RichText.Content tagName="li" value={source} />
+							) : (
+								''
+							)
+						)}
+					</ul>
 				) : (
 					''
 				)}

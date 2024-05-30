@@ -42,10 +42,8 @@
 			"selector": ".fr-quote__author"
 		},
 		"sources": {
-			"type": "string",
-			"default": "",
-			"source": "html",
-			"selector": ".fr-quote__source li"
+			"type": "array",
+			"default": [""]
 		},
 		"displayImage": {
 			"type": "boolean",

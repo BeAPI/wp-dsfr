@@ -1,5 +1,4 @@
 import { __ } from '@wordpress/i18n';
-import { useState } from '@wordpress/element';
 import {
 	InspectorControls,
 	MediaUpload,
@@ -15,12 +14,13 @@ import {
 	TextControl,
 	ToggleControl,
 } from '@wordpress/components';
+import { plus, trash } from '@wordpress/icons';
 import classNames from 'classnames';
 import dsfrClassName from '../utils/dsfrClassName';
 
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit({ attributes, setAttributes, isSelected }) {
 	const blockProps = useBlockProps({
 		className: classNames({
 			'fr-quote--column': attributes.displayImage,
@@ -30,12 +30,42 @@ export default function Edit({ attributes, setAttributes }) {
 	// replace wp-block-dsfr-fr-quote by fr-quote
 	dsfrClassName(blockProps, 'fr-quote');
 
+	function addSourceField() {
+		const sources = [...attributes.sources];
+		sources.push('');
+		setAttributes({ sources });
+	}
+
+	function hasEmptySourceField() {
+		return (
+			attributes.sources.length > 1 &&
+			attributes.sources.filter((source) => !source).length > 0
+		);
+	}
+
+	function cleanSources() {
+		const sources = attributes.sources.filter((source) => !!source);
+
+		if (sources.length === 0) {
+			sources.push('');
+		}
+
+		if (sources.length !== attributes.sources.length) {
+			setAttributes({ sources });
+		}
+	}
+
+	function updateSources(source, index) {
+		const sources = [...attributes.sources];
+		sources[index] = source;
+		setAttributes({ sources });
+	}
+
 	function onSelectMedia(media) {
-		console.log(media);
 		setAttributes({
 			imageId: media.id,
 			imageUrl: media.sizes.medium.url,
-      imageAlt: media.alt,
+			imageAlt: media.alt,
 		});
 	}
 
@@ -44,6 +74,10 @@ export default function Edit({ attributes, setAttributes }) {
 			imageId: 0,
 			imageUrl: '',
 		});
+	}
+
+	if (!isSelected) {
+		cleanSources();
 	}
 
 	return (
@@ -133,14 +167,38 @@ export default function Edit({ attributes, setAttributes }) {
 						allowedFormats={[]}
 					/>
 					<ul className="fr-quote__source">
-						<RichText
-							tagName="li"
-              value={attributes.sources}
-							placeholder={__('Add source')}
-							onChange={(sources) => setAttributes({ sources })}
-							allowedFormats={['core/link']}
-							disableLineBreaks="false"
-						/>
+						{attributes.sources.map((source, index) => (
+							<RichText
+								tagName="li"
+								value={source}
+								placeholder={__('Add source')}
+								onChange={(source) => {
+									updateSources(source, index);
+								}}
+								allowedFormats={['core/link']}
+								disableLineBreaks="false"
+							/>
+						))}
+						<li>
+							{hasEmptySourceField() && (
+								<Button
+									icon={trash}
+									label={__(
+										'Remove last field',
+										'dsfr-native-blocks'
+									)}
+									onClick={cleanSources}
+								/>
+							)}
+							<Button
+								icon={plus}
+								label={__(
+									'Add source field',
+									'dsfr-native-blocks'
+								)}
+								onClick={addSourceField}
+							/>
+						</li>
 					</ul>
 					{attributes.displayImage && (
 						<div className="fr-quote__image">
