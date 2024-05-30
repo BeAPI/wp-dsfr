@@ -1,0 +1,65 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "dsfr/fr-quote",
+	"version": "1.0.0",
+	"title": "Quote",
+	"category": "text",
+	"description": "DSFR quote block.",
+	"supports": {
+		"html": false,
+		"align": false,
+		"color": {
+			"background": false,
+			"text": false
+		}
+	},
+	"attributes": {
+		"color": {
+			"type": "string"
+		},
+		"cite": {
+			"type": "string",
+			"default": "",
+			"source": "attribute",
+			"selector": "blockquote",
+			"attribute": "src"
+		},
+		"quote": {
+			"type": "string",
+			"default": "",
+			"source": "text",
+			"selector": "blockquote p"
+		},
+		"quoteSize": {
+			"type": "string",
+			"default": ""
+		},
+		"author": {
+			"type": "string",
+			"default": "",
+			"source": "text",
+			"selector": ".fr-quote__author"
+		},
+		"sources": {
+			"type": "string",
+			"default": "",
+			"source": "text",
+			"selector": ".fr-quote__source li"
+		},
+		"displayImage": {
+			"type": "boolean",
+			"default": false
+		},
+		"imageId": {
+			"type": "integer",
+			"default": 0
+		},
+		"imageUrl": {
+			"type": "string"
+		}
+	},
+	"textdomain": "dsfr-native-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}

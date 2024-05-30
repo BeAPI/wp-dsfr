@@ -1,0 +1,25 @@
+/* editor */
+.fr-quote {
+    &::after {
+        content: none !important;
+    }
+
+    &__source {
+        .components-button {
+            width: 12px;
+            height: 12px;
+            text-indent: -10000px;
+            background: #000;
+            border-radius: 50%;
+        }
+    }
+
+    &__image {
+        .components-button {
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+        }
+    }
+}

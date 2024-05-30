@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
@@ -13,7 +13,7 @@ export default function Edit({
 	const activeTabIndex = context['dsfr/fr-tabs--active-tab-index'];
 	const index = select('core/block-editor').getBlockIndex(clientId) - 1;
 	const blockProps = useBlockProps({
-		className: classnames({
+		className: classNames({
 			'fr-tabs__panel--selected': activeTabIndex === index,
 		}),
 	});

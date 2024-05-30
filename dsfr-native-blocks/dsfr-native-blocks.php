@@ -27,6 +27,7 @@ function dsfr_native_blocks_init() {
 		'fr-accordion',
 		'fr-accordion-title',
 		'fr-collapse',
+		'fr-quote',
 		'fr-tabs',
 		'fr-tabs-list',
 		'fr-tabs-list-item',
