@@ -197,7 +197,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 								<Button
 									icon={trash}
 									label={__(
-										'Remove last field',
+										'Remove empty field(s)',
 										'dsfr-native-blocks'
 									)}
 									onClick={cleanSources}
