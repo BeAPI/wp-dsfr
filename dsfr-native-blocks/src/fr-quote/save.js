@@ -4,10 +4,16 @@ import dsfrClassName from '../utils/dsfrClassName';
 
 export default function save({ attributes }) {
 	const hasImage = attributes.displayImage && attributes.imageUrl;
+	const classes = {
+		'fr-quote--column': attributes.displayImage,
+	};
+
+	if (attributes.color) {
+		classes['fr-quote--' + attributes.color] = true;
+	}
+
 	const blockProps = useBlockProps.save({
-		className: classNames({
-			'fr-quote--column': hasImage,
-		}),
+		className: classNames(classes),
 	});
 
 	dsfrClassName(blockProps, 'fr-quote');

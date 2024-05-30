@@ -16,7 +16,8 @@
 	},
 	"attributes": {
 		"color": {
-			"type": "string"
+			"type": "string",
+			"default": ""
 		},
 		"cite": {
 			"type": "string",

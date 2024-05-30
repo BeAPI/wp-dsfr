@@ -19,12 +19,19 @@ import classNames from 'classnames';
 import dsfrClassName from '../utils/dsfrClassName';
 
 import './editor.scss';
+import DSFRColorSelectControl from '../components/DSFRColorSelectControl';
 
 export default function Edit({ attributes, setAttributes, isSelected }) {
+	const classes = {
+		'fr-quote--column': attributes.displayImage,
+	};
+
+	if (attributes.color) {
+		classes['fr-quote--' + attributes.color] = true;
+	}
+
 	const blockProps = useBlockProps({
-		className: classNames({
-			'fr-quote--column': attributes.displayImage,
-		}),
+		className: classNames(classes),
 	});
 
 	// replace wp-block-dsfr-fr-quote by fr-quote
@@ -87,6 +94,12 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 					title={__('Options', 'dsfr-native-blocks')}
 					initialOpen={true}
 				>
+					<PanelRow>
+						<DSFRColorSelectControl
+							value={attributes.color}
+							onChange={(color) => setAttributes({ color })}
+						/>
+					</PanelRow>
 					<PanelRow>
 						<ToggleControl
 							label={__(
