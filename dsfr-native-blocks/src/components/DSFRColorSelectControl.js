@@ -1,9 +1,9 @@
 import { __ } from '@wordpress/i18n';
 import { SelectControl } from '@wordpress/components';
-import getDsfrColorList from '../utils/getDsfrColorList';
+import getDSFRColorList from '../utils/getDSFRColorList';
 
 export default function (props) {
-	const colorsList = getDsfrColorList();
+	const colorsList = getDSFRColorList();
 	const options = [
 		{
 			label: __('Default', 'dsfr-native-blocks'),

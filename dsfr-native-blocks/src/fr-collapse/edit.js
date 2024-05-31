@@ -1,7 +1,7 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 export default function Edit({ setAttributes, context }) {
 	let allowedBlocks = [];
@@ -36,7 +36,7 @@ export default function Edit({ setAttributes, context }) {
 		setAttributes({ id: context['dsfr/fr-accordion--id'] });
 	}, [context['dsfr/fr-accordion--id']]);
 
-	dsfrClassName(blockProps, 'fr-collapse');
+	setDSFRBlockClassName(blockProps, 'fr-collapse');
 
 	return (
 		<div {...blockProps}>

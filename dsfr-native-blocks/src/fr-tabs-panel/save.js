@@ -1,6 +1,6 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 import classNames from 'classnames';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 export default function save({ attributes: { id, labelledby, index } }) {
 	const blockProps = useBlockProps.save({
@@ -11,7 +11,7 @@ export default function save({ attributes: { id, labelledby, index } }) {
 		tabindex: 0,
 	});
 
-	dsfrClassName(blockProps, 'fr-tabs-panel', 'fr-tabs__panel');
+	setDSFRBlockClassName(blockProps, 'fr-tabs-panel', 'fr-tabs__panel');
 
 	return (
 		<div {...blockProps} id={id} aria-labelledby={labelledby}>

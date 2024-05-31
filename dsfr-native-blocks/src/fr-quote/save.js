@@ -1,7 +1,7 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import classNames from 'classnames';
 import isValidURL from '../utils/isValidURL';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 export default function save({ attributes }) {
 	const hasImage = attributes.displayImage && attributes.imageUrl;
@@ -18,7 +18,7 @@ export default function save({ attributes }) {
 		className: classNames(classes),
 	});
 
-	dsfrClassName(blockProps, 'fr-quote');
+	setDSFRBlockClassName(blockProps, 'fr-quote');
 
 	return (
 		<figure {...blockProps}>

@@ -20,7 +20,7 @@ import {
 } from '@wordpress/icons';
 import { select } from '@wordpress/data';
 import './editor.scss';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 import uniqid from '../utils/uniqid';
 
 const defaultTabsListPositions = [
@@ -106,7 +106,7 @@ export default function Edit({
 		setAttributes({ id: uniqid('fr-tabs') });
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-	dsfrClassName(innerBlocksProps, 'fr-tabs');
+	setDSFRBlockClassName(innerBlocksProps, 'fr-tabs');
 
 	if (tabsListPosition) {
 		innerBlocksProps.className +=

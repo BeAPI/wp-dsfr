@@ -16,7 +16,7 @@ import {
 } from '@wordpress/components';
 import { plus, trash } from '@wordpress/icons';
 import classNames from 'classnames';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 import isValidURL from '../utils/isValidURL';
 import DSFRColorSelectControl from '../components/DSFRColorSelectControl';
 
@@ -36,7 +36,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 	});
 
 	// replace wp-block-dsfr-fr-quote by fr-quote
-	dsfrClassName(blockProps, 'fr-quote');
+	setDSFRBlockClassName(blockProps, 'fr-quote');
 
 	/**
 	 * Add a new RichText to the sources list

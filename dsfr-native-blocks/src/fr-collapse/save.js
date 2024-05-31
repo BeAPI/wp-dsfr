@@ -1,5 +1,5 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 export default function save({ attributes: { id } }) {
 	const blockProps = useBlockProps.save({
@@ -7,7 +7,7 @@ export default function save({ attributes: { id } }) {
 	});
 	const innerBlocksProps = useInnerBlocksProps.save();
 
-	dsfrClassName(blockProps, 'fr-collapse');
+	setDSFRBlockClassName(blockProps, 'fr-collapse');
 
 	return (
 		<div {...blockProps} id={id}>

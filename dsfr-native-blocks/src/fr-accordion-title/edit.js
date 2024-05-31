@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 export default function Edit({ attributes, setAttributes, context }) {
 	const blockProps = useBlockProps();
@@ -11,7 +11,11 @@ export default function Edit({ attributes, setAttributes, context }) {
 		setAttributes({ ariaControls: context['dsfr/fr-accordion--id'] });
 	}, [context['dsfr/fr-accordion--id']]);
 
-	dsfrClassName(blockProps, 'fr-accordion-title', 'fr-accordion__title');
+	setDSFRBlockClassName(
+		blockProps,
+		'fr-accordion-title',
+		'fr-accordion__title'
+	);
 
 	return (
 		<h3 {...blockProps}>

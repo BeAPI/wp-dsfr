@@ -1,10 +1,14 @@
 import { useBlockProps } from '@wordpress/block-editor';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 export default function save({ attributes: { label, ariaControls } }) {
 	const blockProps = useBlockProps.save();
 
-	dsfrClassName(blockProps, 'fr-accordion-title', 'fr-accordion__title');
+	setDSFRBlockClassName(
+		blockProps,
+		'fr-accordion-title',
+		'fr-accordion__title'
+	);
 
 	return (
 		<h3 {...blockProps}>

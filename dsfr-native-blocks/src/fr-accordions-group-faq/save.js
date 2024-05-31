@@ -1,10 +1,14 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 export default function save({ attributes }) {
 	const blockProps = useBlockProps.save();
 
-	dsfrClassName(blockProps, 'fr-accordions-group-faq', 'fr-accordions-group');
+	setDSFRBlockClassName(
+		blockProps,
+		'fr-accordions-group-faq',
+		'fr-accordions-group'
+	);
 
 	return (
 		<div {...blockProps}>

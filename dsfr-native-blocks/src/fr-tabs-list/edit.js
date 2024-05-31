@@ -1,5 +1,5 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 export default function Edit() {
 	const blockProps = useBlockProps();
@@ -16,7 +16,7 @@ export default function Edit() {
 		renderAppender: false,
 	});
 
-	dsfrClassName(innerBlocksProps, 'fr-tabs-list', 'fr-tabs__list');
+	setDSFRBlockClassName(innerBlocksProps, 'fr-tabs-list', 'fr-tabs__list');
 
 	return <ul {...innerBlocksProps} role="tablist" />;
 }

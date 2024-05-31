@@ -6,13 +6,17 @@ import { useBlockProps } from '@wordpress/block-editor';
  * Internal dependencies
  */
 import FaqList from './FaqList';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 export default function Edit({ attributes, setAttributes, isSelected }) {
 	const { questions } = attributes;
 	const blockProps = useBlockProps();
 
-	dsfrClassName(blockProps, 'fr-accordions-group-faq', 'fr-accordions-group');
+	setDSFRBlockClassName(
+		blockProps,
+		'fr-accordions-group-faq',
+		'fr-accordions-group'
+	);
 
 	return (
 		<div {...blockProps}>

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 export default function Edit({
 	attributes: { id, labelledby },
@@ -54,7 +54,7 @@ export default function Edit({
 		});
 	}, [index, contextId, contextLabelledBy]);
 
-	dsfrClassName(blockProps, 'fr-tabs-panel', 'fr-tabs__panel');
+	setDSFRBlockClassName(blockProps, 'fr-tabs-panel', 'fr-tabs__panel');
 
 	return (
 		<div {...blockProps} id={id} aria-labelledby={labelledby}>

@@ -1,6 +1,6 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import dsfrClassName from '../utils/dsfrClassName';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 import uniqid from '../utils/uniqid';
 
 export default function Edit({ setAttributes }) {
@@ -15,7 +15,7 @@ export default function Edit({ setAttributes }) {
 		setAttributes({ id: uniqid('fr-collapse') });
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-	dsfrClassName(innerBlocksProps, 'fr-accordion');
+	setDSFRBlockClassName(innerBlocksProps, 'fr-accordion');
 
 	return <div {...innerBlocksProps} />;
 }
