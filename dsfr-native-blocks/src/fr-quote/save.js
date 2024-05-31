@@ -53,7 +53,7 @@ export default function save({ attributes }) {
 					''
 				)}
 				{hasImage && (
-					<div class="fr-quote__image">
+					<div className="fr-quote__image">
 						<img
 							className="fr-responsive-img"
 							src={attributes.imageUrl}

@@ -18,9 +18,9 @@ import { plus, trash } from '@wordpress/icons';
 import classNames from 'classnames';
 import dsfrClassName from '../utils/dsfrClassName';
 import isValidURL from '../utils/isValidURL';
+import DSFRColorSelectControl from '../components/DSFRColorSelectControl';
 
 import './editor.scss';
-import DSFRColorSelectControl from '../components/DSFRColorSelectControl';
 
 export default function Edit({ attributes, setAttributes, isSelected }) {
 	const classes = {
@@ -38,12 +38,18 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 	// replace wp-block-dsfr-fr-quote by fr-quote
 	dsfrClassName(blockProps, 'fr-quote');
 
+	/**
+	 * Add a new RichText to the sources list
+	 */
 	function addSourceField() {
 		const sources = [...attributes.sources];
 		sources.push('');
 		setAttributes({ sources });
 	}
 
+	/**
+	 * Control if sources have more than 1 source field and has empty field(s)
+	 */
 	function hasEmptySourceField() {
 		return (
 			attributes.sources.length > 1 &&
@@ -51,6 +57,9 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 		);
 	}
 
+	/**
+	 * Remove all empty fields, add 1 field if sources is empty
+	 */
 	function cleanSources() {
 		const sources = attributes.sources.filter((source) => !!source);
 
@@ -63,12 +72,18 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 		}
 	}
 
+	/**
+	 * Update the sources attribute (see block.json)
+	 */
 	function updateSources(source, index) {
 		const sources = [...attributes.sources];
 		sources[index] = source;
 		setAttributes({ sources });
 	}
 
+	/**
+	 * Update attributes imageId, imageUrl, imageAlt (see block.json)
+	 */
 	function onSelectMedia(media) {
 		setAttributes({
 			imageId: media.id,
@@ -77,10 +92,14 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 		});
 	}
 
+	/**
+	 * Reset attributes imageId, imageUrl, imageAlt (see block.json)
+	 */
 	function removeMedia() {
 		setAttributes({
 			imageId: 0,
 			imageUrl: '',
+			imageAlt: '',
 		});
 	}
 

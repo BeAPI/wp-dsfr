@@ -11,7 +11,7 @@ export default function (props) {
 		},
 	];
 
-	for (let color in colorsList) {
+	for (const color in colorsList) {
 		options.push({
 			label: colorsList[color],
 			value: color,
