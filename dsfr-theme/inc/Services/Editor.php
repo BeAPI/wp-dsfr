@@ -324,6 +324,7 @@ class Editor implements Service {
 			'dsfr/fr-accordion',
 			'dsfr/fr-collapse',
 			'dsfr/fr-accordion-title',
+			'dsfr/fr-quote',
 			'dsfr/fr-tabs',
 			'dsfr/fr-tabs-list',
 			'dsfr/fr-tabs-list-item',
