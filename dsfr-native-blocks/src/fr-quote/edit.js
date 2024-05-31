@@ -17,6 +17,7 @@ import {
 import { plus, trash } from '@wordpress/icons';
 import classNames from 'classnames';
 import dsfrClassName from '../utils/dsfrClassName';
+import isValidURL from '../utils/isValidURL';
 
 import './editor.scss';
 import DSFRColorSelectControl from '../components/DSFRColorSelectControl';
@@ -144,10 +145,17 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 							onChange={(cite) => setAttributes({ cite })}
 							placeholder={'https://www.foo.com'}
 							type="url"
-							help={__(
-								'A URL that designates a source document or message for the information quoted. This attribute is intended to point to information explaining the context or the reference for the quote.',
-								'dsfr-native-blocks'
-							)}
+							help={
+								attributes.cite && !isValidURL(attributes.cite)
+									? __(
+											'This URL is not valid and will not be used.',
+											'dsfr-native-blocks'
+									  )
+									: __(
+											'A URL that designates a source document or message for the information quoted. This attribute is intended to point to information explaining the context or the reference for the quote.',
+											'dsfr-native-blocks'
+									  )
+							}
 						/>
 					</PanelRow>
 				</PanelBody>

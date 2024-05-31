@@ -1,9 +1,11 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import classNames from 'classnames';
+import isValidURL from '../utils/isValidURL';
 import dsfrClassName from '../utils/dsfrClassName';
 
 export default function save({ attributes }) {
 	const hasImage = attributes.displayImage && attributes.imageUrl;
+	const cite = isValidURL(attributes.cite) ? attributes.cite : '';
 	const classes = {
 		'fr-quote--column': attributes.displayImage,
 	};
@@ -20,7 +22,7 @@ export default function save({ attributes }) {
 
 	return (
 		<figure {...blockProps}>
-			<blockquote cite={attributes.cite}>
+			<blockquote cite={cite}>
 				<RichText.Content
 					tagName="p"
 					className={
