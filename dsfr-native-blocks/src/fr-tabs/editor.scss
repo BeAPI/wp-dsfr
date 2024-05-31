@@ -4,6 +4,13 @@
         content: "";
     }
 
+    .fr-tabs__list {
+        .wp-block {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+
     .fr-tabs__panel {
         display: none !important;
         border: 1px solid var(--border-default-grey) !important;

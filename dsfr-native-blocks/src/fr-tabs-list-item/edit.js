@@ -39,7 +39,7 @@ export default function Edit({
 						<TextControl
 							value={buttonClassName}
 							label={__(
-								'Additional CSS class(es)',
+								'Tab button CSS class(es)',
 								'dsfr-native-blocks'
 							)}
 							onChange={(newButtonClassName) => {
@@ -52,7 +52,7 @@ export default function Edit({
 				</PanelBody>
 			</InspectorControls>
 			<ComposeBlockControls clientId={clientId} index={index} />
-			<li role="presentation">
+			<li role="presentation" {...useBlockProps()}>
 				<RichText
 					tagName="span"
 					className={('fr-tabs__tab ' + buttonClassName).trim()}

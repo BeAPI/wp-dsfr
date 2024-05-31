@@ -5,7 +5,7 @@ export default function Edit() {
 	const blockProps = useBlockProps();
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
 		allowedBlocks: ['dsfr/fr-tabs-list-item'],
-		__experimentalDirectInsert: false,
+		directInsert: false,
 		orientation: 'horizontal',
 		templateLock: false,
 		template: new Array(3).fill([
