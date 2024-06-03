@@ -24,10 +24,6 @@
 		"activeTabIndex": {
 			"type": "integer",
 			"default": 0
-		},
-		"tabsListPosition": {
-			"type": "string",
-			"default": ""
 		}
 	},
 	"providesContext": {
