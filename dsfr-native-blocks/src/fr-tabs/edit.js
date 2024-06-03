@@ -27,7 +27,7 @@ export default function Edit({
 			...new Array(3).fill(['dsfr/fr-tabs-panel']),
 		],
 		templateInsertUpdatesSelection: true,
-    renderAppender: false,
+		renderAppender: false,
 	});
 
 	useEffect(() => {
