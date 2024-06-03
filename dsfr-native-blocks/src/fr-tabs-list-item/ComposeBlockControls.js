@@ -13,7 +13,7 @@ const ComposeBlockControls = ({
 	onRemoveBlocks,
 	onInsertBlock,
 }) => (
-	<BlockControls>
+	<BlockControls key="toolbar">
 		<ToolbarGroup
 			controls={[
 				{
