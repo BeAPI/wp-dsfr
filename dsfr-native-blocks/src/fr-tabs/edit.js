@@ -22,12 +22,12 @@ export default function Edit({
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
 		directInsert: false,
 		allowedBlocks: ['dsfr/fr-tabs-list', 'dsfr/fr-tabs-panel'],
-		templateLock: 'all',
 		template: [
 			['dsfr/fr-tabs-list'],
 			...new Array(3).fill(['dsfr/fr-tabs-panel']),
 		],
 		templateInsertUpdatesSelection: true,
+    renderAppender: false,
 	});
 
 	useEffect(() => {
