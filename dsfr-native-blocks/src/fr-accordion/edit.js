@@ -6,7 +6,7 @@ import uniqid from '../utils/uniqid';
 export default function Edit({ setAttributes }) {
 	const blockProps = useBlockProps();
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
-		__experimentalDirectInsert: false,
+		directInsert: false,
 		templateLock: 'all',
 		template: [['dsfr/fr-accordion-title'], ['dsfr/fr-collapse']],
 	});
