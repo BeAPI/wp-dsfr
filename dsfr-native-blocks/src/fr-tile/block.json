@@ -47,7 +47,7 @@
 			"type": "string",
 			"default": "",
 			"source": "html",
-			"selector": ".fr-tile__title"
+			"selector": ".fr-tile__title > *"
 		},
 		"description": {
 			"type": "string",
@@ -92,6 +92,20 @@
 			"source": "attribute",
 			"selector": "img",
 			"attribute": "alt"
+		},
+		"linkUrl": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "href",
+			"__experimentalRole": "content"
+		},
+		"linkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "target",
+			"__experimentalRole": "content"
 		}
 	},
 	"textdomain": "dsfr-native-blocks",

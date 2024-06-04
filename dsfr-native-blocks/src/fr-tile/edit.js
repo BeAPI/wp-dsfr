@@ -1,6 +1,9 @@
 import { __ } from '@wordpress/i18n';
+import { useEffect, useMemo, useRef, useState } from '@wordpress/element';
 import {
+	BlockControls,
 	InspectorControls,
+	__experimentalLinkControl as LinkControl,
 	MediaUpload,
 	MediaUploadCheck,
 	RichText,
@@ -9,9 +12,13 @@ import {
 import {
 	Button,
 	PanelBody,
+	Popover,
 	RadioControl,
 	ToggleControl,
+	ToolbarButton,
 } from '@wordpress/components';
+import { useMergeRefs } from '@wordpress/compose';
+import { link, linkOff } from '@wordpress/icons';
 import classNames from 'classnames';
 import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 import DSFRColorSelectControl from '../components/DSFRColorSelectControl';
@@ -20,6 +27,10 @@ import getSurtitleClasses from './getSurtitleClasses';
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes, isSelected }) {
+	const [popoverAnchor, setPopoverAnchor] = useState(null);
+	const [isEditingURL, setIsEditingURL] = useState(false);
+	const isURLSet = !!attributes.linkUrl;
+	const ref = useRef();
 	const blockProps = useBlockProps({
 		className: classNames({
 			'fr-tile--horizontal': attributes.isHorizontal,
@@ -28,7 +39,16 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 			'fr-tile--shadow': attributes.displayShadow,
 			['fr-tile--' + attributes.background]: !!attributes.background,
 		}),
+		ref: useMergeRefs([setPopoverAnchor, ref]),
 	});
+	const linkValue = useMemo(
+		() => ({
+			url: attributes.linkUrl,
+			opensInNewTab: attributes.target === '_blank',
+			title: attributes.linkTitle,
+		}),
+		[attributes.linkUrl, attributes.linkTarget, attributes.linkTitle]
+	);
 
 	/**
 	 * Update attributes imageId, imageUrl, imageAlt (see block.json)
@@ -51,6 +71,25 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 			imageAlt: '',
 		});
 	}
+
+	function startEditing(e) {
+		e.preventDefault();
+		setIsEditingURL(true);
+	}
+
+	function unlink() {
+		setAttributes({
+			url: '',
+			linkTarget: '',
+		});
+		setIsEditingURL(false);
+	}
+
+	useEffect(() => {
+		if (!isSelected) {
+			setIsEditingURL(false);
+		}
+	}, [isSelected]);
 
 	setDSFRBlockClassName(blockProps, 'fr-tile');
 
@@ -161,17 +200,65 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 					)}
 				</PanelBody>
 			</InspectorControls>
+			<BlockControls group="block">
+				{!isURLSet && (
+					<ToolbarButton
+						name="link"
+						icon={link}
+						title={__('Link')}
+						onClick={startEditing}
+					/>
+				)}
+				{isURLSet && (
+					<ToolbarButton
+						name="link"
+						icon={linkOff}
+						title={__('Unlink')}
+						onClick={unlink}
+						isActive
+					/>
+				)}
+			</BlockControls>
+			{isSelected && (isEditingURL || isURLSet) && (
+				<Popover
+					placement="bottom"
+					onClose={() => {
+						setIsEditingURL(false);
+					}}
+					anchor={popoverAnchor}
+					focusOnMount={isEditingURL ? 'firstElement' : false}
+					__unstableSlotName="__unstable-block-tools-after"
+					shift
+				>
+					<LinkControl
+						value={linkValue}
+						onChange={(value) => {
+							setAttributes({
+								linkUrl: value.url,
+								linkTarget: value.opensInNewTab
+									? '_blank'
+									: '_self',
+							});
+						}}
+						onRemove={unlink}
+						forceIsEditingLink={isEditingURL}
+					/>
+				</Popover>
+			)}
 			<div {...blockProps}>
 				<div className="fr-tile__body">
 					<div className="fr-tile__content">
-						<RichText
-							tagName="h3"
-							className="fr-tile__title"
-							placeholder={__('Add title', 'dsfr-native-blocks')}
-							value={attributes.title}
-							onChange={(title) => setAttributes({ title })}
-							allowedFormats={['core/link']}
-						/>
+						<h3 className="fr-tile__title">
+							<RichText
+								tagName="span"
+								placeholder={__(
+									'Add title',
+									'dsfr-native-blocks'
+								)}
+								value={attributes.title}
+								onChange={(title) => setAttributes({ title })}
+							/>
+						</h3>
 
 						<RichText
 							tagName="p"

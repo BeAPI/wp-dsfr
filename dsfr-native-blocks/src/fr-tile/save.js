@@ -12,6 +12,7 @@ export default function save({ attributes }) {
 			'fr-tile--no-border': !attributes.displayBorder,
 			'fr-tile--shadow': attributes.displayShadow,
 			['fr-tile--' + attributes.background]: !!attributes.background,
+			'fr-enlarge-link': attributes.title && attributes.linkUrl,
 		}),
 	});
 
@@ -21,11 +22,22 @@ export default function save({ attributes }) {
 		<div {...blockProps}>
 			<div className="fr-tile__body">
 				<div className="fr-tile__content">
-					<RichText.Content
-						tagName="h3"
-						className="fr-tile__title"
-						value={attributes.title}
-					/>
+					{attributes.title ? (
+						<h3 className="fr-tile__title">
+							{attributes.linkUrl ? (
+								<a
+									href={attributes.linkUrl}
+									target={attributes.linkTarget}
+								>
+									{attributes.title}
+								</a>
+							) : (
+								attributes.title
+							)}
+						</h3>
+					) : (
+						''
+					)}
 
 					<RichText.Content
 						tagName="p"
