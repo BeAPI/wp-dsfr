@@ -86,7 +86,9 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 	function onSelectMedia(media) {
 		setAttributes({
 			imageId: media.id,
-			imageUrl: media.sizes.medium.url,
+			imageUrl: media?.sizes?.medium?.url
+				? media.sizes.medium.url
+				: media.url,
 			imageAlt: media.alt,
 		});
 	}
