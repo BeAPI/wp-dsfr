@@ -1,0 +1,27 @@
+/* style */
+
+@use "sass:math";
+
+.fr-tiles-group {
+    --gap: 16px;
+    --n: var(--tiles-by-line, 1);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    margin-top: 24px;
+    margin-bottom: 24px;
+    
+    .fr-tile {
+        width: calc((100% - var(--gap) * (var(--n) - 1)) / var(--n));
+    }
+
+    @media screen and (min-width: 576px) {
+        --n: var(--tiles-by-line-sm, 2);
+    }
+
+    @media screen and (min-width: 992px) {
+        --gap: 24px;
+        --n: var(--tiles-by-line-md, 3);
+    }
+}

@@ -330,6 +330,7 @@ class Editor implements Service {
 			'dsfr/fr-tabs-list-item',
 			'dsfr/fr-tabs-panel',
 			'dsfr/fr-tile',
+			'dsfr/fr-tiles-group',
 		];
 
 		return ( is_array( $allowed_blocks ) ) ? array_merge( $allowed, $allowed_blocks ) : $allowed;

@@ -32,6 +32,8 @@ function dsfr_native_blocks_init() {
 		'fr-tabs-list',
 		'fr-tabs-list-item',
 		'fr-tabs-panel',
+		'fr-tile',
+		'fr-tiles-group',
 	];
 
 	foreach ( $blocks as $block ) {
