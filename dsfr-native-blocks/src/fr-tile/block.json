@@ -45,15 +45,13 @@
 		},
 		"title": {
 			"type": "string",
-			"default": "",
-			"source": "html",
-			"selector": ".fr-tile__title > *"
+			"default": ""
 		},
 		"description": {
 			"type": "string",
 			"default": "",
 			"source": "html",
-			"selector": ".fr-tile__description"
+			"selector": ".fr-tile__desc"
 		},
 		"detail": {
 			"type": "string",

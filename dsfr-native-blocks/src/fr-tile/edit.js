@@ -38,6 +38,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 			'fr-tile--no-border': !attributes.displayBorder,
 			'fr-tile--shadow': attributes.displayShadow,
 			['fr-tile--' + attributes.background]: !!attributes.background,
+			'fr-enlarge-link': attributes.title && attributes.linkUrl,
 		}),
 		ref: useMergeRefs([setPopoverAnchor, ref]),
 	});
@@ -249,15 +250,39 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 				<div className="fr-tile__body">
 					<div className="fr-tile__content">
 						<h3 className="fr-tile__title">
-							<RichText
-								tagName="span"
-								placeholder={__(
-									'Add title',
-									'dsfr-native-blocks'
-								)}
-								value={attributes.title}
-								onChange={(title) => setAttributes({ title })}
-							/>
+							{isURLSet ? (
+								<a
+									href={attributes.linkUrl}
+									onClick={(e) => e.preventDefault()}
+									rel="noopener"
+								>
+									<RichText
+										tagName="span"
+										placeholder={__(
+											'Add title',
+											'dsfr-native-blocks'
+										)}
+										value={attributes.title}
+										onChange={(title) =>
+											setAttributes({ title })
+										}
+										allowedFormats={[]}
+									/>
+								</a>
+							) : (
+								<RichText
+									tagName="span"
+									placeholder={__(
+										'Add title',
+										'dsfr-native-blocks'
+									)}
+									value={attributes.title}
+									onChange={(title) =>
+										setAttributes({ title })
+									}
+									allowedFormats={[]}
+								/>
+							)}
 						</h3>
 
 						<RichText

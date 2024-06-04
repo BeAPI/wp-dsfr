@@ -28,6 +28,7 @@ export default function save({ attributes }) {
 								<a
 									href={attributes.linkUrl}
 									target={attributes.linkTarget}
+									rel="noopener"
 								>
 									{attributes.title}
 								</a>

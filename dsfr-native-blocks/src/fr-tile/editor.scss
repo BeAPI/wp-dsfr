@@ -2,6 +2,31 @@
 .fr-tile {
     $el: &;
 
+    #{$el}__title {
+        width: fit-content;
+
+        a {
+            pointer-events: none;
+
+            &::before {
+                content: none;
+            }
+
+            span {
+                pointer-events: all;
+            }
+        }
+
+        textarea {
+            width: fit-content;
+            font: inherit;
+            color: inherit;
+            text-align: center;
+            border: none;
+            box-shadow: none;
+        }
+    }
+
     #{$el}__pictogram {
         .components-button {
             justify-content: center;
