@@ -30,8 +30,6 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 
 	setDSFRBlockClassName(innerBlocksProps, 'fr-tiles-group');
 
-	console.log(style);
-
 	return (
 		<>
 			<InspectorControls>
