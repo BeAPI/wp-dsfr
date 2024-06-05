@@ -2,7 +2,8 @@
 /**
  * Title: Mise en avant
  * Slug: dsfr/callout
- * categories: callout
+ * Categories: callout
+ * Viewport width: 768px
  */
 ?>
 <!-- wp:group {"className":"fr-callout fr-icon-information-line","layout":{"type":"constrained"}} -->

@@ -2,7 +2,8 @@
 /**
  * Title: Badge - informations
  * Slug: dsfr/badge-informations
- * categories: badge
+ * Categories: badge
+ * Viewport width: 768px
  */
 ?>
 <!-- wp:group {"className":"wp-block-group--how-to-use fr-icon-information-line","layout":{"type":"constrained"}} -->

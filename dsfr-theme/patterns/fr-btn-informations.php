@@ -2,7 +2,8 @@
 /**
  * Title: Bouton - informations
  * Slug: dsfr/btn-informations
- * categories: btn
+ * Categories: btn
+ * Viewport width: 768px
  */
 ?>
 <!-- wp:group {"className":"wp-block-group--how-to-use fr-icon-information-line","layout":{"type":"constrained"}} -->

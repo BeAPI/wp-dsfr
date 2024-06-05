@@ -2,7 +2,8 @@
 /**
  * Title: Mise en exergue
  * Slug: dsfr/highlight
- * categories: highlight
+ * Categories: highlight
+ * Viewport width: 768px
  */
 ?>
 <!-- wp:group {"className":"fr-highlight","layout":{"type":"constrained"}} -->

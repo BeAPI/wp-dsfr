@@ -2,7 +2,8 @@
 /**
  * Title: Lien - informations
  * Slug: dsfr/link-informations
- * categories: link
+ * Categories: link
+ * Viewport width: 768px
  */
 ?>
 <!-- wp:group {"className":"wp-block-group\u002d\u002dhow-to-use fr-icon-information-line","layout":{"type":"constrained"}} -->

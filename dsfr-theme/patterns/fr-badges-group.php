@@ -2,7 +2,8 @@
 /**
  * Title: Groupe de badges
  * Slug: dsfr/badges-group
- * categories: badge
+ * Categories: badge
+ * Viewport width: 576px
  */
 ?>
 <!-- wp:list {"className":"fr-badges-group"} -->

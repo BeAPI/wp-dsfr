@@ -2,7 +2,8 @@
 /**
  * Title: Mise en exergue - informations
  * Slug: dsfr/highlight-informations
- * categories: highlight
+ * Categories: highlight
+ * Viewport width: 768px
  */
 ?>
 <!-- wp:group {"className":"wp-block-group--how-to-use fr-icon-information-line","layout":{"type":"constrained"}} -->

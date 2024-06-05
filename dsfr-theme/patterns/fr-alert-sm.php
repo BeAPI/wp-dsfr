@@ -2,7 +2,8 @@
 /**
  * Title: Alerte (petit)
  * Slug: dsfr/alert-sm
- * categories: alert
+ * Categories: alert
+ * Viewport width: 768px
  */
 ?>
 <!-- wp:group {"className":"fr-alert fr-alert--sm","layout":{"type":"constrained"}} -->
