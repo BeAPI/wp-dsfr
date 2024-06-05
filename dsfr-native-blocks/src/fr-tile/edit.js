@@ -20,8 +20,9 @@ import {
 import { useMergeRefs } from '@wordpress/compose';
 import { link, linkOff } from '@wordpress/icons';
 import classNames from 'classnames';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 import DSFRColorSelectControl from '../components/DSFRColorSelectControl';
+import IconRaw from '../components/IconRaw';
+import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 import getSurtitleClasses from './getSurtitleClasses';
 
 import './editor.scss';
@@ -55,6 +56,19 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 	 * Update attributes imageId, imageUrl, imageAlt (see block.json)
 	 */
 	function onSelectMedia(media) {
+		if (media.mime === 'image/svg+xml') {
+			fetch(media.url)
+				.then((response) => response.text())
+				.then((svg) => {
+					console.log(svg);
+					setAttributes({
+						imageUrl: '',
+						imageAlt: '',
+						imageSvg: svg,
+					});
+				});
+		}
+
 		setAttributes({
 			imageId: media.id,
 			imageUrl: media?.sizes?.thumbnail?.url
@@ -72,6 +86,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 			imageId: 0,
 			imageUrl: '',
 			imageAlt: '',
+			imageSvg: '',
 		});
 	}
 
@@ -336,15 +351,27 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 								<MediaUpload
 									allowedTypes={['image']}
 									onSelect={onSelectMedia}
-									value={attributes.mediaId}
+									value={attributes.imageId}
 									render={({ open }) => (
 										<Button onClick={open}>
-											{attributes.imageUrl ? (
-												<img
-													className="fr-ratio-1x1"
-													src={attributes.imageUrl}
-													alt={attributes.imageAlt}
-												/>
+											{attributes.imageId ? (
+												attributes.imageUrl ? (
+													<img
+														className="fr-ratio-1x1"
+														src={
+															attributes.imageUrl
+														}
+														alt={
+															attributes.imageAlt
+														}
+													/>
+												) : (
+													<IconRaw
+														content={
+															attributes.imageSvg
+														}
+													/>
+												)
 											) : (
 												__(
 													'Choose an image',

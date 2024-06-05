@@ -5,12 +5,11 @@ import {
 	useInnerBlocksProps,
 } from '@wordpress/block-editor';
 import { PanelBody, RangeControl } from '@wordpress/components';
-import classNames from 'classnames';
 import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes, isSelected }) {
+export default function Edit({ attributes, setAttributes }) {
 	const blockProps = useBlockProps();
 	const innerBlocksProps = {
 		...useInnerBlocksProps(blockProps, {

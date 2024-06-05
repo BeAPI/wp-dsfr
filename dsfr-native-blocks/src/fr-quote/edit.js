@@ -229,7 +229,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 								<MediaUpload
 									allowedTypes={['image']}
 									onSelect={onSelectMedia}
-									value={attributes.mediaId}
+									value={attributes.imageId}
 									render={({ open }) => (
 										<Button onClick={open}>
 											{attributes.imageUrl ? (

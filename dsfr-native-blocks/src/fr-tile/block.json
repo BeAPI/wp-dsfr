@@ -91,6 +91,12 @@
 			"selector": "img",
 			"attribute": "alt"
 		},
+		"imageSvg": {
+			"type": "string",
+			"default": "",
+			"source": "html",
+			"selector": ".fr-tile__pictogram"
+		},
 		"linkUrl": {
 			"type": "string",
 			"source": "attribute",

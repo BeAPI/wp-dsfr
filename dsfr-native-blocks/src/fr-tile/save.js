@@ -1,5 +1,6 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import classNames from 'classnames';
+import IconRaw from '../components/IconRaw';
 import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
 
 import getSurtitleClasses from './getSurtitleClasses';
@@ -65,14 +66,18 @@ export default function save({ attributes }) {
 					)}
 				</div>
 			</div>
-			{attributes.displayImage && attributes.imageUrl ? (
+			{attributes.displayImage && attributes.imageId ? (
 				<div className="fr-tile__header">
 					<div className="fr-tile__pictogram">
-						<img
-							className="fr-ratio-1x1"
-							src={attributes.imageUrl}
-							alt={attributes.imageAlt}
-						/>
+						{attributes.imageUrl ? (
+							<img
+								className="fr-ratio-1x1"
+								src={attributes.imageUrl}
+								alt={attributes.imageAlt}
+							/>
+						) : (
+							<IconRaw content={attributes.imageSvg} />
+						)}
 					</div>
 				</div>
 			) : (
