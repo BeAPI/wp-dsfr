@@ -2,7 +2,7 @@
 /**
  * Title: Badge
  * Slug: dsfr/badge
- * categories: badge
+ * Categories: badge
  * Viewport width: 320px
  */
 ?>
