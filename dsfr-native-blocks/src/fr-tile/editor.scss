@@ -1,0 +1,32 @@
+/* editor */
+.fr-tile {
+    $el: &;
+
+    #{$el}__title {
+        a {
+            pointer-events: none;
+
+            &::before {
+                content: none;
+            }
+
+            span {
+                pointer-events: all;
+            }
+        }
+    }
+
+    #{$el}__pictogram {
+        .components-button {
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            border-radius: 0;
+
+            &:not(:has(img)):not(:has(svg)) {
+                border: 1px solid var(--border-default-grey);
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "dsfr/fr-tiles-group",
+	"version": "1.0.0",
+	"title": "Tiles",
+	"category": "text",
+	"description": "DSFR tiles group block.",
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"],
+		"color": {
+			"background": false,
+			"text": false
+		}
+	},
+	"attributes": {
+		"tilesByLine": {
+			"type": "integer",
+			"default": 3
+		}
+	},
+	"textdomain": "dsfr-native-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"viewStyle": "file:./style-index.css"
+}

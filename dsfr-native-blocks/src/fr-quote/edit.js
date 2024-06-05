@@ -9,7 +9,6 @@ import {
 import {
 	Button,
 	PanelBody,
-	PanelRow,
 	RadioControl,
 	TextControl,
 	ToggleControl,
@@ -87,7 +86,9 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 	function onSelectMedia(media) {
 		setAttributes({
 			imageId: media.id,
-			imageUrl: media.sizes.medium.url,
+			imageUrl: media?.sizes?.medium?.url
+				? media.sizes.medium.url
+				: media.url,
 			imageAlt: media.alt,
 		});
 	}
@@ -114,69 +115,51 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 					title={__('Options', 'dsfr-native-blocks')}
 					initialOpen={true}
 				>
-					<PanelRow>
-						<DSFRColorSelectControl
-							value={attributes.color}
-							onChange={(color) => setAttributes({ color })}
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={__(
-								'Show author portrait',
-								'dsfr-native-blocks'
-							)}
-							checked={attributes.displayImage}
-							onChange={(displayImage) => {
-								if (!displayImage) {
-									removeMedia();
-								}
-								setAttributes({ displayImage });
-							}}
-						/>
-					</PanelRow>
-					<PanelRow>
-						<RadioControl
-							label={__('Quote size', 'dsfr-native-blocks')}
-							selected={attributes.quoteSize}
-							options={[
-								{
-									label: __('LG', 'dsfr-native-blocks'),
-									value: 'lg',
-								},
-								{
-									label: __(
-										'Default (XL)',
+					<DSFRColorSelectControl
+						value={attributes.color}
+						onChange={(color) => setAttributes({ color })}
+					/>
+					<ToggleControl
+						label={__('Show author portrait', 'dsfr-native-blocks')}
+						checked={attributes.displayImage}
+						onChange={(displayImage) => {
+							removeMedia();
+							setAttributes({ displayImage });
+						}}
+					/>
+					<RadioControl
+						label={__('Quote size', 'dsfr-native-blocks')}
+						selected={attributes.quoteSize}
+						options={[
+							{
+								label: __('LG', 'dsfr-native-blocks'),
+								value: 'lg',
+							},
+							{
+								label: __('Default (XL)', 'dsfr-native-blocks'),
+								value: '',
+							},
+						]}
+						onChange={(quoteSize) => setAttributes({ quoteSize })}
+					/>
+					<TextControl
+						value={attributes.cite}
+						label={__('Cite', 'dsfr-native-blocks')}
+						onChange={(cite) => setAttributes({ cite })}
+						placeholder={'https://www.foo.com'}
+						type="url"
+						help={
+							attributes.cite && !isValidURL(attributes.cite)
+								? __(
+										'This URL is not valid and will not be used.',
 										'dsfr-native-blocks'
-									),
-									value: '',
-								},
-							]}
-							onChange={(quoteSize) =>
-								setAttributes({ quoteSize })
-							}
-						/>
-					</PanelRow>
-					<PanelRow>
-						<TextControl
-							value={attributes.cite}
-							label={__('Cite', 'dsfr-native-blocks')}
-							onChange={(cite) => setAttributes({ cite })}
-							placeholder={'https://www.foo.com'}
-							type="url"
-							help={
-								attributes.cite && !isValidURL(attributes.cite)
-									? __(
-											'This URL is not valid and will not be used.',
-											'dsfr-native-blocks'
-									  )
-									: __(
-											'A URL that designates a source document or message for the information quoted. This attribute is intended to point to information explaining the context or the reference for the quote.',
-											'dsfr-native-blocks'
-									  )
-							}
-						/>
-					</PanelRow>
+								  )
+								: __(
+										'A URL that designates a source document or message for the information quoted. This attribute is intended to point to information explaining the context or the reference for the quote.',
+										'dsfr-native-blocks'
+								  )
+						}
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<figure {...blockProps}>
@@ -246,7 +229,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 								<MediaUpload
 									allowedTypes={['image']}
 									onSelect={onSelectMedia}
-									value={attributes.mediaId}
+									value={attributes.imageId}
 									render={({ open }) => (
 										<Button onClick={open}>
 											{attributes.imageUrl ? (

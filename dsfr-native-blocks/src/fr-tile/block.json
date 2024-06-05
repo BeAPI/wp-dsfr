@@ -1,0 +1,118 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "dsfr/fr-tile",
+	"version": "1.0.0",
+	"title": "Tile",
+	"category": "text",
+	"description": "DSFR tile block.",
+	"supports": {
+		"html": false,
+		"align": false,
+		"color": {
+			"background": false,
+			"text": false
+		}
+	},
+	"attributes": {
+		"isHorizontal": {
+			"type": "boolean",
+			"default": false
+		},
+		"verticalAt": {
+			"type": "string",
+			"default": ""
+		},
+		"displayIcon": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayBorder": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayShadow": {
+			"type": "boolean",
+			"default": false
+		},
+		"background": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"description": {
+			"type": "string",
+			"default": "",
+			"source": "html",
+			"selector": ".fr-tile__desc"
+		},
+		"detail": {
+			"type": "string",
+			"default": "",
+			"source": "html",
+			"selector": ".fr-tile__detail"
+		},
+		"surtitleType": {
+			"type": "string",
+			"default": ""
+		},
+		"surtitleText": {
+			"type": "string",
+			"default": "",
+			"source": "html",
+			"selector": ".fr-tile__start p"
+		},
+		"badgeColor": {
+			"type": "string",
+			"default": ""
+		},
+		"imageId": {
+			"type": "integer",
+			"default": 0
+		},
+		"imageURL": {
+			"type": "string",
+			"default": "",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "src"
+		},
+		"imageAlt": {
+			"type": "string",
+			"default": "",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "alt"
+		},
+		"imageSvg": {
+			"type": "string",
+			"default": "",
+			"source": "html",
+			"selector": ".fr-tile__pictogram"
+		},
+		"linkURL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "href",
+			"__experimentalRole": "content"
+		},
+		"linkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "target",
+			"__experimentalRole": "content"
+		}
+	},
+	"textdomain": "dsfr-native-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}
