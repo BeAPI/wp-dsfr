@@ -30,7 +30,7 @@ import './editor.scss';
 export default function Edit({ attributes, setAttributes, isSelected }) {
 	const [popoverAnchor, setPopoverAnchor] = useState(null);
 	const [isEditingURL, setIsEditingURL] = useState(false);
-	const isURLSet = !!attributes.linkUrl;
+	const isURLSet = !!attributes.linkURL;
 	const ref = useRef();
 	const blockProps = useBlockProps({
 		className: classNames({
@@ -39,30 +39,29 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 			'fr-tile--no-border': !attributes.displayBorder,
 			'fr-tile--shadow': attributes.displayShadow,
 			['fr-tile--' + attributes.background]: !!attributes.background,
-			'fr-enlarge-link': attributes.title && attributes.linkUrl,
+			'fr-enlarge-link': attributes.title && attributes.linkURL,
 		}),
 		ref: useMergeRefs([setPopoverAnchor, ref]),
 	});
 	const linkValue = useMemo(
 		() => ({
-			url: attributes.linkUrl,
+			url: attributes.linkURL,
 			opensInNewTab: attributes.target === '_blank',
 			title: attributes.linkTitle,
 		}),
-		[attributes.linkUrl, attributes.linkTarget, attributes.linkTitle]
+		[attributes.linkURL, attributes.linkTarget, attributes.linkTitle]
 	);
 
 	/**
-	 * Update attributes imageId, imageUrl, imageAlt (see block.json)
+	 * Update attributes imageId, imageURL, imageAlt (see block.json)
 	 */
 	function onSelectMedia(media) {
 		if (media.mime === 'image/svg+xml') {
 			fetch(media.url)
 				.then((response) => response.text())
 				.then((svg) => {
-					console.log(svg);
 					setAttributes({
-						imageUrl: '',
+						imageURL: '',
 						imageAlt: '',
 						imageSvg: svg,
 					});
@@ -71,7 +70,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 
 		setAttributes({
 			imageId: media.id,
-			imageUrl: media?.sizes?.thumbnail?.url
+			imageURL: media?.sizes?.thumbnail?.url
 				? media.sizes.thumbnail.url
 				: media.url,
 			imageAlt: media.alt,
@@ -79,22 +78,28 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 	}
 
 	/**
-	 * Reset attributes imageId, imageUrl, imageAlt (see block.json)
+	 * Reset attributes imageId, imageURL, imageAlt (see block.json)
 	 */
 	function removeMedia() {
 		setAttributes({
 			imageId: 0,
-			imageUrl: '',
+			imageURL: '',
 			imageAlt: '',
 			imageSvg: '',
 		});
 	}
 
-	function startEditing(e) {
+	/**
+	 * When user start editing link
+	 */
+	function startEditingURL(e) {
 		e.preventDefault();
 		setIsEditingURL(true);
 	}
 
+	/**
+	 * Reset link attributes
+	 */
 	function unlink() {
 		setAttributes({
 			url: '',
@@ -224,7 +229,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						name="link"
 						icon={link}
 						title={__('Link')}
-						onClick={startEditing}
+						onClick={startEditingURL}
 					/>
 				)}
 				{isURLSet && (
@@ -252,7 +257,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						value={linkValue}
 						onChange={(value) => {
 							setAttributes({
-								linkUrl: value.url,
+								linkURL: value.url,
 								linkTarget: value.opensInNewTab
 									? '_blank'
 									: '_self',
@@ -269,7 +274,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						<h3 className="fr-tile__title">
 							{isURLSet ? (
 								<a
-									href={attributes.linkUrl}
+									href={attributes.linkURL}
 									onClick={(e) => e.preventDefault()}
 									rel="noopener"
 								>
@@ -355,11 +360,11 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 									render={({ open }) => (
 										<Button onClick={open}>
 											{attributes.imageId ? (
-												attributes.imageUrl ? (
+												attributes.imageURL ? (
 													<img
 														className="fr-ratio-1x1"
 														src={
-															attributes.imageUrl
+															attributes.imageURL
 														}
 														alt={
 															attributes.imageAlt

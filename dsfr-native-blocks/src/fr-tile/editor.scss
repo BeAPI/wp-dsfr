@@ -3,8 +3,6 @@
     $el: &;
 
     #{$el}__title {
-        width: fit-content;
-
         a {
             pointer-events: none;
 
@@ -15,15 +13,6 @@
             span {
                 pointer-events: all;
             }
-        }
-
-        textarea {
-            width: fit-content;
-            font: inherit;
-            color: inherit;
-            text-align: center;
-            border: none;
-            box-shadow: none;
         }
     }
 

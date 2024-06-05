@@ -13,7 +13,7 @@ export default function save({ attributes }) {
 			'fr-tile--no-border': !attributes.displayBorder,
 			'fr-tile--shadow': attributes.displayShadow,
 			['fr-tile--' + attributes.background]: !!attributes.background,
-			'fr-enlarge-link': attributes.title && attributes.linkUrl,
+			'fr-enlarge-link': attributes.title && attributes.linkURL,
 		}),
 	});
 
@@ -25,9 +25,9 @@ export default function save({ attributes }) {
 				<div className="fr-tile__content">
 					{attributes.title ? (
 						<h3 className="fr-tile__title">
-							{attributes.linkUrl ? (
+							{attributes.linkURL ? (
 								<a
-									href={attributes.linkUrl}
+									href={attributes.linkURL}
 									target={attributes.linkTarget}
 									rel="noopener"
 								>
@@ -69,10 +69,10 @@ export default function save({ attributes }) {
 			{attributes.displayImage && attributes.imageId ? (
 				<div className="fr-tile__header">
 					<div className="fr-tile__pictogram">
-						{attributes.imageUrl ? (
+						{attributes.imageURL ? (
 							<img
 								className="fr-ratio-1x1"
-								src={attributes.imageUrl}
+								src={attributes.imageURL}
 								alt={attributes.imageAlt}
 							/>
 						) : (

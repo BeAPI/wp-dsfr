@@ -77,7 +77,7 @@
 			"type": "integer",
 			"default": 0
 		},
-		"imageUrl": {
+		"imageURL": {
 			"type": "string",
 			"default": "",
 			"source": "attribute",
@@ -97,7 +97,7 @@
 			"source": "html",
 			"selector": ".fr-tile__pictogram"
 		},
-		"linkUrl": {
+		"linkURL": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "a",
