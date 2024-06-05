@@ -1,7 +1,7 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import classNames from 'classnames';
-import isValidURL from '../utils/isValidURL';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
+import isValidURL from '../common/js/utils/isValidURL';
+import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
 export default function save({ attributes }) {
 	const hasImage = attributes.displayImage && attributes.imageUrl;

@@ -20,9 +20,9 @@ import {
 import { useMergeRefs } from '@wordpress/compose';
 import { link, linkOff } from '@wordpress/icons';
 import classNames from 'classnames';
-import DSFRColorSelectControl from '../components/DSFRColorSelectControl';
-import IconRaw from '../components/IconRaw';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
+import DSFRColorSelectControl from '../common/js/components/DSFRColorSelectControl';
+import IconRaw from '../common/js/components/IconRaw';
+import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 import getSurtitleClasses from './getSurtitleClasses';
 
 import './editor.scss';

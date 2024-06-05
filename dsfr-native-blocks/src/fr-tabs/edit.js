@@ -8,8 +8,8 @@ import { PanelBody, PanelRow, TextControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import TabsFocus from './TabsFocus';
 import { heading } from '@wordpress/icons';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
-import uniqid from '../utils/uniqid';
+import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
+import uniqid from '../common/js/utils/uniqid';
 
 import './editor.scss';
 

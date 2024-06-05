@@ -1,7 +1,7 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
-import uniqid from '../utils/uniqid';
+import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
+import uniqid from '../common/js/utils/uniqid';
 
 export default function Edit({ setAttributes }) {
 	const blockProps = useBlockProps();

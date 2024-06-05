@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
+import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
 export default function Edit({
 	attributes: { id, labelledby },

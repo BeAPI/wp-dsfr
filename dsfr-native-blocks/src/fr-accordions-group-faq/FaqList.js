@@ -6,7 +6,7 @@ import { useState } from '@wordpress/element';
 import { Button } from '@wordpress/components';
 import { chevronUp, chevronDown, trash, plusCircle } from '@wordpress/icons';
 import { RichText } from '@wordpress/block-editor';
-import uniqid from '../utils/uniqid';
+import uniqid from '../common/js/utils/uniqid';
 
 export default function FaqList({ questions, onChange, isBlockSelected }) {
 	const [activeAccordionId, setActiveAccordionId] = useState('');

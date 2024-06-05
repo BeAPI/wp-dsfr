@@ -1,6 +1,6 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 import classNames from 'classnames';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
+import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
 export default function save({ attributes: { id, labelledby, index } }) {
 	const blockProps = useBlockProps.save({

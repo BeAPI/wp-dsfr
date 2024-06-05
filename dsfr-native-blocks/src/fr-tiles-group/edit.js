@@ -5,7 +5,7 @@ import {
 	useInnerBlocksProps,
 } from '@wordpress/block-editor';
 import { PanelBody, RangeControl } from '@wordpress/components';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
+import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
 import './editor.scss';
 

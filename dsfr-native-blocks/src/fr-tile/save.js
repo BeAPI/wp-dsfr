@@ -1,7 +1,7 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import classNames from 'classnames';
-import IconRaw from '../components/IconRaw';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
+import IconRaw from '../common/js/components/IconRaw';
+import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
 import getSurtitleClasses from './getSurtitleClasses';
 

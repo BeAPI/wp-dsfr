@@ -15,9 +15,9 @@ import {
 } from '@wordpress/components';
 import { plus, trash } from '@wordpress/icons';
 import classNames from 'classnames';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
-import isValidURL from '../utils/isValidURL';
-import DSFRColorSelectControl from '../components/DSFRColorSelectControl';
+import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
+import isValidURL from '../common/js/utils/isValidURL';
+import DSFRColorSelectControl from '../common/js/components/DSFRColorSelectControl';
 
 import './editor.scss';
 

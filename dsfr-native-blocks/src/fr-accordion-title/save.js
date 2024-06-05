@@ -1,5 +1,5 @@
 import { useBlockProps } from '@wordpress/block-editor';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
+import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
 export default function save({ attributes: { label, ariaControls } }) {
 	const blockProps = useBlockProps.save();

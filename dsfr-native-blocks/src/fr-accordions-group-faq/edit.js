@@ -6,7 +6,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  * Internal dependencies
  */
 import FaqList from './FaqList';
-import setDSFRBlockClassName from '../utils/setDSFRBlockClassName';
+import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
 export default function Edit({ attributes, setAttributes, isSelected }) {
 	const { questions } = attributes;
