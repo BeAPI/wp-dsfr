@@ -8,7 +8,13 @@ $post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_terms_name( get_the_ID
 	<div class="fr-container">
 		<div class="hero__content">
 			<?php
-			get_template_part( 'components/parts/single/hero-single-tags-group' );
+			get_template_part(
+				'components/parts/common/tags-group',
+				'',
+				[
+					'tags' => $post_tags,
+				]
+			);
 
 			the_title( '<h1 class="hero__title">', '</h1>' );
 			?>
