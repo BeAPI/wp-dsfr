@@ -18,14 +18,14 @@ npm install
 After the installation in complete you can use the `env` command to manage the local environment
 ```bash
 # Start the local environement (available at http://localhost:8888)
-npm run env start
+npm start
 
 # Stop the local environement
-npm run env stop
+npm run stop
 
 # Reset the database (will delete all data permanently)
-npm run env clean all
+npm run clean
 
 # Remove the local environment (will delete all data and files permanently)
-npm run env destroy
+npm run destroy
 ```

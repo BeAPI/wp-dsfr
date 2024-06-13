@@ -1,6 +1,9 @@
 {
   "scripts": {
-    "env": "wp-env"
+    "start": "wp-env start",
+    "stop": "wp-env stop",
+    "clean": "wp-env clean all",
+    "destroy": "wp-env destroy"
   },
   "dependencies": {
     "@wordpress/env": "^9.8.0"
