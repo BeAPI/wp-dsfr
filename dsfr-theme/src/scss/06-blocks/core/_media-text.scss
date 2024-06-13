@@ -1,20 +1,31 @@
 .wp-block-media-text {
     $el: &;
+    $vertical-padding: calc(var(--column-gap) / 2);
 
-    --c1: #{column(4, 3, 8)};
-    --c2: #{column(4, 3, 8)};
+    --text-outter-x-padding: 0;
+    --media-inner-x-padding: #{$vertical-padding};
 
     @extend %block-spacing-sm;
 
-    grid-template-columns: var(--c1) var(--c2) !important;
-    justify-content: space-between;
+    figure#{$el}__media {
+        padding: 0 var(--media-inner-x-padding) 0 0;
+    }
 
     #{$el}__content {
-        padding: 0;
+        padding: 0 var(--text-outter-x-padding) 0 $vertical-padding;
     }
 
     &.has-media-on-the-right {
-        grid-template-columns: var(--c2) var(--c1) !important;
+
+        figure#{$el}__media {
+            padding-right: 0;
+            padding-left: var(--media-inner-x-padding);
+        }
+
+        #{$el}__content {
+            padding-right: $vertical-padding;
+            padding-left: var(--text-outter-x-padding);
+        }
     }
 
     #{context-selector("&.alignwide", "[data-align='wide'] > &")} {
@@ -25,9 +36,24 @@
         @extend %block-spacing-lg;
     }
 
+    @include editor-only {
+        --handle-x-margin: var(--media-inner-x-padding);
+
+        .components-resizable-box__handle {
+            margin-right: var(--handle-x-margin);
+        }
+
+        &.has-media-on-the-right {
+            .components-resizable-box__handle {
+                margin-right: 0;
+                margin-left: var(--handle-x-margin);
+            }
+        }
+    }
+
     @include breakpoints(md, max) {
         &.is-stacked-on-mobile {
-            grid-template-columns: 100% !important;
+            grid-template-columns: 100%;
 
             #{$el}__media {
                 grid-row: 1;
@@ -35,9 +61,16 @@
                 margin-bottom: $spacing-6 !important;
             }
 
+            figure#{$el}__media {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
             #{$el}__content {
                 grid-row: 2;
                 grid-column: 1;
+                padding-right: 0;
+                padding-left: 0;
             }
         }
 
@@ -52,32 +85,38 @@
 
     @include breakpoints(md) {
         #{context-selector("&.alignwide", "[data-align='wide'] > &")} {
-            --c1: #{column(5)};
-            --c2: #{column(6)};
+            --media-inner-x-padding: calc(#{$vertical-padding} + #{column(1, 1, 6)});
         }
 
         #{context-selector("&.alignfull", "[data-align='full'] > &")} {
-            --c1: calc((100% - var(--external-gutter)) * #{column-factor(5)} + var(--external-gutter));
-            --c2: calc((100% - var(--external-gutter)) * #{column-factor(6)});
+            --text-outter-x-padding: var(--external-gutter);
+            --media-inner-x-padding: calc((100% - #{$vertical-padding} - var(--external-gutter)) * #{column-factor(1, 1, 6)} + #{$vertical-padding});
 
-            column-gap: column(1, 2);
-            max-width: calc(100% - var(--external-gutter));
-            margin-left: 0;
+            #{$el}__content {
+                max-width: column-px(6);
+            }
 
             &.has-media-on-the-right {
-                margin-right: 0;
-                margin-left: auto;
+                #{$el}__content {
+                    margin-left: auto;
+                }
             }
         }
     }
 
     @include breakpoints(lg) {
         #{context-selector("&.alignfull", "[data-align='full'] > &")} {
-            --c1: auto;
-            --c2: #{column-px(6)};
+            --media-inner-x-padding: #{column-px(1, 1.5)};
 
-            column-gap: column-px(1, 2);
-            max-width: calc(#{$container-wide} + (100% - #{$container-wide}) / 2);
+            #{$el}__content {
+                max-width: calc(column-px(6, 5.5) + var(--external-gutter));
+            }
+
+            &.has-media-on-the-right {
+                #{$el}__content {
+                    margin-left: auto;
+                }
+            }
         }
     }
 }

@@ -1,5 +1,23 @@
 @use "sass:map";
+@use "sass:math";
 @use "sass:string";
+
+/**
+ * To number - convert string to number
+ *
+ * @author: Stackoverflow - https://stackoverflow.com/questions/47630616/scss-arithmetic-operation-with-string
+ *
+ * @param string $value
+ *
+ * Examples :
+ *          @for (dollar)i from 1 through 6 {
+ *              &[data-per-line="#{(dollar)i}"] {
+ *                  .card {
+ *                      width: column(to-number(#{math(dot)div(12, (dollar)i + 1)}));
+ *                  }
+ *              }
+ *          }
+ */
 
 @function to-number($value) {
     @if type-of($value) == "number" {
@@ -23,7 +41,7 @@
                 $result: $result * 10 + map.get($numbers, $character);
             } @else {
                 $digits: $digits * 10;
-                $result: $result + map.get($numbers, $character) / $digits;
+                $result: $result + math.div(map.get($numbers, $character), $digits);
             }
         }
     }
