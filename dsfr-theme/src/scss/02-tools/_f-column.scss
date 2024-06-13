@@ -104,3 +104,11 @@
 
     @return calc((100% - var(--external-gutter) * 2) * #{math.div($width, ($gutter-width * ($total-column - 1) + $column-width * $total-column))});
 }
+
+// ----
+// column factor
+// ----
+
+@function column-factor($device, $nb-column: null, $nb-gutter: null, $total-column: null, $total-gutter: null) {
+    @return math.div(to-number(strip-unit(column($device, $nb-column, $nb-gutter, $total-column, $total-gutter))), 100);
+}
