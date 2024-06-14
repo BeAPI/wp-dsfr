@@ -31,3 +31,47 @@
         line-height: $paragraph-lg-line-height;
     }
 }
+
+@mixin fr-link-download {
+    position: relative;
+    max-width: 100%;
+    max-height: none;
+    padding: 0 0;
+    overflow: initial;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    &::after {
+        --icon-size: 1rem;
+        display: inline-block;
+        flex: 0 0 auto;
+        width: var(--icon-size);
+        height: var(--icon-size);
+        margin-right: -.125rem;
+        margin-bottom: 1.75rem;
+        margin-left: .5rem;
+        vertical-align: calc((.75rem - var(--icon-size)) * .5 - 1.75rem);
+        content: "";
+        background-color: currentColor;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+        mask-image: get-svg-url(download);
+    }
+
+    span {
+        @include fr-link-download-detail;
+    }
+}
+
+@mixin fr-link-download-detail {
+    position: absolute;
+    left: 0;
+    margin-top: 1.75rem !important;
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--text-mention-grey);
+    white-space: nowrap;
+    pointer-events: none;
+    cursor: text;
+}

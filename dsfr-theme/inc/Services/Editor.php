@@ -62,6 +62,11 @@ class Editor implements Service {
 		 * White list of gutenberg blocks
 		 */
 		add_filter( 'allowed_block_types_all', [ $this, 'gutenberg_blocks_allowed' ], 10, 2 );
+
+		/**
+		 * Modify core blocks render
+		 */
+		add_filter( 'register_block_type_args', [ $this, 'core_block_type_args' ], 10, 3 );
 	}
 
 	/**
@@ -258,7 +263,6 @@ class Editor implements Service {
 	/**
 	 * Register custom block styles
 	 */
-
 	private function register_custom_block_styles() {
 		// Buttons
 		register_block_style(
@@ -318,6 +322,7 @@ class Editor implements Service {
 			'core/video',
 			'core/embed',
 			'core/audio',
+			'core/file',
 			// dsfr
 			'dsfr/fr-accordions-group-faq',
 			'dsfr/fr-accordions-group',
@@ -334,5 +339,39 @@ class Editor implements Service {
 		];
 
 		return ( is_array( $allowed_blocks ) ) ? array_merge( $allowed, $allowed_blocks ) : $allowed;
+	}
+
+	/**
+	 * Change args of core blocks
+	 *
+	 * @param array $args
+	 * @param string $name
+	 *
+	 * @return array
+	 */
+	public function core_block_type_args( $args, $name ) {
+		if ( 'core/file' === $name ) {
+			$args['render_callback'] = [ $this, 'modify_core_file' ];
+		}
+
+		return $args;
+	}
+
+	/**
+	 * Modify core file - insert file detail into core/file block
+	 *
+	 * @param array  $attributes
+	 * @param string $content
+	 *
+	 * @return string
+	 */
+	public function modify_core_file( array $attributes, string $content ): string {
+		$file_infos = \Beapi\Theme\Dsfr\Helpers\Misc\get_file_infos( $attributes['id'] );
+
+		if ( empty( $file_infos['href'] ) ) {
+			return $content;
+		}
+
+		return str_replace( '</a>', '<span>' . esc_html( strtoupper( $file_infos['type']['ext'] ) ) .' – ' . esc_html( $file_infos['size'] ) . '</span></a>', $content );
 	}
 }

@@ -47,11 +47,11 @@
     // ----
     // Alignements verticaux
     // ----
-    #{context-selector(":first-child:where(:not(:is(.blocks-container [class*="fr-"] *)))", ":first-child:where(:not(:is([data-align]:not(:first-child) > *, .is-root-container [class*="fr-"] *))), [data-align]:first-child > *")} {
+    #{context-selector(":where(:first-child:not(:is(.blocks-container [class*="fr-"] *)))", ":where(:first-child:not(:is([data-align]:not(:first-child) > *, .is-root-container [class*="fr-"] *))), [data-align]:first-child > *")} {
         margin-top: 0 !important;
     }
 
-    #{context-selector(":last-child:where(:not(:is(.blocks-container [class*="fr-"] *)))", ":last-child:where(:not(:is([data-align]:not(:last-child) > *, .is-root-container [class*="fr-"] *))), [data-align]:last-child > *")} {
+    #{context-selector(":where(:last-child:not(:is(.blocks-container [class*="fr-"] *)))", ":where(:last-child:not(:is([data-align]:not(:last-child) > *, .is-root-container [class*="fr-"] *))), [data-align]:last-child > *")} {
         margin-bottom: 0 !important;
     }
 }
