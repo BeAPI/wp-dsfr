@@ -1,5 +1,14 @@
 <?php
-// FR TAGS GROUP
+/**
+ * COMPONENT - FR TAGS GROUP
+ * 
+ * $args array keys :
+ * 
+ * @param string[]|WP_Terms[] tags
+ * @param string              color
+ * @param array               active_term_slugs
+ * 
+ */
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Link\the_link;
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Text\the_text;
 
@@ -7,43 +16,41 @@ if ( empty( $args['tags'] ) ) {
 	return;
 }
 
-$color     = ! empty( $args['color'] ) ? $args['color'] : '';
-$clickable = isset( $args['clickable'] ) ? $args['clickable'] : true; 
+$color             = ! empty( $args['color'] ) ? $args['color'] : '';
+$active_term_slugs = ! empty( $args['active_term_slugs'] ) ? $args['active_term_slugs'] : [];
 ?>
 <ul class="fr-tags-group">
 	<?php
 	foreach ( $args['tags'] as $fr_tag ) :
-		if  ( $fr_tag instanceof \WP_Term ) {
-			$fr_tag = [
-				'label' => $fr_tag->name,
-				'color' => $color,
-				'href'  => get_term_link($fr_tag),
-			];
-		} else if ( 'string' === gettype( $fr_tag ) ) {
-			$fr_tag = [
-				'label' => $fr_tag,
-				'color' => $color,
-				'href'  => '',
-			];
+		$tag_classes = [ 'fr-tag' ];
+
+		if ( ! empty( $color ) ) {
+			$tag_classes[] = 'fr-tag--' . $color;
 		}
 
-		$tag_color_class = ( ! empty( $fr_tag['color'] ) ? ' fr-tag--' . $fr_tag['color'] : '' );
+		if  ( $fr_tag instanceof \WP_Term ) {
+			$is_active = in_array( $fr_tag->slug, $active_term_slugs, true);
 
-		if ( $clickable && ! empty( $fr_tag['href'] ) ) {
+			if ( $is_active ) {
+				$tag_classes[] = 'fr-tag--dismiss';
+			}
+
 			the_link(
 				[
-					'href'  => $fr_tag['href'],
-					'class' => 'fr-tag' . $tag_color_class,
+					'href'  => $is_active ? get_permalink( get_option( 'page_for_posts' ) ) : get_term_link( $fr_tag ),
+					'class' => implode( ' ', array_map( 'sanitize_html_class', $tag_classes ) ),
+					'title' => $is_active ? esc_attr__( 'Retourner à la page des actualités', 'dsfr-theme' ) : '',
 				],
 				[
-					'content' => $fr_tag['label']
+					'content' => $fr_tag->name
 				]
 			);
-		} else {
+
+		} else if ( 'string' === gettype( $fr_tag ) ) {
 			the_text(
-				$fr_tag['label'],
+				$fr_tag,
 				[
-					'before' => '<li><p class="fr-tag' . $tag_color_class . '">',
+					'before' => '<li><p class="' . implode( ' ', array_map( 'sanitize_html_class', $tag_classes ) ) . '">',
 					'after'  => '</p></li>',
 				]
 			);

@@ -2,8 +2,26 @@
 get_header();
 ?>
 <div class="fr-my-7w fr-mt-md-12w fr-mb-md-10w">
-	<?php get_template_part( 'components/parts/common/hero', '', [ 'title' => get_the_archive_title() ] ); ?>
+	<?php
+	get_template_part(
+		'components/parts/common/hero',
+		'',
+		[
+			'title' => is_category() || is_tag() ? get_the_archive_title() : null,
+		]
+	);
+	?>
 	<div class="fr-container">
+		<?php
+		get_template_part(
+			'components/parts/common/tags-group',
+			'',
+			[
+				'tags'              => get_terms( is_tag() ? 'post_tag' : 'category' ),
+				'active_term_slugs' => is_tag() ? [ get_query_var( 'tag' ) ] : ( is_category() ? [ get_query_var( 'category_name' ) ] : null ),
+			]
+		);
+		?>
 		<div class="grid grid--fr-card-post" data-grid-size="3">
 			<?php
 			if ( have_posts() ) :

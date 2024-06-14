@@ -2,7 +2,7 @@
 // HERO SINGLE
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Text\the_text;
 
-$post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_terms_name( get_the_ID(), 'post_tag' );
+$post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_the_terms_name( get_the_ID(), 'post_tag' );
 ?>
 <header class="hero hero--thumbnail-centered">
 	<div class="fr-container">
@@ -12,7 +12,7 @@ $post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_terms_name( get_the_ID
 				'components/parts/common/tags-group',
 				'',
 				[
-					'tags' => $post_tags,
+					'tags' => Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_the_terms_array( get_the_ID(), 'category' ),
 				]
 			);
 
