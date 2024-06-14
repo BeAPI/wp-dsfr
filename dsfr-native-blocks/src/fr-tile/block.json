@@ -5,7 +5,7 @@
 	"version": "1.0.0",
 	"title": "Tuile",
 	"category": "text",
-	"description": "DSFR bloc tuile",
+	"description": "Bloc DSFR tuile.",
 	"supports": {
 		"html": false,
 		"align": false,

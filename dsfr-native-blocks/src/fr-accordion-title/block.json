@@ -7,7 +7,7 @@
 	"title": "Titre d'accordéon",
 	"category": "widgets",
 	"icon": "editor-textcolor",
-	"description": "DSFR bloc titre d'accordéon",
+	"description": "Bloc DSFR titre d'accordéon.",
 	"supports": {
 		"html": false,
 		"anchor": false,

@@ -6,7 +6,7 @@
 	"title": "List d'onglet",
 	"category": "widgets",
 	"icon": "menu",
-	"description": "DSFR bloc liste d'onglets",
+	"description": "Bloc DSFR liste d'onglets.",
 	"parent": ["dsfr/fr-tabs"],
 	"supports": {
 		"html": false,

@@ -6,7 +6,7 @@
 	"title": "Groupe d'accordéons",
 	"category": "widgets",
 	"icon": "archive",
-	"description": "DSFR bloc groupe d'accordéons.",
+	"description": "Bloc DSFR groupe d'accordéons.",
 	"supports": {
 		"html": false,
 		"anchor": true,

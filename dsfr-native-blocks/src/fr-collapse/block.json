@@ -7,7 +7,7 @@
 	"title": "Collapse",
 	"category": "widgets",
 	"icon": "text-page",
-	"description": "DSFR bloc collapse",
+	"description": "Bloc DSFR collapse.",
 	"supports": {
 		"html": false,
 		"anchor": false,

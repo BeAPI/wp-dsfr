@@ -5,7 +5,7 @@
 	"version": "1.0.0",
 	"title": "Citation",
 	"category": "text",
-	"description": "DSFR bloc citation",
+	"description": "Bloc DSFR citation.",
 	"supports": {
 		"html": false,
 		"align": false,

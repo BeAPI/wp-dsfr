@@ -3,10 +3,10 @@
 	"apiVersion": 2,
 	"name": "dsfr/fr-tabs-panel",
 	"version": "1.0.2",
-	"title": "Onglet - contenu",
+	"title": "Contenu d'onglet",
 	"category": "widgets",
 	"icon": "layout",
-	"description": "DSFR bloc contenu onglet",
+	"description": "Bloc DSFR contenu onglet.",
 	"parent": ["dsfr/fr-tabs"],
 	"supports": {
 		"html": false,

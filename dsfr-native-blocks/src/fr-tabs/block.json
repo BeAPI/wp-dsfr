@@ -6,7 +6,7 @@
 	"title": "Onglets",
 	"category": "widgets",
 	"icon": "table-row-after",
-	"description": "DSFR bloc onglets",
+	"description": "Bloc DSFR onglets.",
 	"supports": {
 		"html": false,
 		"anchor": true,

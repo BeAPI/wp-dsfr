@@ -5,7 +5,7 @@
 	"version": "1.0.0",
 	"title": "Grille de tuiles",
 	"category": "text",
-	"description": "DSFR bloc grille de tuiles",
+	"description": "Bloc DSFR grille de tuiles.",
 	"supports": {
 		"html": false,
 		"align": ["wide", "full"],

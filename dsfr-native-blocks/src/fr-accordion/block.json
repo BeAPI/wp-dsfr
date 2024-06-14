@@ -7,7 +7,7 @@
 	"title": "Accordéons",
 	"category": "widgets",
 	"icon": "button",
-	"description": "DSFR block accordéons.",
+	"description": "Block DSFR accordéons.",
 	"supports": {
 		"html": false,
 		"anchor": false,
