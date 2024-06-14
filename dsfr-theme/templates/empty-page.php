@@ -12,7 +12,6 @@ if ( have_posts() ) :
 			<div class="blocks-container">
 				<?php the_content(); ?>
 			</div>
-			<?php get_template_part( 'components/parts/common/page-top' ); ?>
 		</div>
 		<?php
 	endwhile;
