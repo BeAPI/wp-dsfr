@@ -17,8 +17,7 @@ get_header();
 			'components/parts/common/tags-group',
 			'',
 			[
-				'tags'              => get_terms( is_tag() ? 'post_tag' : 'category' ),
-				'active_term_slugs' => is_tag() ? [ get_query_var( 'tag' ) ] : ( is_category() ? [ get_query_var( 'category_name' ) ] : null ),
+				'tags' => Beapi\Theme\Dsfr\Helpers\Misc\get_archive_tags_group_arg( is_tag() ? 'post_tag' : 'category' ),
 			]
 		);
 		?>

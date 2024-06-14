@@ -4,9 +4,7 @@
  * 
  * $args array keys :
  * 
- * @param string[]|WP_Terms[] tags
- * @param string              color
- * @param array               active_term_slugs
+ * @param string[]|array[] tags
  * 
  */
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Link\the_link;
@@ -15,40 +13,55 @@ use function Beapi\Theme\Dsfr\Helpers\Formatting\Text\the_text;
 if ( empty( $args['tags'] ) ) {
 	return;
 }
-
-$color             = ! empty( $args['color'] ) ? $args['color'] : '';
-$active_term_slugs = ! empty( $args['active_term_slugs'] ) ? $args['active_term_slugs'] : [];
 ?>
 <ul class="fr-tags-group">
 	<?php
 	foreach ( $args['tags'] as $fr_tag ) :
 		$tag_classes = [ 'fr-tag' ];
 
-		if ( ! empty( $color ) ) {
-			$tag_classes[] = 'fr-tag--' . $color;
+		if ( 'string' === gettype( $fr_tag ) ) {
+			$fr_tag = [ 'label' => $fr_tag ];
 		}
 
-		if  ( $fr_tag instanceof \WP_Term ) {
-			$is_active = in_array( $fr_tag->slug, $active_term_slugs, true);
+		$fr_tag = array_merge(
+			[
+				'is_dismissable' => false,
+				'href'           => '',
+				'title'          => '',
+				'color'          => '',
+				'size'           => '',
+				
+			],
+			$fr_tag
+		);
 
-			if ( $is_active ) {
+		if ( ! empty( $fr_tag['color'] ) ) {
+			$tag_classes[] = 'fr-tag--' . $fr_tag['color'];
+		}
+
+		if ( ! empty( $fr_tag['size'] ) ) {
+			$tag_classes[] = 'fr-tag--' . $fr_tag['color'];
+		}
+
+		if  ( ! empty( $fr_tag['href'] ) ) {
+			if ( $fr_tag['is_dismissable'] ) {
 				$tag_classes[] = 'fr-tag--dismiss';
 			}
 
 			the_link(
 				[
-					'href'  => $is_active ? get_permalink( get_option( 'page_for_posts' ) ) : get_term_link( $fr_tag ),
+					'href'  => $fr_tag['href'],
 					'class' => implode( ' ', array_map( 'sanitize_html_class', $tag_classes ) ),
-					'title' => $is_active ? esc_attr__( 'Retourner à la page des actualités', 'dsfr-theme' ) : '',
+					'title' => $fr_tag['title'],
 				],
 				[
-					'content' => $fr_tag->name
+					'content' => $fr_tag['label']
 				]
 			);
 
-		} else if ( 'string' === gettype( $fr_tag ) ) {
+		} else {
 			the_text(
-				$fr_tag,
+				$fr_tag['label'],
 				[
 					'before' => '<li><p class="' . implode( ' ', array_map( 'sanitize_html_class', $tag_classes ) ) . '">',
 					'after'  => '</p></li>',
