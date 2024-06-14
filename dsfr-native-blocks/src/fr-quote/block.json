@@ -3,9 +3,9 @@
 	"apiVersion": 2,
 	"name": "dsfr/fr-quote",
 	"version": "1.0.0",
-	"title": "Quote",
+	"title": "Citation",
 	"category": "text",
-	"description": "DSFR quote block.",
+	"description": "DSFR bloc citation",
 	"supports": {
 		"html": false,
 		"align": false,

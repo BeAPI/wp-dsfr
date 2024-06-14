@@ -4,10 +4,10 @@
 	"name": "dsfr/fr-accordion",
 	"parent": ["dsfr/fr-accordions-group"],
 	"version": "1.0.0",
-	"title": "Accordion",
+	"title": "Accordéons",
 	"category": "widgets",
 	"icon": "button",
-	"description": "DSFR accordion block.",
+	"description": "DSFR block accordéons.",
 	"supports": {
 		"html": false,
 		"anchor": false,

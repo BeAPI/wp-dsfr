@@ -120,7 +120,10 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						onChange={(color) => setAttributes({ color })}
 					/>
 					<ToggleControl
-						label={__('Show author portrait', 'dsfr-native-blocks')}
+						label={__(
+							"Afficher le portrait de l'auteur",
+							'dsfr-native-blocks'
+						)}
 						checked={attributes.displayImage}
 						onChange={(displayImage) => {
 							removeMedia();
@@ -128,7 +131,10 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						}}
 					/>
 					<RadioControl
-						label={__('Quote size', 'dsfr-native-blocks')}
+						label={__(
+							'Taille de la citation',
+							'dsfr-native-blocks'
+						)}
 						selected={attributes.quoteSize}
 						options={[
 							{
@@ -136,7 +142,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 								value: 'lg',
 							},
 							{
-								label: __('Default (XL)', 'dsfr-native-blocks'),
+								label: __('Défaut (XL)', 'dsfr-native-blocks'),
 								value: '',
 							},
 						]}
@@ -144,18 +150,18 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 					/>
 					<TextControl
 						value={attributes.cite}
-						label={__('Cite', 'dsfr-native-blocks')}
+						label={__('Source', 'dsfr-native-blocks')}
 						onChange={(cite) => setAttributes({ cite })}
 						placeholder={'https://www.foo.com'}
 						type="url"
 						help={
 							attributes.cite && !isValidURL(attributes.cite)
 								? __(
-										'This URL is not valid and will not be used.',
+										'Cette URL est invalide est ne sera pas intégrée au bloc',
 										'dsfr-native-blocks'
 								  )
 								: __(
-										'A URL that designates a source document or message for the information quoted. This attribute is intended to point to information explaining the context or the reference for the quote.',
+										"Une URL qui désigne la source du document ou du message cité. Cet attribut est prévu pour signaler l'information expliquant le contexte ou la référence de la citation",
 										'dsfr-native-blocks'
 								  )
 						}
@@ -171,10 +177,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 								? 'fr-text--' + attributes.quoteSize
 								: ''
 						}
-						placeholder={__(
-							'Write your quote here',
-							'dsfr-native-blocks'
-						)}
+						placeholder={__('Citation', 'dsfr-native-blocks')}
 						value={attributes.quote}
 						onChange={(quote) => setAttributes({ quote })}
 						allowedFormats={[]}
@@ -184,7 +187,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 					<RichText
 						tagName="p"
 						className="fr-quote__author"
-						placeholder={__('Author', 'dsfr-native-blocks')}
+						placeholder={__('Auteur', 'dsfr-native-blocks')}
 						value={attributes.author}
 						onChange={(author) => setAttributes({ author })}
 						allowedFormats={[]}
@@ -194,7 +197,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 							<RichText
 								tagName="li"
 								value={source}
-								placeholder={__('Add source')}
+								placeholder={__('Ajouter une source')}
 								onChange={(source) => {
 									updateSources(source, index);
 								}}
@@ -207,7 +210,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 								<Button
 									icon={trash}
 									label={__(
-										'Remove empty field(s)',
+										'Supprimer le(s) champ(s) source(s) vide(s)',
 										'dsfr-native-blocks'
 									)}
 									onClick={cleanSources}
@@ -216,7 +219,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 							<Button
 								icon={plus}
 								label={__(
-									'Add source field',
+									'Ajouter un champ source',
 									'dsfr-native-blocks'
 								)}
 								onClick={addSourceField}
@@ -240,7 +243,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 												/>
 											) : (
 												__(
-													'Choose an image',
+													'Ajouter une image',
 													'dsfr-native-blocks'
 												)
 											)}

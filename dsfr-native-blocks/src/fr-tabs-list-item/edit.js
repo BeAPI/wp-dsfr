@@ -32,14 +32,14 @@ export default function Edit({
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Tab options', 'dsfr-native-blocks')}
+					title={__('Options du bloc Onglet', 'dsfr-native-blocks')}
 					initialOpen={true}
 				>
 					<PanelRow>
 						<TextControl
 							value={buttonClassName}
 							label={__(
-								'Tab button CSS class(es)',
+								"Classe(s) CSS du bouton de l'onglet",
 								'dsfr-native-blocks'
 							)}
 							onChange={(newButtonClassName) => {

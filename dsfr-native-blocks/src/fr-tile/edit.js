@@ -120,25 +120,31 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Tile parameters', 'dsfr-native-blocks')}
+					title={__('Paramètres de la Tuile', 'dsfr-native-blocks')}
 					initialOpen={true}
 				>
 					<ToggleControl
-						label={__('Is horizontal', 'dsfr-native-blocks')}
+						label={__(
+							'Afficher horizontalement',
+							'dsfr-native-blocks'
+						)}
 						checked={attributes.isHorizontal}
 						onChange={(isHorizontal) =>
 							setAttributes({ isHorizontal })
 						}
 					/>
 					<ToggleControl
-						label={__('Display link icon', 'dsfr-native-blocks')}
+						label={__(
+							"Afficher l'icône du lien",
+							'dsfr-native-blocks'
+						)}
 						checked={attributes.displayIcon}
 						onChange={(displayIcon) =>
 							setAttributes({ displayIcon })
 						}
 					/>
 					<ToggleControl
-						label={__('Display image', 'dsfr-native-blocks')}
+						label={__("Afficher l'image", 'dsfr-native-blocks')}
 						checked={attributes.displayImage}
 						onChange={(displayImage) => {
 							removeMedia();
@@ -146,7 +152,10 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						}}
 					/>
 					<ToggleControl
-						label={__('Display border', 'dsfr-native-blocks')}
+						label={__(
+							'Afficher les bordures',
+							'dsfr-native-blocks'
+						)}
 						checked={attributes.displayBorder}
 						onChange={(displayBorder) =>
 							setAttributes({
@@ -158,7 +167,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						}
 					/>
 					<ToggleControl
-						label={__('Display shadow', 'dsfr-native-blocks')}
+						label={__("Afficher l'ombre", 'dsfr-native-blocks')}
 						checked={attributes.displayShadow}
 						onChange={(displayShadow) =>
 							setAttributes({
@@ -170,11 +179,11 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						}
 					/>
 					<RadioControl
-						label={__('Background', 'dsfr-native-blocks')}
+						label={__('Fond', 'dsfr-native-blocks')}
 						selected={attributes.background}
 						options={[
 							{
-								label: __('Grey', 'dsfr-native-blocks'),
+								label: __('Gris', 'dsfr-native-blocks'),
 								value: 'grey',
 							},
 							{
@@ -182,14 +191,14 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 								value: 'no-background',
 							},
 							{
-								label: __('Default', 'dsfr-native-blocks'),
+								label: __('Défaut', 'dsfr-native-blocks'),
 								value: '',
 							},
 						]}
 						onChange={(background) => setAttributes({ background })}
 					/>
 					<RadioControl
-						label={__('Surtitle type', 'dsfr-native-blocks')}
+						label={__('Type de surtitre', 'dsfr-native-blocks')}
 						selected={attributes.surtitleType}
 						options={[
 							{
@@ -201,7 +210,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 								value: 'badge',
 							},
 							{
-								label: __('None', 'dsfr-native-blocks'),
+								label: __('Aucun', 'dsfr-native-blocks'),
 								value: '',
 							},
 						]}
@@ -214,7 +223,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 					/>
 					{attributes.surtitleType === 'badge' && (
 						<DSFRColorSelectControl
-							label={__('Badge color', 'dsfr-native-blocks')}
+							label={__('Couleur du badge', 'dsfr-native-blocks')}
 							value={attributes.badgeColor}
 							onChange={(badgeColor) =>
 								setAttributes({ badgeColor })
@@ -281,7 +290,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 									<RichText
 										tagName="span"
 										placeholder={__(
-											'Add title',
+											'Ajouter un titre',
 											'dsfr-native-blocks'
 										)}
 										value={attributes.title}
@@ -295,7 +304,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 								<RichText
 									tagName="span"
 									placeholder={__(
-										'Add title',
+										'Ajouter un titre',
 										'dsfr-native-blocks'
 									)}
 									value={attributes.title}
@@ -311,7 +320,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 							tagName="p"
 							className="fr-tile__desc"
 							placeholder={__(
-								'Add description',
+								'Ajouter une description',
 								'dsfr-native-blocks'
 							)}
 							value={attributes.description}
@@ -324,7 +333,10 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						<RichText
 							tagName="p"
 							className="fr-tile__detail"
-							placeholder={__('Add detail', 'dsfr-native-blocks')}
+							placeholder={__(
+								'Ajouter des détails',
+								'dsfr-native-blocks'
+							)}
 							value={attributes.detail}
 							onChange={(detail) => setAttributes({ detail })}
 							allowedFormats={[]}
@@ -336,7 +348,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 									tagName="p"
 									className={getSurtitleClasses(attributes)}
 									placeholder={__(
-										'Add text',
+										'Ajouter un texte',
 										'dsfr-native-blocks'
 									)}
 									value={attributes.surtitleText}
@@ -379,7 +391,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 												)
 											) : (
 												__(
-													'Choose an image',
+													'Choisir une image',
 													'dsfr-native-blocks'
 												)
 											)}

@@ -3,10 +3,10 @@
 	"apiVersion": 2,
 	"name": "dsfr/fr-tabs-list-item",
 	"version": "1.0.2",
-	"title": "Tab",
+	"title": "Onglet",
 	"category": "widgets",
 	"icon": "button",
-	"description": "DSFR tabs tab block",
+	"description": "DSFR bloc onglet",
 	"parent": ["dsfr/fr-tabs-list"],
 	"supports": {
 		"html": false,

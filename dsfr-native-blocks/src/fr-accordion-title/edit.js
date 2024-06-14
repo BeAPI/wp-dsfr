@@ -24,7 +24,7 @@ export default function Edit({ attributes, setAttributes, context }) {
 				className="fr-accordion__btn"
 				allowedFormats={[]}
 				value={label}
-				placeholder={__('Accordion title', 'dsfr-native-blocks')}
+				placeholder={__("Titre de l'accordéon", 'dsfr-native-blocks')}
 				onChange={(content) => {
 					setAttributes({ label: content });
 				}}
