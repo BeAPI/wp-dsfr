@@ -157,7 +157,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						help={
 							attributes.cite && !isValidURL(attributes.cite)
 								? __(
-										'Cette URL est invalide est ne sera pas intégrée au bloc',
+										'Cette URL est invalide et ne sera pas intégrée au bloc',
 										'dsfr-native-blocks'
 								  )
 								: __(
