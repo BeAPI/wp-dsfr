@@ -33,11 +33,14 @@ export default function Edit({ attributes, setAttributes }) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Tiles grid parameters', 'dsfr-native-blocks')}
+					title={__(
+						'Paramètres de la grille de tuiles',
+						'dsfr-native-blocks'
+					)}
 					initialOpen={true}
 				>
 					<RangeControl
-						label={__('Tiles by line', 'dsfr-native-blocks')}
+						label={__('Tuiles par ligne', 'dsfr-native-blocks')}
 						value={attributes.tilesByLine}
 						onChange={(tilesByLine) =>
 							setAttributes({ tilesByLine })
@@ -46,7 +49,7 @@ export default function Edit({ attributes, setAttributes }) {
 						max={6}
 						help={sprintf(
 							__(
-								'%d column(s) for desktop, %d for tablet and %s for mobile'
+								'%d colonnes(s) pour les ordinateurs de bureau, %d pour les tablettes et %s pour les mobiles'
 							),
 							tilesByLineMD,
 							tilesByLineSM,

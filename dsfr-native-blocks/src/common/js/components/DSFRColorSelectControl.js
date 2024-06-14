@@ -6,7 +6,7 @@ export default function (props) {
 	const colorsList = getDSFRColorList();
 	const options = [
 		{
-			label: __('Default', 'dsfr-native-blocks'),
+			label: __('Défaut', 'dsfr-native-blocks'),
 			value: '',
 		},
 	];
@@ -20,7 +20,7 @@ export default function (props) {
 
 	props = Object.assign(
 		{
-			label: __('Block color', 'dsfr-native-blocks'),
+			label: __('Couleur du bloc', 'dsfr-native-blocks'),
 		},
 		props,
 		{ options }

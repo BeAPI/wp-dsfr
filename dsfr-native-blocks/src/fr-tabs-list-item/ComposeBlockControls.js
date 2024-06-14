@@ -18,7 +18,7 @@ const ComposeBlockControls = ({
 			controls={[
 				{
 					icon: 'arrow-left-alt2',
-					title: __('Move Item Before', 'dsfr-native-blocks'),
+					title: __("Placer l'item avant", 'dsfr-native-blocks'),
 					isDisabled: 0 === index,
 					onClick: () => {
 						onMoveUp(index);
@@ -26,7 +26,7 @@ const ComposeBlockControls = ({
 				},
 				{
 					icon: 'arrow-right-alt2',
-					title: __('Move Item After', 'dsfr-native-blocks'),
+					title: __("Placer l'item après", 'dsfr-native-blocks'),
 					isDisabled: count === index + 1,
 					onClick: () => {
 						onMoveDown(index);
@@ -38,21 +38,21 @@ const ComposeBlockControls = ({
 			controls={[
 				{
 					icon: 'table-col-before',
-					title: __('Add Item Before', 'dsfr-native-blocks'),
+					title: __('Ajouter un item avant', 'dsfr-native-blocks'),
 					onClick: () => {
 						onInsertBlock(index);
 					},
 				},
 				{
 					icon: 'table-col-after',
-					title: __('Add Item After', 'dsfr-native-blocks'),
+					title: __('Ajouter un item après', 'dsfr-native-blocks'),
 					onClick: () => {
 						onInsertBlock(index + 1);
 					},
 				},
 				{
 					icon: 'trash',
-					title: __('Delete Item', 'dsfr-native-blocks'),
+					title: __("Supprimer l'item", 'dsfr-native-blocks'),
 					onClick: () => {
 						onRemoveBlocks(index);
 					},

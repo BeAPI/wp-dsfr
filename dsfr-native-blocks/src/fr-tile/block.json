@@ -3,9 +3,9 @@
 	"apiVersion": 2,
 	"name": "dsfr/fr-tile",
 	"version": "1.0.0",
-	"title": "Tile",
+	"title": "Tuile",
 	"category": "text",
-	"description": "DSFR tile block.",
+	"description": "DSFR bloc tuile",
 	"supports": {
 		"html": false,
 		"align": false,

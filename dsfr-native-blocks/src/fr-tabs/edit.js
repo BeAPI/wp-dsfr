@@ -40,7 +40,7 @@ export default function Edit({
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Accessibility', 'dsfr-native-blocks')}
+					title={__('Accéssibilité', 'dsfr-native-blocks')}
 					icon={heading}
 					initialOpen={true}
 				>

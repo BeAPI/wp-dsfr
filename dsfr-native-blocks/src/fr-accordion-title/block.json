@@ -4,10 +4,10 @@
 	"name": "dsfr/fr-accordion-title",
 	"parent": ["dsfr/fr-accordion"],
 	"version": "1.0.0",
-	"title": "Accordion title",
+	"title": "Titre d'accordéon",
 	"category": "widgets",
 	"icon": "editor-textcolor",
-	"description": "DSFR accordion title block.",
+	"description": "DSFR bloc titre d'accordéon",
 	"supports": {
 		"html": false,
 		"anchor": false,

@@ -3,9 +3,9 @@
 	"apiVersion": 2,
 	"name": "dsfr/fr-tiles-group",
 	"version": "1.0.0",
-	"title": "Tiles",
+	"title": "Grille de tuiles",
 	"category": "text",
-	"description": "DSFR tiles group block.",
+	"description": "DSFR bloc grille de tuiles",
 	"supports": {
 		"html": false,
 		"align": ["wide", "full"],

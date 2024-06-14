@@ -3,10 +3,10 @@
 	"apiVersion": 2,
 	"name": "dsfr/fr-accordions-group",
 	"version": "1.0.0",
-	"title": "Accordions group",
+	"title": "Groupe d'accordéons",
 	"category": "widgets",
 	"icon": "archive",
-	"description": "DSFR accordions group block.",
+	"description": "DSFR bloc groupe d'accordéons.",
 	"supports": {
 		"html": false,
 		"anchor": true,
