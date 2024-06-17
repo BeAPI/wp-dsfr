@@ -12,13 +12,7 @@ use function Beapi\Theme\Dsfr\Helpers\Formatting\Escape\escape_content_value;
  * @return array Return an array with the terms name
  */
 function get_the_terms_name( $post_id, string $taxonomy ): array {
-	$terms = get_the_terms( $post_id, $taxonomy );
-
-	if ( false === $terms || is_wp_error( $terms ) ) {
-		return [];
-	}
-
-	return wp_list_pluck( $terms, 'name' );
+	return wp_list_pluck( get_the_terms_array( $post_id, $taxonomy ), 'name' );
 }
 
 /**

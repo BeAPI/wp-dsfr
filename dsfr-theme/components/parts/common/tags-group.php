@@ -40,7 +40,7 @@ if ( empty( $args['tags'] ) ) {
 		}
 
 		if ( ! empty( $fr_tag['size'] ) ) {
-			$tag_classes[] = 'fr-tag--' . $fr_tag['color'];
+			$tag_classes[] = 'fr-tag--' . $fr_tag['size'];
 		}
 
 		if  ( ! empty( $fr_tag['href'] ) ) {
