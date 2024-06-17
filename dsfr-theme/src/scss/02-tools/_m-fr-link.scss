@@ -53,12 +53,11 @@
         vertical-align: calc((.75rem - var(--icon-size)) * .5 - 1.75rem);
         content: "";
         background-color: currentColor;
-        -webkit-mask-size: 100% 100%;
         mask-size: 100% 100%;
         mask-image: get-svg-url(download);
     }
 
-    span {
+    .fr-link__detail {
         @include fr-link-download-detail;
     }
 }

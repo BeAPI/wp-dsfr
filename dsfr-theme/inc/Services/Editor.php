@@ -372,6 +372,6 @@ class Editor implements Service {
 			return $content;
 		}
 
-		return str_replace( '</a>', '<span>' . esc_html( strtoupper( $file_infos['type']['ext'] ) ) .' – ' . esc_html( $file_infos['size'] ) . '</span></a>', $content );
+		return str_replace( '</a>', '<span class="fr-link__detail">' . esc_html( strtoupper( $file_infos['type']['ext'] ) ) .' – ' . esc_html( $file_infos['size'] ) . '</span></a>', $content );
 	}
 }
