@@ -1,15 +1,12 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 const WebpackBar = require('webpackbar')
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin')
-
-const browsersyncConfig = require('./browsersync.config')
 
 module.exports = {
   get: function (mode) {
@@ -45,7 +42,6 @@ module.exports = {
       )
     } else {
       plugins.push(
-        new BrowserSyncPlugin(browsersyncConfig.browserSyncOptions, browsersyncConfig.pluginOptions),
         new MiniCssExtractPlugin({
           filename: '[name].css',
         })
