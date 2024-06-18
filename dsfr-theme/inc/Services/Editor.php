@@ -260,6 +260,15 @@ class Editor implements Service {
 	 */
 
 	private function register_custom_block_styles() {
+		// Headings
+		register_block_style(
+			'core/heading',
+			[
+				'name'  => 'flag-fr',
+				'label' => 'Drapeau FR',
+			]
+		);
+
 		// Buttons
 		register_block_style(
 			'core/button',

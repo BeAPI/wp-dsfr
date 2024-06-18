@@ -40,3 +40,14 @@
         @extend %display-#{$size};
     }
 }
+
+.is-style-flag-fr {
+    &::before {
+        display: block;
+        width: 114px;
+        height: 5px;
+        margin-bottom: $text-spacing;
+        content: "";
+        background: linear-gradient(to right, var(--blue-france-sun-113-625) 33.33%, var(--grey-950-125) 33.33%, var(--grey-950-125) 66.66%, var(--red-marianne-main-472) 66.66%);
+    }
+}
