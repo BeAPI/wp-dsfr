@@ -41,8 +41,9 @@ class Editor_Patterns implements Service {
 			'badge'     => [ 'label' => 'Badge' ],
 			'btn'       => [ 'label' => 'Bouton' ],
 			'callout'   => [ 'label' => 'Mise en avant' ],
+			'hero'      => [ 'label' => 'Hero' ],
 			'highlight' => [ 'label' => 'Mise en exergue' ],
-			'icon'      => [ 'label' => 'Icônes' ],
+			'icon'      => [ 'label' => 'Icône' ],
 			'link'      => [ 'label' => 'Lien' ],
 			'table'     => [ 'label' => 'Tableau' ],
 		];

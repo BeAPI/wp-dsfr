@@ -1,0 +1,64 @@
+.wp-block-group {
+    $el: &;
+
+    &--hero {
+        @extend %block-spacing-lg;
+
+        #{context-selector('&.alignfull.has-background', '[data-align="full"] > &.has-background')} {
+            padding-top: $spacing-12;
+            padding-bottom: $spacing-12;
+        }
+
+        &.alignfull {
+            > #{$el}__inner-container {
+                width: auto;
+                max-width: none;
+            }
+        }
+
+        @include style-only {
+            &.alignfull.has-background:first-child {
+                position: relative;
+                padding-top: 0;
+
+                &::before {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    z-index: -1;
+                    width: 100%;
+                    height: calc(100% + 500px);
+                    content: "";
+                    background: inherit;
+                }
+            }
+        }
+
+        .wp-block-columns {
+            row-gap: $spacing-9;
+        }
+
+        figure:has(img[src$=".svg"]) {
+            .components-resizable-box__container,
+            img {
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+
+        @include breakpoints(md, max) {
+            #{$el}__inner-container > figure:has(img:not([src$=".svg"])),
+            .wp-block-column:last-child:has(img:not([src$=".svg"])) {
+                margin: 0 calc(var(--external-gutter) * -1) -#{$spacing-12} calc(var(--external-gutter) * -1) !important;
+            }
+        }
+
+        @include breakpoints(md) {
+            #{context-selector('&.alignfull.has-background', '[data-align="full"] > &.has-background')} {
+                padding-top: $spacing-14;
+                padding-bottom: $spacing-14;
+            }
+        }
+    }
+}
