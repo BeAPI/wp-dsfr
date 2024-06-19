@@ -2,9 +2,12 @@
     @include fr-link;
 }
 
-// fix for download link
-// see FRLinkDownload.js and https://github.com/GouvernementFR/dsfr/issues/902
-.fr-link--download {
+%fr-link-download {
+    @extend %fr-link-download-fix;
+    @include fr-link-download;
+}
+
+%fr-link-download-fix {
     &.has-js-fr-download-link-icon {
         &::after {
             content: none;
@@ -23,4 +26,10 @@
         mask-size: 100% 100%;
         mask-image: get-svg-url(download, "");
     }
+}
+
+// fix for download link
+// see FRLinkDownload.js and https://github.com/GouvernementFR/dsfr/issues/902
+.fr-link--download {
+    @extend %fr-link-download-fix;
 }

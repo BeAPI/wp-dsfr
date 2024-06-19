@@ -33,7 +33,7 @@ class FrLinkDownload extends AbstractDomElement {
 // ----
 // init
 // ----
-FrLinkDownload.init('.fr-link--download')
+FrLinkDownload.init('.fr-link--download, .wp-block-file a:first-child')
 
 // ----
 // export

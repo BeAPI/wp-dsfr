@@ -62,6 +62,11 @@ class Editor implements Service {
 		 * White list of gutenberg blocks
 		 */
 		add_filter( 'allowed_block_types_all', [ $this, 'gutenberg_blocks_allowed' ], 10, 2 );
+
+		/**
+		 * Modify core blocks render
+		 */
+		add_filter( 'render_block_core/file', [ $this, 'override_block_core_file_render' ], 20, 3 );
 	}
 
 	/**
@@ -258,7 +263,6 @@ class Editor implements Service {
 	/**
 	 * Register custom block styles
 	 */
-
 	private function register_custom_block_styles() {
 		// Headings
 		register_block_style(
@@ -327,6 +331,7 @@ class Editor implements Service {
 			'core/video',
 			'core/embed',
 			'core/audio',
+			'core/file',
 			// dsfr
 			'dsfr/fr-accordions-group-faq',
 			'dsfr/fr-accordions-group',
@@ -343,5 +348,31 @@ class Editor implements Service {
 		];
 
 		return ( is_array( $allowed_blocks ) ) ? array_merge( $allowed, $allowed_blocks ) : $allowed;
+	}
+
+	/**
+	 * Modify core file - insert file detail into core/file block
+	 *
+	 * @param string   $block_content
+	 * @param array    $block
+	 * @param WP_Block $instance
+	 *
+	 * @return string
+	 */
+	public function override_block_core_file_render( string $block_content, array $block, \WP_Block $instance ): string {
+		if ( empty( $block['attrs'] ) || empty( $block['attrs']['id'] ) ) {
+			return $block_content;
+		}
+
+		$file_infos = \Beapi\Theme\Dsfr\Helpers\Misc\get_file_infos( $block['attrs']['id'] );
+		$position   = strpos( $block_content, '</a>' );
+
+		if ( empty( $file_infos['href'] ) || false === $position ) {
+			return $block_content;
+		}
+
+		$detail = \Beapi\Theme\Dsfr\Helpers\Misc\get_file_detail( $file_infos );
+
+		return substr_replace( $block_content, '<span class="fr-link__detail">' . esc_html( $detail ) . '</span></a>', $position, 4 );
 	}
 }
