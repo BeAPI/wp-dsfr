@@ -9,15 +9,8 @@
             padding-bottom: $spacing-12;
         }
 
-        &.alignfull {
-            > #{$el}__inner-container {
-                width: auto;
-                max-width: none;
-            }
-        }
-
         @include style-only {
-            &.alignfull.has-background:first-child {
+            body:not(.single) .blocks-container > &.alignfull.has-background:first-child {
                 position: relative;
                 padding-top: 0;
 
@@ -36,15 +29,6 @@
 
         .wp-block-columns {
             row-gap: $spacing-9;
-        }
-
-        figure:has(img[src$=".svg"]) {
-            .components-resizable-box__container,
-            img {
-                display: block;
-                margin-right: auto;
-                margin-left: auto;
-            }
         }
 
         @include breakpoints(md, max) {

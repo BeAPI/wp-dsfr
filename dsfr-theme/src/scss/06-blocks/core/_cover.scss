@@ -5,7 +5,7 @@
     padding: 0;
 
     #{$el}__inner-container {
-        padding: 72px 24px;
+        padding: $spacing-12 $spacing-6;
     }
 
     &.is-light {
@@ -64,8 +64,8 @@
 
         #{context-selector("&.alignwide", "[data-align='wide'] > &")},
         #{context-selector("&.alignfull", "[data-align='full'] > &")} {
-            margin-top: 120px;
-            margin-bottom: 120px;
+            margin-top: $spacing-14;
+            margin-bottom: $spacing-14;
 
             #{$el}__inner-container {
                 > .has-text-align-right,

@@ -31,8 +31,8 @@
 
 		<!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%">
-			<!-- wp:image {"width":"180px","height":"auto"} -->
-			<figure class="wp-block-image is-resized"><img alt="" style="width:180px;height:auto"/></figure>
+			<!-- wp:image {"width":"180px","height":"180px","scale":"cover","align":"center"} -->
+			<figure class="wp-block-image aligncenter is-resized"><img alt="" style="object-fit:cover;width:180px;height:180px" /></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->

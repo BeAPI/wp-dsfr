@@ -93,6 +93,16 @@
     }
 }
 
+%block-inner-spacing-md {
+    padding-top: $spacing-10;
+    padding-bottom: $spacing-10;
+
+    @include breakpoints(md) {
+        padding-top: $spacing-12;
+        padding-bottom: $spacing-12;
+    }
+}
+
 %block-spacing-lg {
     margin-top: $spacing-12;
     margin-bottom: $spacing-12;

@@ -37,15 +37,16 @@ class Editor_Patterns implements Service {
 		 * usage : 'common' => [ 'label' => __( 'Common', 'dsfr-theme' ) ]
 		 */
 		$pattern_categories = [
-			'alert'     => [ 'label' => 'Alerte' ],
-			'badge'     => [ 'label' => 'Badge' ],
-			'btn'       => [ 'label' => 'Bouton' ],
-			'callout'   => [ 'label' => 'Mise en avant' ],
-			'hero'      => [ 'label' => 'Hero' ],
-			'highlight' => [ 'label' => 'Mise en exergue' ],
-			'icon'      => [ 'label' => 'Icône' ],
-			'link'      => [ 'label' => 'Lien' ],
-			'table'     => [ 'label' => 'Tableau' ],
+			'alert'     => [ 'label' => __( 'Alerte', 'dsfr-theme' ) ],
+			'badge'     => [ 'label' => __( 'Badge', 'dsfr-theme' ) ],
+			'btn'       => [ 'label' => __( 'Bouton', 'dsfr-theme' ) ],
+			'callout'   => [ 'label' => __( 'Mise en avant', 'dsfr-theme' ) ],
+			'hero'      => [ 'label' => __( 'Hero', 'dsfr-theme' ) ],
+			'highlight' => [ 'label' => __( 'Mise en exergue', 'dsfr-theme' ) ],
+			'icon'      => [ 'label' => __( 'Icône', 'dsfr-theme' ) ],
+			'link'      => [ 'label' => __( 'Lien', 'dsfr-theme' ) ],
+			'table'     => [ 'label' => __( 'Tableau', 'dsfr-theme' ) ],
+			'misc'      => [ 'label' => __( 'Divers', 'dsfr-theme' ) ],
 		];
 
 		foreach ( $pattern_categories as $name => $properties ) {
