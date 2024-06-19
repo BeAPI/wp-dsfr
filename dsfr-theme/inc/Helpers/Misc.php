@@ -16,7 +16,7 @@ function get_file_infos( int $file_id ): array {
 			'href' => '',
 			'path' => '',
 			'size' => '',
-			'type' => '',
+			'ext'  => '',
 		];
 	}
 
@@ -26,6 +26,27 @@ function get_file_infos( int $file_id ): array {
 		'href' => $file_href,
 		'path' => $file_path,
 		'size' => size_format( wp_filesize( $file_path ) ),
-		'type' => wp_check_filetype( $file_path ),
+		'ext'  => wp_check_filetype( $file_path )['ext'],
 	];
+}
+
+/**
+ * Get file details
+ *
+ * @param array $file_infos (see function below)
+ *
+ * @return string $file_detail
+ */
+function get_file_detail( array $file_infos ): string {
+	$details = [];
+
+	if ( ! empty( $file_infos['ext'] ) ) {
+		$details[] = strtoupper( $file_infos['ext'] );
+	}
+	
+	if ( ! empty( $file_infos['size'] ) ) {
+		$details[] = $file_infos['size'];
+	}
+
+	return implode( ' – ', $details );
 }

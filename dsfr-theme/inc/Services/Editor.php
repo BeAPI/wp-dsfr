@@ -66,7 +66,7 @@ class Editor implements Service {
 		/**
 		 * Modify core blocks render
 		 */
-		add_filter( 'register_block_type_args', [ $this, 'core_block_type_args' ], 10, 3 );
+		add_filter( 'render_block_core/file', [ $this, 'override_block_core_file_render' ], 20, 3 );
 	}
 
 	/**
@@ -342,22 +342,6 @@ class Editor implements Service {
 	}
 
 	/**
-	 * Change args of core blocks
-	 *
-	 * @param array $args
-	 * @param string $name
-	 *
-	 * @return array
-	 */
-	public function core_block_type_args( $args, $name ) {
-		if ( 'core/file' === $name ) {
-			$args['render_callback'] = [ $this, 'modify_core_file' ];
-		}
-
-		return $args;
-	}
-
-	/**
 	 * Modify core file - insert file detail into core/file block
 	 *
 	 * @param array  $attributes
@@ -365,13 +349,20 @@ class Editor implements Service {
 	 *
 	 * @return string
 	 */
-	public function modify_core_file( array $attributes, string $content ): string {
-		$file_infos = \Beapi\Theme\Dsfr\Helpers\Misc\get_file_infos( $attributes['id'] );
-
-		if ( empty( $file_infos['href'] ) ) {
-			return $content;
+	public function override_block_core_file_render( string $block_content, array $block, \WP_Block $instance ): string {
+		if ( empty( $block['attrs'] ) || empty( $block['attrs']['id'] ) ) {
+			return $block_content;
 		}
 
-		return str_replace( '</a>', '<span class="fr-link__detail">' . esc_html( strtoupper( $file_infos['type']['ext'] ) ) .' – ' . esc_html( $file_infos['size'] ) . '</span></a>', $content );
+		$file_infos = \Beapi\Theme\Dsfr\Helpers\Misc\get_file_infos( $block['attrs']['id'] );
+		$position   = strpos( $block_content, '</a>' );
+
+		if ( empty( $file_infos['href'] ) || false === $position ) {
+			return $block_content;
+		}
+
+		$detail = \Beapi\Theme\Dsfr\Helpers\Misc\get_file_detail( $file_infos );
+
+		return substr_replace( $block_content, '<span class="fr-link__detail">' . esc_html( $detail ) . '</span></a>', $position, 4 );
 	}
 }
