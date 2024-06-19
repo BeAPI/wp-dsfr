@@ -1,31 +1,32 @@
+[![EN](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/BeAPI/dsfr/blob/develop/README.EN.md)
+
 # 🇫🇷 DSFR
 
-## Tooling
+## Outils
 
-### Local environment
+### Environnement local
 
-This repository use [`@wordpress/env`](https://www.npmjs.com/package/@wordpress/env) package to easily setup a local
-environment to work on the DSFR theme and the associated plugins.
+Ce dépôt utilise le package [`@wordpress/env`](https://www.npmjs.com/package/@wordpress/env) pour configurer facilement un environnement local pour travailler sur le thème DSFR et les plugins associés.
 
-The local environment is available at the URL http://localhost:8888
-You ca use `admin`/`password` to log in to the admin.
+L'environnement local est disponible à l'URL http://localhost:8888
+Vous pouvez utiliser `admin`/`password` pour vous connecter à l'administration.
 
-You'll need to install the dependencies first 
+Vous devrez d'abord installer les dépendances :
 ```bash
 npm install
 ```
 
-After the installation in complete you can use the `env` command to manage the local environment
+Après l'installation, vous pouvez utiliser la commande `env` pour gérer l'environnement local :
 ```bash
-# Start the local environement (available at http://localhost:8888)
+# Démarrer l'environnement local (disponible à http://localhost:8888)
 npm start
 
-# Stop the local environement
+# Arrêter l'environnement local
 npm run stop
 
-# Reset the database (will delete all data permanently)
+# Réinitialiser la base de données (supprimera toutes les données de manière permanente)
 npm run clean
 
-# Remove the local environment (will delete all data and files permanently)
+# Supprimer l'environnement local (supprimera toutes les données et fichiers de manière permanente)
 npm run destroy
 ```

@@ -1,22 +1,25 @@
+[![EN](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/BeAPI/dsfr/blob/develop/dsfr-native-blocks/README.EN.md)
+
 # 🇫🇷 Dsfr Native Blocks
-- Contributors:      BeAPI
-- Tags:              block
-- Tested up to:      6.1
-- Stable tag:        0.1.0
-- License:           GPL-2.0-or-later
-- License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+
+- Contributeurs : BeAPI
+- Étiquettes : block
+- Testé jusqu'à : 6.1
+- Version stable : 0.1.0
+- Licence : GPL-2.0-or-later
+- URL de la licence : https://www.gnu.org/licenses/gpl-2.0.html
 
 ## Description
 
-DSFR Gutenberg blocks for WordPress DSFR theme
+Blocs Gutenberg DSFR pour le thème WordPress DSFR
 
 ## Installation
 
-1. Upload the plugin files to the `/wp-content/plugins/dsfr-native-blocks` directory
-2. Activate the plugin through the 'Plugins' screen in WordPress
-3. Build blocks with `npm install` and `npm run build` in `/dsfr-native-blocks` folder (see required node version in package.json)
+1. Téléversez les fichiers du plugin dans le répertoire `/wp-content/plugins/dsfr-native-blocks`
+2. Activez le plugin via l'écran "Extensions" dans WordPress
+3. Construisez les blocs avec `npm install` et `npm run build` dans le dossier `/dsfr-native-blocks` (voir la version de Node requise dans package.json)
 
-## Changelog
+## Journal des changements
 
 ### 0.1.0
-* Release
+* Première version
