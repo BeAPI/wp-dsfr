@@ -1,0 +1,27 @@
+.wp-block-group {
+    $el: &;
+
+    &#{$el}--arguments {
+        @extend %block-spacing-lg;
+
+        .wp-block-heading {
+            margin-bottom: 40px;
+        }
+
+        &.has-background {
+            @extend %block-inner-spacing-md;
+        }
+
+        .wp-block-columns {
+            margin-top: 0;
+
+            .wp-block-image {
+                margin-bottom: $spacing-5;
+            }
+
+            .wp-block-heading {
+                margin-bottom: $spacing-5;
+            }
+        }
+    }
+}

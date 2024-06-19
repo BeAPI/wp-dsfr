@@ -7,7 +7,7 @@
         padding: $spacing-6 var(--external-gutter);
     }
 
-    &__inner-container {
+    #{$el}__inner-container {
         > * {
             max-width: none;
         }
@@ -32,8 +32,8 @@
 
     @include breakpoints(md) {
         &.has-background {
-            padding-top: $spacing-7;
-            padding-bottom: $spacing-7;
+            padding-top: $spacing-14;
+            padding-bottom: $spacing-14;
         }
     }
 }

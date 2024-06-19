@@ -46,6 +46,7 @@ class Editor_Patterns implements Service {
 			'icon'      => [ 'label' => 'Icône' ],
 			'link'      => [ 'label' => 'Lien' ],
 			'table'     => [ 'label' => 'Tableau' ],
+			'misc'      => [ 'label' => 'Divers' ],
 		];
 
 		foreach ( $pattern_categories as $name => $properties ) {
