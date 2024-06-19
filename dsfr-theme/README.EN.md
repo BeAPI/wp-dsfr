@@ -1,4 +1,4 @@
-[![FR](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/BeAPI/dsfr/blob/develop/dsfr-theme/README.md)
+[![FR](https://img.shields.io/badge/lang-fr-blue.svg)](https://github.com/BeAPI/dsfr/blob/develop/dsfr-theme/README.md)
 
 # 🇫🇷 DSFR theme
 
