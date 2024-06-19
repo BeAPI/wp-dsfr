@@ -344,8 +344,9 @@ class Editor implements Service {
 	/**
 	 * Modify core file - insert file detail into core/file block
 	 *
-	 * @param array  $attributes
-	 * @param string $content
+	 * @param string   $block_content
+	 * @param array    $block
+	 * @param WP_Block $instance
 	 *
 	 * @return string
 	 */
