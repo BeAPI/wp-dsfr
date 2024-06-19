@@ -31,15 +31,6 @@
             row-gap: $spacing-9;
         }
 
-        figure:has(img[src$=".svg"]) {
-            .components-resizable-box__container,
-            img {
-                display: block;
-                margin-right: auto;
-                margin-left: auto;
-            }
-        }
-
         @include breakpoints(md, max) {
             #{$el}__inner-container > figure:has(img:not([src$=".svg"])),
             .wp-block-column:last-child:has(img:not([src$=".svg"])) {

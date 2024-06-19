@@ -15,8 +15,8 @@
 	<!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide">
 		<?php for ( $i = 0; $i < 3; $i++ ) : ?>
-		<!-- wp:column -->
-		<div class="wp-block-column">
+		<!-- wp:column {"width":"29.33%"} -->
+		<div class="wp-block-column" style="flex-basis:29.33%">
 			<!-- wp:image {"width":"120px","height":"120px","scale":"cover","align":"center"} -->
 			<figure class="wp-block-image aligncenter is-resized"><img alt="" style="object-fit:cover;width:120px;height:120px" /></figure>
 			<!-- /wp:image -->
