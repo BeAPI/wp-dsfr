@@ -4,13 +4,18 @@
  * 
  * $args array keys :
  * 
- * @param array $tags = [
- *     'is_dismissable' => bool,
- *     'label'          => '',
- *     'href'           => '',
- *     'title'          => '',
- *     'color'          => 'green-menthe' | ...,
- *     'size'           => '' | 'sm',
+ * @param array $args = [
+ *     'tags' => [
+ *          [
+ *               'is_dismissable' => bool,
+ *               'label'          => '',
+ *               'href'           => '',
+ *               'title'          => '',
+ *               'color'          => 'green-menthe' | ...,
+ *               'size'           => '' | 'sm',
+ *          ],
+ *          ...
+ *     ]
  * ]
  * 
  */

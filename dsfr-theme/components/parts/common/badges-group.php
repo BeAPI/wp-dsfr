@@ -2,16 +2,16 @@
 /**
  * COMPONENT - FR BADGES GROUP
  * 
- * $args array keys :
- * 
- * @param array $badges = [
- *    [
- *        'type'     => '' | 'success' | 'error' | 'info' | 'warning' | 'new'
- *        'size'     => '' | 'sm'
- *        'color'    => 'green-menthe' | ... (priority goes to type)
- *        'has_icon' => bool
- *    ],
- *    ...
+ * @param array $args = [
+ *    'badges' => [
+ *        [
+ *            'type'     => '' | 'success' | 'error' | 'info' | 'warning' | 'new'
+ *            'size'     => '' | 'sm'
+ *            'color'    => 'green-menthe' | ... (priority goes to type)
+ *            'has_icon' => bool
+ *        ],
+ *        ...
+ *    ]
  * ]
  * 
  */

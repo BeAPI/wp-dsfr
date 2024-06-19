@@ -2,9 +2,9 @@
 /**
  * COMPONENT - CARD SEARCH
  * 
- * $args array keys :
- * 
- * @param string $heading_level
+ * @param array $args = [
+ *     'heading_level' => ''
+ * ]
  * 
  */
 
