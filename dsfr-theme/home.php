@@ -3,13 +3,7 @@ get_header();
 ?>
 <div class="fr-my-7w fr-mt-md-12w fr-mb-md-10w">
 	<?php
-	get_template_part(
-		'components/parts/common/hero',
-		'',
-		[
-			'title' => is_category() || is_tag() ? get_the_archive_title() : null,
-		]
-	);
+	get_template_part( 'components/parts/common/hero' );
 	?>
 	<div class="fr-container">
 		<?php
@@ -17,7 +11,7 @@ get_header();
 			'components/parts/common/tags-group',
 			'',
 			[
-				'tags' => Beapi\Theme\Dsfr\Helpers\Misc\get_archive_tags_group_arg( is_tag() ? 'post_tag' : 'category' ),
+				'tags' => Beapi\Theme\Dsfr\Helpers\Misc\get_archive_tags_group_arg( 'category' ),
 			]
 		);
 		?>

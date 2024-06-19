@@ -4,7 +4,15 @@
  * 
  * $args array keys :
  * 
- * @param string[]|array[] tags
+ * @param array $badges = [
+ *    [
+ *        'type'     => '' | 'success' | 'error' | 'info' | 'warning' | 'new'
+ *        'size'     => '' | 'sm'
+ *        'color'    => 'green-menthe' | ... (priority goes to type)
+ *        'has_icon' => bool
+ *    ],
+ *    ...
+ * ]
  * 
  */
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Text\the_text;
@@ -18,20 +26,6 @@ if ( empty( $args['badges'] ) ) {
 	foreach ( $args['badges'] as $fr_badge ) :
 		$badge_classes = [ 'fr-badge' ];
 
-		if ( 'string' === gettype( $fr_badge ) ) {
-			$fr_badge = [ 'label' => $fr_badge ];
-		}
-
-		$fr_badge = array_merge(
-			[
-				'type'     => '',
-				'size'     => '',
-				'color'    => '',
-				'has_icon' => true,
-			],
-			$fr_badge
-		);
-
 		if ( ! empty( $fr_badge['type'] ) ) {
 			$badge_classes[] = 'fr-badge--' .  $fr_badge['type'];
 		} else if ( ! empty( $fr_tag['color'] ) ) {
@@ -42,7 +36,7 @@ if ( empty( $args['badges'] ) ) {
 			$badge_classes[] = 'fr-badge--' . $fr_tag['size'];
 		}
 
-		if ( ! $fr_badge['has_icon'] ) {
+		if ( false === $fr_badge['has_icon'] ) {
 			$badge_classes[] = 'fr-badge--no-icon';
 		}
 

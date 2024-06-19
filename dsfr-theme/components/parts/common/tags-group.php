@@ -4,7 +4,14 @@
  * 
  * $args array keys :
  * 
- * @param string[]|array[] tags
+ * @param array $tags = [
+ *     'is_dismissable' => bool,
+ *     'label'          => '',
+ *     'href'           => '',
+ *     'title'          => '',
+ *     'color'          => 'green-menthe' | ...,
+ *     'size'           => '' | 'sm',
+ * ]
  * 
  */
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Link\the_link;
@@ -18,22 +25,6 @@ if ( empty( $args['tags'] ) ) {
 	<?php
 	foreach ( $args['tags'] as $fr_tag ) :
 		$tag_classes = [ 'fr-tag' ];
-
-		if ( 'string' === gettype( $fr_tag ) ) {
-			$fr_tag = [ 'label' => $fr_tag ];
-		}
-
-		$fr_tag = array_merge(
-			[
-				'is_dismissable' => false,
-				'href'           => '',
-				'title'          => '',
-				'color'          => '',
-				'size'           => '',
-				
-			],
-			$fr_tag
-		);
 
 		if ( ! empty( $fr_tag['color'] ) ) {
 			$tag_classes[] = 'fr-tag--' . $fr_tag['color'];

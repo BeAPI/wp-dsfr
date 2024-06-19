@@ -2,7 +2,7 @@
 // HERO SINGLE
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Text\the_text;
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_the_terms_array;
-use function Beapi\Theme\Dsfr\Helpers\Misc\convert_terms_to_tags_group_arg;
+use function Beapi\Theme\Dsfr\Helpers\Misc\get_tags_group_arg;
 
 $post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_the_terms_name( get_the_ID(), 'post_tag' );
 ?>
@@ -14,7 +14,7 @@ $post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_the_terms_name( get_th
 				'components/parts/common/tags-group',
 				'',
 				[
-					'tags' => convert_terms_to_tags_group_arg( get_the_terms_array( get_the_ID(), 'category' ) ),
+					'tags' => get_tags_group_arg( get_the_terms_array( get_the_ID(), 'category' ) ),
 				]
 			);
 

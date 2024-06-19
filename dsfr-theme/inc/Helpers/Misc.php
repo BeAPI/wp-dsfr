@@ -52,24 +52,39 @@ function get_file_detail( array $file_infos ): string {
 }
 
 /**
- * Convert terms to tags group arg
- * @usage Beapi\Theme\Dsfr\Helpers\Misc\get_archive_tags_group_arg( $terms );
+ * Create array of tag params
+ * See : components/parts/common/tags-group.php
+ * @usage Beapi\Theme\Dsfr\Helpers\Misc\get_tags_group_arg( $terms );
  *
- * @param array  $terms.
+ * @param array  $terms = [ $term_name, $wp_term, $partial_param, ... ]
+ * @param string $size
  * @param string $color
  *
  * @return array
  */
-function convert_terms_to_tags_group_arg( array $terms, string $color = '' ): array {
+function get_tags_group_arg( array $terms, string $size = '', string $color = '' ): array {
 	$items = [];
 
 	foreach ( $terms as $term ) {
-		$items[] = [
-			'label' => $term->name,
-			'href'  => get_term_link( $term ),
-			'title' => '',
-			'color' => $color
+		$params = [
+			'is_dismissable' => false,
+			'label'          => '',
+			'href'           => '',
+			'title'          => '',
+			'color'          => $color,
+			'size'           => $size,
 		];
+
+		if ( 'string' === gettype( $term ) ) {
+			$params['label'] = $term;
+		} else if ( $term instanceof \WP_Term ) {
+			$params['label'] = $term->name;
+			$params['href']  = get_term_link( $term );
+		} else if ( 'array' === gettype( $term ) ) {
+			$params = array_merge( $params, $term );
+		}
+
+		$items[] = $params;
 	}
 
 	return $items;
@@ -79,28 +94,28 @@ function convert_terms_to_tags_group_arg( array $terms, string $color = '' ): ar
  * Get archive tags group arg
  * @usage Beapi\Theme\Dsfr\Helpers\Misc\get_archive_tags_group_arg( 'category' );
  *
- * @param string $taxonomy.
- * @param string $color
+ * @param string        $taxonomy.
+ * @param \WP_Term|null $active_term
+ * @param string        $color
  *
  * @return array
  */
-function get_archive_tags_group_arg( string $taxonomy, string $color = '' ): array {
+function get_archive_tags_group_arg( string $taxonomy, ?\WP_Term $active_term = null, string $color = '' ): array {
 	if ( ! is_archive() && ! is_home() ) {
 		return [];
 	}
 
-	$terms = get_terms( is_tag() ? 'post_tag' : 'category' );
+	$terms = get_terms( $taxonomy );
 
 	if ( false === $terms || is_wp_error( $terms ) ) {
 		return [];
 	}
 
-	$tags_group_arg   = convert_terms_to_tags_group_arg( $terms, $color );
-	$active_term_slug = is_tag() ? get_query_var( 'tag' ) : ( is_category() ? get_query_var( 'category_name' ) : null );
+	$tags_group_arg = get_tags_group_arg( $terms, $color );
 
-	if ( $active_term_slug ) {
+	if ( $active_term instanceof \WP_Term ) {
 		foreach ( $terms as $i => $term ) {
-			if ( $active_term_slug !== $term->slug ) {
+			if ( $active_term->slug !== $term->slug ) {
 				continue;
 			}
 
