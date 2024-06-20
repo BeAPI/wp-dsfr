@@ -75,12 +75,12 @@ function get_tags_group_arg( array $terms, string $size = '', string $color = ''
 			'size'           => $size,
 		];
 
-		if ( 'string' === gettype( $term ) ) {
+		if ( is_string( $term ) ) {
 			$params['label'] = $term;
 		} else if ( $term instanceof \WP_Term ) {
 			$params['label'] = $term->name;
 			$params['href']  = get_term_link( $term );
-		} else if ( 'array' === gettype( $term ) ) {
+		} else if ( is_aray( $term ) ) {
 			$params = array_merge( $params, $term );
 		}
 
@@ -101,10 +101,6 @@ function get_tags_group_arg( array $terms, string $size = '', string $color = ''
  * @return array
  */
 function get_archive_tags_group_arg( string $taxonomy, ?\WP_Term $active_term = null, string $color = '' ): array {
-	if ( ! is_archive() && ! is_home() ) {
-		return [];
-	}
-
 	$terms = get_terms( $taxonomy );
 
 	if ( false === $terms || is_wp_error( $terms ) ) {
@@ -114,12 +110,17 @@ function get_archive_tags_group_arg( string $taxonomy, ?\WP_Term $active_term = 
 	$tags_group_arg = get_tags_group_arg( $terms, $color );
 
 	if ( $active_term instanceof \WP_Term ) {
+		$page_for_posts_id = get_option( 'page_for_posts' );
+
 		foreach ( $terms as $i => $term ) {
 			if ( $active_term->slug !== $term->slug ) {
 				continue;
 			}
 
-			$tags_group_arg[$i]['href']           = get_permalink( get_option( 'page_for_posts' ) );
+			if ( ! empty( $page_for_posts_id ) ) {
+				$tags_group_arg[$i]['href'] = get_permalink( $page_for_posts_id );
+			}
+
 			$tags_group_arg[$i]['title']          = esc_attr__( 'Retourner à la page des actualités', 'dsfr-theme' );
 			$tags_group_arg[$i]['is_dismissable'] = true; 
 
