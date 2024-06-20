@@ -80,7 +80,7 @@ function get_tags_group_arg( array $terms, string $size = '', string $color = ''
 		} else if ( $term instanceof \WP_Term ) {
 			$params['label'] = $term->name;
 			$params['href']  = get_term_link( $term );
-		} else if ( is_aray( $term ) ) {
+		} else if ( is_array( $term ) ) {
 			$params = array_merge( $params, $term );
 		}
 
