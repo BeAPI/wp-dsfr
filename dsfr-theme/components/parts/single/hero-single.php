@@ -1,14 +1,22 @@
 <?php
 // HERO SINGLE
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Text\the_text;
+use function Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_the_terms_array;
+use function Beapi\Theme\Dsfr\Helpers\Misc\get_tags_group_arg;
 
-$post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_terms_name( get_the_ID(), 'post_tag' );
+$post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_the_terms_name( get_the_ID(), 'post_tag' );
 ?>
 <header class="hero hero--thumbnail-centered">
 	<div class="fr-container">
 		<div class="hero__content">
 			<?php
-			get_template_part( 'components/parts/single/hero-single-tags-group' );
+			get_template_part(
+				'components/parts/common/tags-group',
+				'',
+				[
+					'tags' => get_tags_group_arg( get_the_terms_array( get_the_ID(), 'category' ) ),
+				]
+			);
 
 			the_title( '<h1 class="hero__title">', '</h1>' );
 			?>

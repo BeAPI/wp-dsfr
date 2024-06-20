@@ -2,22 +2,35 @@
 namespace Beapi\Theme\Dsfr\Helpers\Formatting\Term;
 
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Escape\escape_content_value;
+
 /**
- * @usage Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_terms_name( 0, 'news-type' );
+ * @usage Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_the_terms_name( 0, 'news-type' );
  *
  * @param int|\WP_Post $post Post ID or object.
  * @param string $taxonomy Taxonomy name
  *
  * @return array Return an array with the terms name
  */
-function get_terms_name( $post_id, string $taxonomy ): array {
+function get_the_terms_name( $post_id, string $taxonomy ): array {
+	return wp_list_pluck( get_the_terms_array( $post_id, $taxonomy ), 'name' );
+}
+
+/**
+ * @usage Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_the_terms_array( 0, 'news-type' );
+ *
+ * @param int|\WP_Post $post Post ID or object.
+ * @param string $taxonomy Taxonomy name
+ *
+ * @return array Return an array with the terms
+ */
+function get_the_terms_array( $post_id, string $taxonomy ): array {
 	$terms = get_the_terms( $post_id, $taxonomy );
 
 	if ( false === $terms || is_wp_error( $terms ) ) {
 		return [];
 	}
 
-	return wp_list_pluck( $terms, 'name' );
+	return $terms;
 }
 
 /**
@@ -41,7 +54,7 @@ function get_terms_name( $post_id, string $taxonomy ): array {
  */
 function get_terms_list( $post, string $taxonomy, array $settings = [] ): string {
 	$attributes = apply_filters( 'bea_theme_framework_term_list_attributes', $post, $taxonomy, $settings );
-	$terms      = get_terms_name( $post, $taxonomy );
+	$terms      = get_the_terms_name( $post, $taxonomy );
 
 	if ( empty( $terms ) ) {
 		return '';

@@ -8,6 +8,10 @@
         min-width: 0;
     }
 
+    .fr-tags-group + & {
+        margin-top: $spacing-10;
+    }
+
     @include breakpoints(xs, sm) {
         &[data-grid-size]:not([data-grid-size="1"]) {
             grid-template-columns: repeat(2, 1fr);
