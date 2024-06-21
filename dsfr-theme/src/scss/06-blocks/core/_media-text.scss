@@ -7,12 +7,38 @@
 
     @extend %block-spacing-sm;
 
+    #{context-selector("&.alignwide", "[data-align='wide'] > &")} {
+        @extend %block-spacing-md;
+    }
+
+    #{context-selector("&.alignfull", "[data-align='full'] > &")} {
+        @extend %block-spacing-lg;
+    }
+
     figure#{$el}__media {
         padding: 0 var(--media-inner-x-padding) 0 0;
     }
 
     #{$el}__content {
         padding: 0 var(--text-outter-x-padding) 0 $vertical-padding;
+    }
+
+    &.is-image-fill {
+        figure#{$el}__media {
+            position: relative;
+            background-size: 0 !important;
+
+            &::after {
+                position: absolute;
+                top: 0;
+                right: var(--media-inner-x-padding);
+                bottom: 0;
+                left: 0;
+                content: "";
+                background: inherit;
+                background-size: cover !important;
+            }
+        }
     }
 
     &.has-media-on-the-right {
@@ -26,14 +52,15 @@
             padding-right: $vertical-padding;
             padding-left: var(--text-outter-x-padding);
         }
-    }
 
-    #{context-selector("&.alignwide", "[data-align='wide'] > &")} {
-        @extend %block-spacing-md;
-    }
-
-    #{context-selector("&.alignfull", "[data-align='full'] > &")} {
-        @extend %block-spacing-lg;
+        &.is-style-fill {
+            figure#{$el}__media {
+                &::after {
+                    right: 0;
+                    left: var(--media-inner-x-padding);
+                }
+            }
+        }
     }
 
     @include editor-only {
