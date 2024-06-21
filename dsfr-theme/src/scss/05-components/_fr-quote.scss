@@ -17,6 +17,8 @@
     }
 
     #{$el}__image {
+        aspect-ratio: 1;
+
         img {
             object-fit: cover;
         }
