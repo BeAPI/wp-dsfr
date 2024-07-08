@@ -116,6 +116,10 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 					initialOpen={true}
 				>
 					<DSFRColorSelectControl
+						label={__(
+							'Couleur du pictogramme',
+							'dsfr-native-blocks'
+						)}
 						value={attributes.color}
 						onChange={(color) => setAttributes({ color })}
 					/>
