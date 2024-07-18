@@ -15,6 +15,7 @@ export default function Edit({
 	clientId,
 	context,
 }) {
+	const buttonClassNames = ['fr-tabs__tab', buttonClassName];
 	const activeTabIndex = context['dsfr/fr-tabs--active-tab-index'];
 	const index = select('core/block-editor').getBlockIndex(clientId);
 	const contextId = context['dsfr/fr-tabs--id'] + '-tab-' + index;
@@ -28,6 +29,13 @@ export default function Edit({
 		});
 	}, [index, contextId, contextControls]);
 
+	if (
+		buttonClassName.includes('fr-icon-') &&
+		!buttonClassName.includes('fr-tabs__tab--icon-left')
+	) {
+		buttonClassNames.push('fr-tabs__tab--icon-left');
+	}
+
 	return (
 		<>
 			<InspectorControls>
@@ -38,15 +46,17 @@ export default function Edit({
 					<PanelRow>
 						<TextControl
 							value={buttonClassName}
+							help={__(
+								'Vous pouvez utiliser ce champ pour ajouter une icône (exemple: fr-icon-success-line)',
+								'dsfr-native-block'
+							)}
 							label={__(
 								"Classe(s) CSS du bouton de l'onglet",
 								'dsfr-native-blocks'
 							)}
-							onChange={(newButtonClassName) => {
-								setAttributes({
-									buttonClassName: newButtonClassName,
-								});
-							}}
+							onChange={(buttonClassName) =>
+								setAttributes({ buttonClassName })
+							}
 						/>
 					</PanelRow>
 				</PanelBody>
@@ -55,7 +65,7 @@ export default function Edit({
 			<li role="presentation" {...useBlockProps()}>
 				<RichText
 					tagName="span"
-					className={('fr-tabs__tab ' + buttonClassName).trim()}
+					className={buttonClassNames.join(' ').trim()}
 					allowedFormats={[]}
 					value={label}
 					id={id}
