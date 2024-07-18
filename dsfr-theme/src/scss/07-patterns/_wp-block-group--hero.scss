@@ -32,8 +32,8 @@
         }
 
         @include breakpoints(md, max) {
-            #{$el}__inner-container > figure:has(img:not([src$=".svg"])),
-            .wp-block-column:last-child:has(img:not([src$=".svg"])) {
+            #{$el}__inner-container > .wp-block-image:not(#{$el}--hero__icon),
+            .wp-block-column:last-child:has(.wp-block-image:not(#{$el}--hero__icon)) {
                 margin: 0 calc(var(--external-gutter) * -1) -#{$spacing-12} calc(var(--external-gutter) * -1) !important;
             }
         }
