@@ -32,9 +32,13 @@
         }
 
         @include breakpoints(md, max) {
-            #{$el}__inner-container > .wp-block-image:not(#{$el}--hero__icon),
-            .wp-block-column:last-child:has(.wp-block-image:not(#{$el}--hero__icon)) {
+            #{$el}__inner-container > .wp-block-image:last-child,
+            &:not(.wp-block-group--hero-icon) .wp-block-column:last-child:has(.wp-block-image) {
                 margin: 0 calc(var(--external-gutter) * -1) -#{$spacing-12} calc(var(--external-gutter) * -1) !important;
+            }
+
+            &.wp-block-group--hero-icon .wp-block-column:last-child:has(.wp-block-image) {
+                margin-bottom: -#{$spacing-8} !important;
             }
         }
 
