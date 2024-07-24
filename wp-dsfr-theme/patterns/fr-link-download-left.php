@@ -7,9 +7,5 @@
  */
 ?>
 <!-- wp:buttons -->
-<div class="wp-block-buttons">
-	<!-- wp:button {"className":"is-style-link fr-icon-download-line fr-link\u002d\u002dicon-left"} -->
-	<div class="wp-block-button is-style-link fr-icon-download-line fr-link--icon-left"><a class="wp-block-button__link wp-element-button"></a></div>
-	<!-- /wp:button -->
-</div>
+<div class="wp-block-buttons"><!-- wp:button {"className":"wp-block-button is-style-link fr-icon-download-line fr-link\u002d\u002dicon-left"} /--></div>
 <!-- /wp:buttons -->
