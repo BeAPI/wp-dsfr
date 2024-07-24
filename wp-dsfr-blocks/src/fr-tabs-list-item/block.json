@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "dsfr/fr-tabs-list-item",
+	"version": "1.0.2",
+	"title": "Onglet",
+	"category": "widgets",
+	"icon": "button",
+	"description": "Bloc DSFR onglet.",
+	"parent": ["dsfr/fr-tabs-list"],
+	"supports": {
+		"html": false,
+		"anchor": false,
+		"align": false,
+		"color": {
+			"background": false,
+			"text": false
+		},
+		"lock": false,
+		"reusable": false
+	},
+	"attributes": {
+		"index": {
+			"type": "integer",
+			"default": 0
+		},
+		"id": {
+			"type": "string",
+			"default": ""
+		},
+		"controls": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonClassName": {
+			"type": "string",
+			"default": ""
+		},
+		"label": {
+			"type": "string",
+			"default": ""
+		},
+		"hasFocus": {
+			"type": "boolean",
+			"value": false
+		}
+	},
+	"usesContext": ["dsfr/fr-tabs--id", "dsfr/fr-tabs--active-tab-index"],
+	"textdomain": "wp-dsfr-blocks",
+	"editorScript": "file:./index.js"
+}

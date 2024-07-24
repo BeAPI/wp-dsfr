@@ -1,4 +1,4 @@
 {
-	"plugins": ["./dsfr-native-blocks"],
-	"themes": [ "./dsfr-theme" ]
+	"plugins": ["./wp-dsfr-blocks"],
+	"themes": [ "./wp-dsfr-theme" ]
 }

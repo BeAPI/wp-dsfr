@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "dsfr/fr-accordions-group",
+	"version": "1.0.0",
+	"title": "Groupe d'accordéons",
+	"category": "widgets",
+	"icon": "archive",
+	"description": "Bloc DSFR groupe d'accordéons.",
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": ["wide", "full"],
+		"color": {
+			"background": false,
+			"text": false
+		}
+	},
+	"textdomain": "wp-dsfr-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}

@@ -8,10 +8,10 @@
 /node_modules
 
 # DSFR Theme
-/dsfr-theme/node_modules
-/dsfr-theme/dist-dsfr
-/dsfr-theme/dist
+/wp-dsfr-theme/node_modules
+/wp-dsfr-theme/dist-dsfr
+/wp-dsfr-theme/dist
 
 # DSFR Plugin
-/dsfr-native-blocks/node_modules
-/dsfr-native-blocks/build
+/wp-dsfr-blocks/node_modules
+/wp-dsfr-blocks/build

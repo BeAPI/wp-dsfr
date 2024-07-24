@@ -1,6 +1,6 @@
 [![EN](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/BeAPI/dsfr/blob/develop/README.EN.md)
 
-# 🇫🇷 DSFR
+# 🇫🇷 WordPress DSFR
 
 ## Outils
 
