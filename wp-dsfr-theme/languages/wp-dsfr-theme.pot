@@ -1,0 +1,690 @@
+# Copyright (C) 2024 BeAPI
+# This file is distributed under the .
+msgid ""
+msgstr ""
+"Project-Id-Version: WP DSFR Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/wp-dsfr-theme\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-07-24T09:55:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: wp-dsfr-theme\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "WP DSFR Theme"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://github.com/BeAPI/dsfr"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "WordPress DSFR theme"
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "BeAPI"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "http://www.beapi.fr"
+msgstr ""
+
+#: 404.php:9
+msgid "Page non trouvée"
+msgstr ""
+
+#: 404.php:10
+msgid "Erreur 404"
+msgstr ""
+
+#: 404.php:11
+msgid "La page que vous cherchez est introuvable. Excusez-nous pour la gène occasionnée."
+msgstr ""
+
+#: 404.php:12
+msgid "Si vous avez tapé l'adresse web dans le navigateur, vérifiez qu'elle est correcte. La page n’est peut-être plus disponible. <br>Dans ce cas, pour continuer votre visite vous pouvez consulter notre page d’accueil, ou effectuer une recherche avec notre moteur de recherche en haut de page. <br>Sinon contactez-nous pour que l’on puisse vous rediriger vers la bonne information."
+msgstr ""
+
+#: 404.php:14
+msgid "Page d'accueil"
+msgstr ""
+
+#. translators: date de publication
+#: components/loops/card-search.php:22
+#: components/parts/single/hero-single.php:26
+msgid "Publié le %s"
+msgstr ""
+
+#: components/parts/common/breadcrumb.php:7
+msgid "vous êtes ici :"
+msgstr ""
+
+#: components/parts/common/breadcrumb.php:8
+msgid "Voir le fil d’Ariane"
+msgstr ""
+
+#: components/parts/common/page-top.php:7
+msgid "Haut de page"
+msgstr ""
+
+#: components/parts/common/pagination.php:56
+msgid "Première page"
+msgstr ""
+
+#: components/parts/common/pagination.php:63
+msgid "Page précédente"
+msgstr ""
+
+#. translators: numéro de page
+#: components/parts/common/pagination.php:72
+msgid "Page %s"
+msgstr ""
+
+#: components/parts/common/pagination.php:81
+msgid "Page suivante"
+msgstr ""
+
+#: components/parts/common/pagination.php:88
+msgid "Dernière page"
+msgstr ""
+
+#. translators: nom du site
+#: components/parts/common/service.php:12
+msgid "Accueil -  %s"
+msgstr ""
+
+#: components/parts/common/share.php:3
+msgid "Partager la page"
+msgstr ""
+
+#: components/parts/common/share.php:15
+#: components/parts/common/share.php:16
+msgid "Partager sur Facebook - nouvelle fenêtre"
+msgstr ""
+
+#: components/parts/common/share.php:21
+msgid "Partager sur Facebook"
+msgstr ""
+
+#: components/parts/common/share.php:26
+#: components/parts/common/share.php:27
+msgid "Partager sur Twitter - nouvelle fenêtre"
+msgstr ""
+
+#: components/parts/common/share.php:32
+msgid "Partager sur Twitter"
+msgstr ""
+
+#: components/parts/common/share.php:37
+#: components/parts/common/share.php:38
+msgid "Partager sur LinkedIn - nouvelle fenêtre"
+msgstr ""
+
+#: components/parts/common/share.php:43
+msgid "Partager sur LinkedIn"
+msgstr ""
+
+#: components/parts/common/share.php:49
+#: components/parts/common/share.php:50
+#: components/parts/common/share.php:52
+msgid "Partager par email"
+msgstr ""
+
+#: components/parts/common/share.php:55
+msgid "Copier dans le presse-papier"
+msgstr ""
+
+#: components/parts/common/skip-links.php:5
+msgid "Accès rapide"
+msgstr ""
+
+#: components/parts/common/skip-links.php:8
+msgid "Contenu"
+msgstr ""
+
+#: components/parts/common/skip-links.php:11
+#: components/parts/header/header-navbar.php:8
+#: components/parts/header/header-navbar.php:9
+msgid "Menu"
+msgstr ""
+
+#: components/parts/common/skip-links.php:14
+msgid "Recherche"
+msgstr ""
+
+#: components/parts/common/skip-links.php:17
+msgid "Pied de page"
+msgstr ""
+
+#: components/parts/common/theme-modal.php:12
+#: components/parts/common/theme-modal.php:13
+#: components/parts/header/header-body.php:14
+#: components/parts/header/header-body.php:15
+#: components/parts/header/header-menu.php:6
+#: components/parts/header/header-menu.php:7
+msgid "Fermer"
+msgstr ""
+
+#: components/parts/common/theme-modal.php:18
+msgid "Paramètres d’affichage"
+msgstr ""
+
+#: components/parts/common/theme-modal.php:23
+msgid "Choisissez un thème pour personnaliser l’apparence du site."
+msgstr ""
+
+#: components/parts/common/theme-modal.php:29
+msgid "Thème clair"
+msgstr ""
+
+#: components/parts/common/theme-modal.php:44
+msgid "Thème sombre"
+msgstr ""
+
+#: components/parts/common/theme-modal.php:59
+msgid "Système"
+msgstr ""
+
+#: components/parts/common/theme-modal.php:60
+msgid "Utilise les paramètres système"
+msgstr ""
+
+#: components/parts/footer/footer-bottom.php:17
+msgid "Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous <a href=\"https://github.com/etalab/licence-ouverte/blob/master/LO.md\" target=\"_blank\">licence etalab-2.0</a>"
+msgstr ""
+
+#. translators: nom du site
+#: components/parts/footer/footer-brand.php:14
+msgid "Retour à l’accueil du site - %s"
+msgstr ""
+
+#: components/parts/header/header-menu.php:11
+#: inc/Services/Menu.php:108
+msgid "Menu principal"
+msgstr ""
+
+#: components/parts/header/header-navbar.php:5
+#: components/parts/header/header-navbar.php:6
+#: searchform.php:9
+#: searchform.php:14
+#: searchform.php:21
+#: searchform.php:22
+msgid "Rechercher"
+msgstr ""
+
+#. translators: date de publication
+#: components/parts/single/hero-single.php:26
+msgid "d F Y"
+msgstr ""
+
+#: components/parts/single/hero-single.php:59
+msgid "Partager l'actualité"
+msgstr ""
+
+#: components/parts/single/latest-posts.php:20
+msgid "Nos autres actualités"
+msgstr ""
+
+#: components/parts/single/latest-posts.php:28
+msgid "Voir toute l’actualité"
+msgstr ""
+
+#: header.php:31
+msgid "Contenu principal"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:13
+msgid "Tilleul verveine"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:14
+msgid "Bourgeon"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:15
+msgid "Émeraude"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:16
+msgid "Menthe"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:17
+msgid "Archipel"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:18
+msgid "Écume"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:19
+msgid "Cumulus"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:20
+msgid "Glycine"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:21
+msgid "Macaron"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:22
+msgid "Tuile"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:23
+msgid "Tournesol"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:24
+msgid "Moutarde"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:25
+msgid "Terre battue"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:26
+msgid "Café crème"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:27
+msgid "Caramel"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:28
+msgid "Opéra"
+msgstr ""
+
+#: inc/Helpers/DSFR.php:29
+msgid "Gris galet"
+msgstr ""
+
+#: inc/Helpers/Formatting/Link.php:144
+msgid "Nouvelle fenêtre"
+msgstr ""
+
+#: inc/Helpers/Misc.php:124
+msgid "Retourner à la page des actualités"
+msgstr ""
+
+#: inc/Services/Customizer.php:47
+msgid "Logo Marque - Intitulé officiel"
+msgstr ""
+
+#: inc/Services/Customizer.php:48
+msgid "Intitulé officiel"
+msgstr ""
+
+#: inc/Services/Customizer.php:49
+msgid "L'intitulé officiel ne doit pas dépasser six lignes."
+msgstr ""
+
+#: inc/Services/Customizer.php:59
+msgid "Logo du site"
+msgstr ""
+
+#: inc/Services/Customizer.php:69
+msgid "Texte du footer"
+msgstr ""
+
+#: inc/Services/Customizer.php:77
+msgid "Résaux sociaux"
+msgstr ""
+
+#: inc/Services/Customizer.php:87
+msgid "Titre des réseaux sociaux"
+msgstr ""
+
+#: inc/Services/Editor_Patterns.php:40
+msgid "Alerte"
+msgstr ""
+
+#: inc/Services/Editor_Patterns.php:41
+msgid "Badge"
+msgstr ""
+
+#: inc/Services/Editor_Patterns.php:42
+msgid "Bouton"
+msgstr ""
+
+#: inc/Services/Editor_Patterns.php:43
+msgid "Mise en avant"
+msgstr ""
+
+#: inc/Services/Editor_Patterns.php:44
+msgid "Hero"
+msgstr ""
+
+#: inc/Services/Editor_Patterns.php:45
+msgid "Mise en exergue"
+msgstr ""
+
+#: inc/Services/Editor_Patterns.php:46
+msgid "Icône"
+msgstr ""
+
+#: inc/Services/Editor_Patterns.php:47
+#: patterns/fr-link-informations.php:22
+msgid "Lien"
+msgstr ""
+
+#: inc/Services/Editor_Patterns.php:48
+msgid "Tableau"
+msgstr ""
+
+#: inc/Services/Editor_Patterns.php:49
+msgid "Divers"
+msgstr ""
+
+#. translators: %s: file name.
+#: inc/Services/Editor_Patterns.php:134
+msgid "Could not register file \"%s\" as a block pattern (\"Slug\" field missing)"
+msgstr ""
+
+#. translators: %1s: file name; %2s: slug value found.
+#: inc/Services/Editor_Patterns.php:147
+msgid "Could not register file \"%1$s\" as a block pattern (invalid slug \"%2$s\")"
+msgstr ""
+
+#. translators: %1s: file name; %2s: slug value found.
+#: inc/Services/Editor_Patterns.php:164
+msgid "Could not register file \"%s\" as a block pattern (\"Title\" field missing)"
+msgstr ""
+
+#: inc/Services/Menu.php:107
+msgid "Menu entête de page outils"
+msgstr ""
+
+#: inc/Services/Menu.php:109
+msgid "Menu pied de page haut"
+msgstr ""
+
+#: inc/Services/Menu.php:110
+msgid "Menu pied de page contenu"
+msgstr ""
+
+#: inc/Services/Menu.php:111
+msgid "Menu pied de page bas"
+msgstr ""
+
+#: patterns/arguments-with-background.php
+msgctxt "Pattern title"
+msgid "Arguments avec fond"
+msgstr ""
+
+#: patterns/arguments-with-background.php:11
+#: patterns/arguments-with-background.php:24
+#: patterns/arguments.php:11
+#: patterns/arguments.php:24
+#: patterns/fr-alert-informations.php:35
+#: patterns/fr-alert.php:11
+#: patterns/fr-callout-informations.php:30
+#: patterns/fr-callout.php:11
+#: patterns/hero-front-page-with-background.php:15
+#: patterns/hero-front-page.php:15
+#: patterns/hero-title-image-with-background.php:13
+#: patterns/hero-title-image.php:13
+msgid "Ajouter un titre"
+msgstr ""
+
+#: patterns/arguments-with-background.php:28
+#: patterns/arguments.php:28
+#: patterns/fr-alert-informations.php:39
+#: patterns/fr-alert-informations.php:51
+#: patterns/fr-alert-sm.php:11
+#: patterns/fr-alert.php:15
+#: patterns/fr-badge-informations.php:28
+#: patterns/fr-badge-informations.php:59
+#: patterns/fr-badge-informations.php:81
+#: patterns/fr-badge-informations.php:98
+#: patterns/fr-badge-informations.php:102
+#: patterns/fr-badge-informations.php:106
+#: patterns/fr-badge.php:9
+#: patterns/fr-badges-group.php:11
+#: patterns/fr-badges-group.php:15
+#: patterns/fr-badges-group.php:19
+#: patterns/fr-callout-informations.php:34
+#: patterns/fr-callout.php:15
+#: patterns/fr-highlight-informations.php:30
+#: patterns/fr-highlight.php:11
+#: patterns/hero-front-page-with-background.php:19
+#: patterns/hero-front-page.php:19
+msgid "Ajouter un texte"
+msgstr ""
+
+#: patterns/arguments.php
+msgctxt "Pattern title"
+msgid "Arguments"
+msgstr ""
+
+#: patterns/fr-alert-informations.php
+msgctxt "Pattern title"
+msgid "Alerte - informations"
+msgstr ""
+
+#: patterns/fr-alert-informations.php:12
+msgid "Informations sur la composition \"Alerte\""
+msgstr ""
+
+#: patterns/fr-alert-informations.php:16
+msgid "Quatre types d'alerte sont disponibles, info, success, error et warning :"
+msgstr ""
+
+#: patterns/fr-alert-sm.php
+msgctxt "Pattern title"
+msgid "Alerte (petit)"
+msgstr ""
+
+#: patterns/fr-alert.php
+msgctxt "Pattern title"
+msgid "Alerte"
+msgstr ""
+
+#: patterns/fr-badge-informations.php
+msgctxt "Pattern title"
+msgid "Badge - informations"
+msgstr ""
+
+#: patterns/fr-badge-informations.php:12
+msgid "Informations sur la composition \"Badge\""
+msgstr ""
+
+#: patterns/fr-badge-informations.php:16
+msgid "Par défaut, les badges sont gris. Vous pouvez utiliser les classes css suivantes pour définir la couleur des badges :"
+msgstr ""
+
+#: patterns/fr-badge-informations.php:36
+msgid "Badge succès, erreur, informations, avertissement et nouveauté"
+msgstr ""
+
+#: patterns/fr-badge-informations.php:67
+#: patterns/fr-btn-informations.php:64
+#: patterns/fr-link-informations.php:55
+msgid "Variantes de taille :"
+msgstr ""
+
+#: patterns/fr-badge-informations.php:89
+msgid "Groupe de badges :"
+msgstr ""
+
+#: patterns/fr-badge-informations.php:93
+msgid "Chaque item de liste doit avoir une classe css <code>fr-badge</code>"
+msgstr ""
+
+#: patterns/fr-badge.php
+msgctxt "Pattern title"
+msgid "Badge"
+msgstr ""
+
+#: patterns/fr-badges-group.php
+msgctxt "Pattern title"
+msgid "Groupe de badges"
+msgstr ""
+
+#: patterns/fr-btn-arrow-left.php
+msgctxt "Pattern title"
+msgid "Bouton - flèche à gauche"
+msgstr ""
+
+#: patterns/fr-btn-arrow-right.php
+msgctxt "Pattern title"
+msgid "Bouton - flèche à droite"
+msgstr ""
+
+#: patterns/fr-btn-download-left.php
+msgctxt "Pattern title"
+msgid "Bouton - téléchargement à gauche"
+msgstr ""
+
+#: patterns/fr-btn-download-right.php
+msgctxt "Pattern title"
+msgid "Bouton - téléchargement à droite"
+msgstr ""
+
+#: patterns/fr-btn-informations.php
+msgctxt "Pattern title"
+msgid "Bouton - informations"
+msgstr ""
+
+#: patterns/fr-btn-informations.php:12
+msgid "Informations sur les boutons"
+msgstr ""
+
+#: patterns/fr-btn-informations.php:16
+msgid "Trois types de boutons sont disponibles via la sélection de style de WordPress :"
+msgstr ""
+
+#: patterns/fr-btn-informations.php:22
+#: patterns/fr-btn-informations.php:26
+#: patterns/fr-btn-informations.php:30
+#: patterns/fr-btn-informations.php:81
+msgid "bouton"
+msgstr ""
+
+#: patterns/fr-btn-informations.php:37
+#: patterns/fr-link-informations.php:28
+msgid "Ajout et positionnement d'une icône :"
+msgstr ""
+
+#: patterns/fr-callout-informations.php
+msgctxt "Pattern title"
+msgid "Mise en avant - informations"
+msgstr ""
+
+#: patterns/fr-callout-informations.php:12
+msgid "Informations sur la composition \"Mise en avant\""
+msgstr ""
+
+#: patterns/fr-callout-informations.php:16
+#: patterns/fr-highlight-informations.php:16
+msgid "Par défaut, la couleur de la bordure est \"default-blue-france\". Vous pouvez utiliser les classes css suivantes pour définir la couleur de la bordure :"
+msgstr ""
+
+#: patterns/fr-callout.php
+msgctxt "Pattern title"
+msgid "Mise en avant"
+msgstr ""
+
+#: patterns/fr-highlight-informations.php
+msgctxt "Pattern title"
+msgid "Mise en exergue - informations"
+msgstr ""
+
+#: patterns/fr-highlight-informations.php:12
+msgid "Informations sur la composition \"Mise en exergue\""
+msgstr ""
+
+#: patterns/fr-highlight.php
+msgctxt "Pattern title"
+msgid "Mise en exergue"
+msgstr ""
+
+#: patterns/fr-icon-informations.php
+msgctxt "Pattern title"
+msgid "Icônes - informations"
+msgstr ""
+
+#: patterns/fr-icon-informations.php:12
+msgid "Informations sur les icônes"
+msgstr ""
+
+#: patterns/fr-icon-informations.php:16
+msgid "Les classes css suivantes peuvent être utilisées sur les boutons, les compositions \"Mise en avant\", les compositions \"Mise en exergue\", ... :"
+msgstr ""
+
+#: patterns/fr-link-informations.php
+msgctxt "Pattern title"
+msgid "Lien - informations"
+msgstr ""
+
+#: patterns/fr-link-informations.php:12
+msgid "Informations sur les liens"
+msgstr ""
+
+#: patterns/fr-link-informations.php:16
+msgid "Le lien simple est disponible via la sélection de style de WordPress :"
+msgstr ""
+
+#: patterns/fr-table-informations.php
+msgctxt "Pattern title"
+msgid "Tableau - informations"
+msgstr ""
+
+#: patterns/fr-table-informations.php:12
+msgid "Informations sur les tableaux"
+msgstr ""
+
+#: patterns/fr-table-informations.php:16
+msgid "Par défaut, les tableaux sont gris. Vous pouvez utiliser les classes css suivantes pour définir la couleur des tableaux :"
+msgstr ""
+
+#: patterns/hero-front-page-with-background.php
+msgctxt "Pattern title"
+msgid "Hero de page d'accueil avec fond"
+msgstr ""
+
+#: patterns/hero-front-page.php
+msgctxt "Pattern title"
+msgid "Hero de page d'accueil"
+msgstr ""
+
+#: patterns/hero-title-image-with-background.php
+msgctxt "Pattern title"
+msgid "Hero avec titre, image et fond"
+msgstr ""
+
+#: patterns/hero-title-image.php
+msgctxt "Pattern title"
+msgid "Hero avec titre et image"
+msgstr ""
+
+#: patterns/hero-title-text-buttons-image-with-background.php
+msgctxt "Pattern title"
+msgid "Hero avec titre, texte, boutons, image et fond"
+msgstr ""
+
+#: patterns/hero-title-text-buttons-image.php
+msgctxt "Pattern title"
+msgid "Hero avec titre, texte, boutons et image"
+msgstr ""
+
+#. translators: terme(s) recherché(s)
+#: search.php:12
+msgid "Résultat(s) de recherche pour \"%s\""
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page vide"
+msgstr ""
