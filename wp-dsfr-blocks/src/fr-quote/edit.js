@@ -104,10 +104,6 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 		});
 	}
 
-	if (!isSelected) {
-		cleanSources();
-	}
-
 	return (
 		<>
 			<InspectorControls>
@@ -116,10 +112,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 					initialOpen={true}
 				>
 					<DSFRColorSelectControl
-						label={__(
-							'Couleur du pictogramme',
-							'wp-dsfr-blocks'
-						)}
+						label={__('Couleur du pictogramme', 'wp-dsfr-blocks')}
 						value={attributes.color}
 						onChange={(color) => setAttributes({ color })}
 					/>
@@ -135,10 +128,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						}}
 					/>
 					<RadioControl
-						label={__(
-							'Taille de la citation',
-							'wp-dsfr-blocks'
-						)}
+						label={__('Taille de la citation', 'wp-dsfr-blocks')}
 						selected={attributes.quoteSize}
 						options={[
 							{
@@ -199,6 +189,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 					<ul className="fr-quote__source">
 						{attributes.sources.map((source, index) => (
 							<RichText
+								key={index}
 								tagName="li"
 								value={source}
 								placeholder={__('Ajouter une source')}

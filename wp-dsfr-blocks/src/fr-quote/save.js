@@ -41,9 +41,13 @@ export default function save({ attributes }) {
 				/>
 				{attributes.sources.length ? (
 					<ul className="fr-quote__source">
-						{attributes.sources.map((source) =>
+						{attributes.sources.map((source, index) =>
 							source ? (
-								<RichText.Content tagName="li" value={source} />
+								<RichText.Content
+									tagName="li"
+									value={source}
+									key={index}
+								/>
 							) : (
 								''
 							)

@@ -124,20 +124,14 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 					initialOpen={true}
 				>
 					<ToggleControl
-						label={__(
-							'Afficher horizontalement',
-							'wp-dsfr-blocks'
-						)}
+						label={__('Afficher horizontalement', 'wp-dsfr-blocks')}
 						checked={attributes.isHorizontal}
 						onChange={(isHorizontal) =>
 							setAttributes({ isHorizontal })
 						}
 					/>
 					<ToggleControl
-						label={__(
-							"Afficher l'icône du lien",
-							'wp-dsfr-blocks'
-						)}
+						label={__("Afficher l'icône du lien", 'wp-dsfr-blocks')}
 						checked={attributes.displayIcon}
 						onChange={(displayIcon) =>
 							setAttributes({ displayIcon })
@@ -152,10 +146,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 						}}
 					/>
 					<ToggleControl
-						label={__(
-							'Afficher les bordures',
-							'wp-dsfr-blocks'
-						)}
+						label={__('Afficher les bordures', 'wp-dsfr-blocks')}
 						checked={attributes.displayBorder}
 						onChange={(displayBorder) =>
 							setAttributes({
