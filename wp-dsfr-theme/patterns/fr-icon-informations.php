@@ -503,10 +503,16 @@
 			],
 
 			'Other' => [
+				'fr-icon-accessibility-fill',
+				'fr-icon-accessibility-line',
+				'fr-icon-ear-off-fill',
+				'fr-icon-ear-off-line',
 				'fr-icon-leaf-fill',
 				'fr-icon-leaf-line',
 				'fr-icon-lightbulb-fill',
 				'fr-icon-lightbulb-line',
+				'fr-icon-mental-disabilities-fill',
+				'fr-icon-mental-disabilities-line',
 				'fr-icon-plant-fill',
 				'fr-icon-plant-line',
 				'fr-icon-recycle-fill',
@@ -517,6 +523,8 @@
 				'fr-icon-seedling-line',
 				'fr-icon-umbrella-fill',
 				'fr-icon-umbrella-line',
+				'fr-icon-wheelchair-fill',
+				'fr-icon-wheelchair-line',
 			],
 
 			'System' => [
