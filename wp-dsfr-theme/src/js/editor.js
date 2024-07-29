@@ -140,6 +140,7 @@ blockGroupFrAlert.addSidebarPanelBody('dsfr-panel', { title: 'DSFR' })
 blockGroupFrAlert.addSidebarClassSelector('dsfr-panel', {
   label: "Classe css du type d'alerte",
   options: [
+    { value: '', label: 'Défaut' },
     { value: 'fr-alert--info', label: 'Information' },
     { value: 'fr-alert--success', label: 'Succès' },
     { value: 'fr-alert--error', label: 'Erreur' },

@@ -16,6 +16,38 @@
 	<p><?php esc_html_e( 'Quatre types d\'alerte sont disponibles, info, success, error et warning :', 'wp-dsfr-theme' ); ?></p>
 	<!-- /wp:paragraph -->
 
+	<!-- wp:paragraph -->
+	<p><?php esc_html_e( 'Alerte par défaut :', 'wp-dsfr-theme' ); ?></p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:group {"className":"fr-alert","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group fr-alert">
+		<!-- wp:heading {"className":"fr-alert__title","level":3,"placeholder":"<?php esc_attr_e( 'Ajouter un titre', 'wp-dsfr-theme' ); ?>"} -->
+		<h3 class="wp-block-heading fr-alert__title"></h3>
+		<!-- /wp:heading -->
+
+		<!-- wp:paragraph {"placeholder":"<?php esc_attr_e( 'Ajouter un texte', 'wp-dsfr-theme' ); ?>"} -->
+		<p></p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:paragraph -->
+	<p><code>fr-icon-lock-fill</code> :</p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:group {"className":"fr-alert fr-icon-lock-fill","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group fr-alert fr-icon-lock-fill">
+		<!-- wp:heading {"className":"fr-alert__title","level":3,"placeholder":"<?php esc_attr_e( 'Ajouter un titre', 'wp-dsfr-theme' ); ?>"} -->
+		<h3 class="wp-block-heading fr-alert__title"></h3>
+		<!-- /wp:heading -->
+
+		<!-- wp:paragraph {"placeholder":"<?php esc_attr_e( 'Ajouter un texte', 'wp-dsfr-theme' ); ?>"} -->
+		<p></p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+
 	<?php
 	$available_classes = [
 		'fr-alert--info',

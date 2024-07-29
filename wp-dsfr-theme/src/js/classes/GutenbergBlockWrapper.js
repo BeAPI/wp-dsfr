@@ -136,6 +136,12 @@ class GutenbergBlockWrapper {
         {
           value: currentClass,
           onChange: (value) => {
+            // if the user start to edit class in text field, do nothing
+            if (currentClass && !attributes.className.split(' ').includes(currentClass)) {
+              currentClass = ''
+              return
+            }
+
             let className = attributes.className.replace(currentClass, '').replace(/\s+/g, ' ').trim()
 
             if (value !== '') {
