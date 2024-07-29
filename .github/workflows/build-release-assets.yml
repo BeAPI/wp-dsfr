@@ -1,0 +1,97 @@
+name: "Build release assets"
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  build-archives:
+    name: "Build archives"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+
+      - id: extract-plugin-version
+        name: "Extract plugin version number from .version-data.json file."
+        run: |
+          # Path to the version data file
+          DSFR_BLOCKS_VERSION_FILE="$GITHUB_WORKSPACE/wp-dsfr-blocks/.version-data.json"
+
+          # Parse the file and extract the version
+          DSFR_BLOCKS_VERSION=$(cat DSFR_BLOCKS_VERSION_FILE | jq .version)
+
+          # Send the version to the output
+          echo "dsfr-blocks-version=$DSFR_BLOCKS_VERSION" >> "$GITHUB_OUTPUT"
+
+      - id: extract-theme-version
+        name: "Extract theme version number from .version-data.json file."
+        run: |
+          # Path to the version data file
+          DSFR_THEME_VERSION_FILE="$GITHUB_WORKSPACE/wp-dsfr-theme/.version-data.json"
+
+          # Parse the file and extract the version
+          DSFR_THEME_VERSION=$(cat DSFR_THEME_VERSION_FILE | jq .version)
+
+          # Send the version to the output
+          echo "dsfr-theme-version=$DSFR_THEME_VERSION" >> "$GITHUB_OUTPUT"
+
+      - id: dsfr-blocks-build-node
+        name: "WP DSFR Blocks : Build project CSS and JS"
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+      - run: npm ci
+      - run: npm run build
+        working-directory: ./wp-dsfr-blocks
+
+      - id: dsfr-theme-build-node
+        name: "WP DSFR Theme : Build project CSS and JS"
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+      - run: npm ci
+      - run: npm run build
+        working-directory: ./wp-dsfr-theme
+
+      - id: build-wp-dsfr-blocks-archive
+        name: "Build WP DSFR Blocks archive"
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+        run: |
+          npm ci
+          npm run plugin-zip
+        working-directory: "./wp-dsfr-blocks"
+
+      - id: build-wp-dsfr-theme-archive
+        name: "Build WP DSFR Theme archive"
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+        run: |
+          npm ci
+          npm run plugin-zip
+        working-directory: "./wp-dsfr-theme"
+
+      - id: upload-wp-dsfr-blocks-asset
+        name: "Upload WP DSFR Blocks archive to the release"
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            upload_url: ${{ github.event.release.upload_url }}
+            asset_path: ./wp-dsfr-blocks/wp-dsfr-blocks.zip
+            asset_name: wp-dsfr-blocks-${{ steps.extract-plugin-version.outputs.dsfr-blocks-version }}.zip
+            asset_content_type: application/zip
+
+      - id: upload-wp-dsfr-theme-asset
+        name: "Upload WP DSFR Theme archive to the release"
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            upload_url: ${{ github.event.release.upload_url }}
+            asset_path: ./wp-dsfr-theme/wp-dsfr-theme.zip
+            asset_name: wp-dsfr-theme-${{ steps.extract-theme-version.outputs.dsfr-theme-version }}.zip
+            asset_content_type: application/zip
