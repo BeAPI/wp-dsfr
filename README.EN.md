@@ -2,9 +2,9 @@
 
 # 🇫🇷 WordPress DSFR
 
-## Tooling
+WP DSFR is a WordPress port of the French Design System (or DSFR) in the form of a WordPress theme.
 
-### Local environment
+## How to use it
 
 This repository use [`@wordpress/env`](https://www.npmjs.com/package/@wordpress/env) package to easily setup a local
 environment to work on the DSFR theme and the associated plugins.
@@ -31,3 +31,10 @@ npm run clean
 # Remove the local environment (will delete all data and files permanently)
 npm run destroy
 ```
+## Use cases
+
+* [`Hôpital d'Instruction des Armées Bégin`](https://hiabegin.sante.defense.gouv.fr/)
+
+## To find out more
+
+Please visit the [`demonstration site`](https://www.wp-dsfr.fr/demo/) to discover the features and contribution possibilities offered by the theme.
