@@ -31,6 +31,10 @@ npm run clean
 npm run destroy
 ```
 
+## Ils utilisent WP DSFR
+
+* [`Hôpital d’Instruction des Armées Bégin`](https://hiabegin.sante.defense.gouv.fr/)
+
 ## En savoir plus
 
-Veuillez consulter le [`site de démonstration`](https://www.wp-dsfr.fr/demo/) pour découvrir les fonctionnalités et possibiltés de contribution offertes par le thème.
+Veuillez consulter le [`site de démonstration`](https://www.wp-dsfr.fr/demo/) pour découvrir les fonctionnalités et possibilités de contribution offertes par le thème.
