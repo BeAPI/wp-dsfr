@@ -12,8 +12,8 @@
 	<div class="wp-block-columns alignwide">
 		<!-- wp:column {"width":"50%"} -->
 		<div class="wp-block-column" style="flex-basis:50%">
-			<!-- wp:heading {"level":1,"className":"is-style-flag-fr","fontSize":"display-sm","placeholder":"<?php esc_attr_e( 'Ajouter un titre', 'wp-dsfr-theme' ); ?>"} -->
-			<h1 class="wp-block-heading is-style-flag-fr has-display-sm-font-size"></h1>
+			<!-- wp:heading {"level":1,"fontSize":"display-sm","placeholder":"<?php esc_attr_e( 'Ajouter un titre', 'wp-dsfr-theme' ); ?>"} -->
+			<h1 class="wp-block-heading has-display-sm-font-size"></h1>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"fontSize":"xl","placeholder":"<?php esc_attr_e( 'Ajouter un texte', 'wp-dsfr-theme' ); ?>"} -->

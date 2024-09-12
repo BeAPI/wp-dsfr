@@ -10,8 +10,8 @@
 <header class="wp-block-group alignfull wp-block-group--hero">
 	<!-- wp:group {"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group">
-		<!-- wp:heading {"level":1,"className":"is-style-flag-fr","fontSize":"display-sm","placeholder":"<?php esc_attr_e( 'Ajouter un titre', 'wp-dsfr-theme' ); ?>"} -->
-		<h1 class="wp-block-heading is-style-flag-fr has-display-sm-font-size"></h1>
+		<!-- wp:heading {"level":1,"fontSize":"display-sm","placeholder":"<?php esc_attr_e( 'Ajouter un titre', 'wp-dsfr-theme' ); ?>"} -->
+		<h1 class="wp-block-heading has-display-sm-font-size"></h1>
 		<!-- /wp:heading -->
 
 		<!-- wp:image -->
