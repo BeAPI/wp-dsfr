@@ -22,17 +22,11 @@
 
 			<!-- wp:buttons -->
 			<div class="wp-block-buttons">
-				<!-- wp:button -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"></a></div>
-				<!-- /wp:button -->
+				<!-- wp:button {"className":"wp-block-button"} /-->
 
-				<!-- wp:button {"className":"is-style-secondary"} -->
-				<div class="wp-block-button is-style-secondary"><a class="wp-block-button__link wp-element-button"></a></div>
-				<!-- /wp:button -->
+				<!-- wp:button {"className":"wp-block-button is-style-secondary"} /-->
 
-				<!-- wp:button {"className":"is-style-tertiary"} -->
-				<div class="wp-block-button is-style-tertiary"><a class="wp-block-button__link wp-element-button"></a></div>
-				<!-- /wp:button -->
+				<!-- wp:button {"className":"wp-block-button is-style-tertiary"} /-->
 			</div>
 			<!-- /wp:buttons -->
 		</div>
