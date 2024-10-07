@@ -285,7 +285,7 @@ class Assets implements Service {
 	 * @return string
 	 */
 	public function set_script_module_attribute( string $html, string $handle ): string {
-		if ( ! str_contains( $html, 'dsfr.module' ) ) {
+		if ( ! dsfr_str_contains( $html, 'dsfr.module' ) ) {
 			return $html;
 		}
 

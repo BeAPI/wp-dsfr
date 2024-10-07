@@ -1,9 +1,9 @@
 <?php
 /**
  * COMPONENT - FR TAGS GROUP
- * 
+ *
  * $args array keys :
- * 
+ *
  * @param array $args = [
  *     'tags' => [
  *          [
@@ -17,7 +17,7 @@
  *          ...
  *     ]
  * ]
- * 
+ *
  */
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Link\the_link;
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Text\the_text;
@@ -39,7 +39,7 @@ if ( empty( $args['tags'] ) ) {
 			$tag_classes[] = 'fr-tag--' . $fr_tag['size'];
 		}
 
-		if  ( ! empty( $fr_tag['href'] ) ) {
+		if ( ! empty( $fr_tag['href'] ) ) {
 			if ( $fr_tag['is_dismissable'] ) {
 				$tag_classes[] = 'fr-tag--dismiss';
 			}

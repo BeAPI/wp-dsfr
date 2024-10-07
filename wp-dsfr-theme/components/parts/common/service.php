@@ -7,10 +7,14 @@ $service_class = ! empty( $args['class'] ) ? $args['class'] : '';
 <div class="<?php echo esc_attr( $service_class ); ?>">
 	<a
 		href="<?php echo esc_url( home_url( '/' ) ); ?>"
-		title="<?php echo esc_attr(
-			/* translators: nom du site */
-			sprintf( __( 'Accueil -  %s', 'wp-dsfr-theme' ), get_bloginfo( 'name' ) )
-		); ?>">
+		title="
+			<?php
+			echo esc_attr(
+				/* translators: nom du site */
+				sprintf( __( 'Accueil -  %s', 'wp-dsfr-theme' ), get_bloginfo( 'name' ) )
+			);
+			?>
+		">
 		<p class="<?php echo esc_attr( $service_class ); ?>-title">
 			<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 		</p>

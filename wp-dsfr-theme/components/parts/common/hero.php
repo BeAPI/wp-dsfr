@@ -1,11 +1,11 @@
 <?php
 /**
  * COMPONENT - CARD POST
- * 
+ *
  * @param array $args = [
  *     'title' => ''
  * ]
- * 
+ *
  */
 
 $title = ! empty( $args['title'] ) ? $args['title'] : get_the_title( get_queried_object_id() );

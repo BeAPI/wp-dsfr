@@ -7,7 +7,7 @@
 			<?php get_template_part( 'components/parts/header/header-brand' ); ?>
 			<div class="fr-header__tools">
 				<?php
-				get_template_part( 'components/parts/header/header-tools-link' );
+					get_template_part( 'components/parts/header/header-tools-link' );
 				?>
 				<div class="fr-header__search fr-modal" id="header-search" tabindex="-1">
 					<div class="fr-container fr-container-lg--fluid">
