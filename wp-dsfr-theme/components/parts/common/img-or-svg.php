@@ -19,7 +19,7 @@ else :
 	$svg = file_get_contents( $file_path ); // phpcs:ignore
 
 	// add role="img" for a11y
-	if ( ! dsfr_str_contains( $svg, ' role="img"' ) ) {
+	if ( ! str_contains( $svg, ' role="img"' ) ) {
 		$svg = str_replace( '<svg ', '<svg role="img" aria-hidden="true" ', $svg );
 	}
 

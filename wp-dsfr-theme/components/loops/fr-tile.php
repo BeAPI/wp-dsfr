@@ -23,20 +23,20 @@ $tile_image_id      = ! empty( $args['image_id'] ) ? $args['image_id'] : 0;
 // ----
 // misc
 // ----
-$tile_classes = [ 'fr-tile' ];
-
-$tile_classes[] = $has_href ? 'fr-enlarge-link' : '';
-$tile_classes[] = $is_tile_horizontal ? 'fr-tile--horizontal' : '';
-
-if ( $is_tile_horizontal && in_array( $tile_vertical_at, [ 'md', 'lg' ], true ) ) {
-	$tile_classes[] = "fr-tile--vertical@{$tile_vertical_at}";
-}
-
-$tile_classes[] = $has_icon ? '' : 'fr-tile--no-icon';
+$tile_classes = array_map(
+	'sanitize_html_class',
+	[
+		'fr-tile',
+		$has_href ? 'fr-enlarge-link' : '',
+		$is_tile_horizontal ? 'fr-tile--horizontal' : '',
+		( $is_tile_horizontal && in_array( $tile_vertical_at, [ 'md', 'lg' ], true ) ) ? "fr-tile--vertical@{$tile_vertical_at}" : '',
+		$has_icon ? '' : 'fr-tile--no-icon',
+	]
+);
 
 $tile_classes = array_filter( $tile_classes );
 ?>
-<div class="<?php echo implode( ' ', array_map( 'sanitize_html_class', $tile_classes ) ); ?>">
+<div class="<?php echo implode( ' ', $tile_classes ); ?>">
 	<div class="fr-tile__body">
 		<div class="fr-tile__content">
 			<?php

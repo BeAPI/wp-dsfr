@@ -130,18 +130,3 @@ function get_archive_tags_group_arg( string $taxonomy, ?\WP_Term $active_term = 
 
 	return $tags_group_arg;
 }
-
-/**
- * Check if a string contains a specific substring, using str_contains() for PHP 8+ and strpos() for earlier versions.
- *
- * @param string $haystack The string to search in.
- * @param string $needle   The substring to search for.
- * @return bool            Returns true if the substring is found, false otherwise.
- */
-function dsfr_str_contains( $haystack, $needle ) {
-	if ( version_compare( PHP_VERSION, '8.0.0', '>=' ) ) {
-		return str_contains( $haystack, $needle );
-	} else {
-		return false !== strpos( $haystack, $needle );
-	}
-}

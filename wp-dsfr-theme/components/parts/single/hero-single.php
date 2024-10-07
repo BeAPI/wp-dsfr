@@ -21,17 +21,10 @@ $post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_the_terms_name( get_th
 			the_title( '<h1 class="hero__title">', '</h1>' );
 			?>
 			<div class="hero__metas">
-				<p class="hero__date">
-					<?php
-					printf(
-						/* translators: date de publication */
-						esc_html__( 'Publié le %s', 'wp-dsfr-theme' ),
-						'<time datetime="' . esc_attr( get_the_date( 'Y-m-d' ) ) . '">' . get_the_date(
-							__( 'd F Y', 'wp-dsfr-theme' )
-						) . '</time>'
-					);
-					?>
-				</p>
+				<p class="hero__date"><?php printf(
+					/* translators: date de publication */
+					esc_html__( 'Publié le %s', 'wp-dsfr-theme' ), '<time datetime="' . esc_attr( get_the_date( 'Y-m-d' ) ) . '">' . get_the_date( __( 'd F Y', 'wp-dsfr-theme' ) ) . '</time>' );
+				?></p>
 				<?php
 				if ( ! empty( $post_tags ) ) :
 					?>
