@@ -1,0 +1,79 @@
+name: "Release new TAG"
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-release:
+    name: "Release new TAG"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - id: parse
+        name: "Extract version number from .version-data.json file."
+        run: |
+          # Path to the version data file
+          DSFR_VERSION_FILE="$GITHUB_WORKSPACE/.version-data.json"
+
+          # Parse the file and extract the version
+          DSFR_VERSION=$(cat DSFR_VERSION_FILE | jq .version)
+
+          # Send the version to the output
+          echo "dsfr-project-version=$DSFR_VERSION" >> "$GITHUB_OUTPUT"
+
+      - id: version-check
+        name: "Check if a tag matching the version doesn't already exists."
+        run: |
+          # Get the version from the previous step
+          VERSION=${{ steps.parse.outputs.dsfr-project-version }}
+
+          if git rev-parse "$VERSION" >/dev/null 2>&1; then
+            echo "A tag aleady exists for this version, please update the .version-data.json file to a new version.";
+            exit 1;
+          fi
+
+      - id: dsfr-blocks-build-node
+        name: "WP DSFR Blocks : Build project CSS and JS"
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+      - run: npm ci
+      - run: npm run build
+        working-directory: ./wp-dsfr-blocks
+
+      - id: dsfr-theme-build-node
+        name: "WP DSFR Theme : Build project CSS and JS"
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+      - run: npm ci
+      - run: npm run build
+        working-directory: ./wp-dsfr-theme
+
+      - id: commit-and-push
+        name: "Commit and push new TAG"
+        run: |
+          # Get the version.
+          VERSION=${{ steps.parse.outputs.dsfr-project-version }}
+
+          echo "Copy .distignore to .gitignore"
+          cp .distignore .gitignore
+
+          echo "Configure git"
+          git config --local user.email "$(git log --format='%ae' HEAD^!)"
+          git config --local user.name "$(git log --format='%an' HEAD^!)"
+
+          echo "Creating branch"
+          git checkout -b release/${VERSION}
+
+          echo "Creating tag ${VERSION}"
+          git add .
+          git add -u
+          git commit -m "Release version ${VERSION}"
+          git tag ${VERSION}
+          git push --tags
