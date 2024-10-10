@@ -1,13 +1,13 @@
 <?php
 /**
  * COMPONENT - FR LINK DOWNLOAD
- * 
+ *
  * $args array keys :
- * 	
+ *
  * @param int    $file_id
  * @param string $content
  * @param string $target
- * 
+ *
  */
 use function \Beapi\Theme\Dsfr\Helpers\Misc\get_file_detail;
 use function \Beapi\Theme\Dsfr\Helpers\Misc\get_file_infos;

@@ -55,9 +55,9 @@ class Yoast implements Service {
 			// Render crumb content
 			if ( ( $total_crumbs - 1 ) === $index ) {
 				// On the last element, don't add HREF attribute and add `aria-current` attribute.
-				$dsfr_breadcrumb_output .= '<a class="fr-breadcrumb__link" aria-current="page">' . esc_html( $crumb['text'] ) . '</a>';
+				$dsfr_breadcrumb_output .= '<a class="' . esc_attr( 'fr-breadcrumb__link' ) . '" aria-current="page">' . esc_html( $crumb['text'] ) . '</a>';
 			} else {
-				$dsfr_breadcrumb_output .= '<a class="fr-breadcrumb__link" href="' . esc_url( $crumb['url'] ) . '">' . esc_html( $crumb['text'] ) . '</a>';
+				$dsfr_breadcrumb_output .= '<a class="' . esc_attr( 'fr-breadcrumb__link' ) . '" href="' . esc_url( $crumb['url'] ) . '">' . esc_html( $crumb['text'] ) . '</a>';
 			}
 
 			// Close crumb element.

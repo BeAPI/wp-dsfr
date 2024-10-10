@@ -1,7 +1,7 @@
 <?php
 /**
  * COMPONENT - FR BADGES GROUP
- * 
+ *
  * @param array $args = [
  *    'badges' => [
  *        [
@@ -13,7 +13,7 @@
  *        ...
  *    ]
  * ]
- * 
+ *
  */
 use function Beapi\Theme\Dsfr\Helpers\Formatting\Text\the_text;
 
@@ -27,7 +27,7 @@ if ( empty( $args['badges'] ) ) {
 		$badge_classes = [ 'fr-badge' ];
 
 		if ( ! empty( $fr_badge['type'] ) ) {
-			$badge_classes[] = 'fr-badge--' .  $fr_badge['type'];
+			$badge_classes[] = 'fr-badge--' . $fr_badge['type'];
 		} else if ( ! empty( $fr_tag['color'] ) ) {
 			$badge_classes[] = 'fr-badge--' . $fr_tag['color'];
 		}

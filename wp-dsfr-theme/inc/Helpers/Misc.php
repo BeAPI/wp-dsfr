@@ -43,7 +43,7 @@ function get_file_detail( array $file_infos ): string {
 	if ( ! empty( $file_infos['ext'] ) ) {
 		$details[] = strtoupper( $file_infos['ext'] );
 	}
-	
+
 	if ( ! empty( $file_infos['size'] ) ) {
 		$details[] = $file_infos['size'];
 	}
@@ -118,11 +118,11 @@ function get_archive_tags_group_arg( string $taxonomy, ?\WP_Term $active_term = 
 			}
 
 			if ( ! empty( $page_for_posts_id ) ) {
-				$tags_group_arg[$i]['href'] = get_permalink( $page_for_posts_id );
+				$tags_group_arg[ $i ]['href'] = get_permalink( $page_for_posts_id );
 			}
 
-			$tags_group_arg[$i]['title']          = esc_attr__( 'Retourner à la page des actualités', 'wp-dsfr-theme' );
-			$tags_group_arg[$i]['is_dismissable'] = true; 
+			$tags_group_arg[ $i ]['title']          = esc_attr__( 'Retourner à la page des actualités', 'wp-dsfr-theme' );
+			$tags_group_arg[ $i ]['is_dismissable'] = true;
 
 			break;
 		}

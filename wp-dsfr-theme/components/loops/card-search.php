@@ -1,11 +1,11 @@
 <?php
 /**
  * COMPONENT - CARD SEARCH
- * 
+ *
  * @param array $args = [
  *     'heading_level' => ''
  * ]
- * 
+ *
  */
 
 use function Beapi\Theme\Dsfr\Helpers\Misc\get_tags_group_arg;
