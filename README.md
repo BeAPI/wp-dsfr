@@ -2,7 +2,7 @@
 
 # 🇫🇷 WP DSFR
 
-WP DSFR est un portage en WordPress du Système de Design Français (ou DSFR) sous forme de thème WordPress.
+WP DSFR est un portage en WordPress du Système de Design Français (ou DSFR) sous forme de thème WordPress porté par [`l'agence WordPress Be API`](https://beapi.fr/).
 
 ## Comment l'utiliser
 
