@@ -38,3 +38,5 @@ npm run destroy
 ## To find out more
 
 Please visit the [`demonstration site`](https://www.wp-dsfr.fr/demo/) to discover the features and contribution possibilities offered by the theme.
+
+*WARNING: designed to facilitate the identification of French government sites, the DSFR is intended only for websites and mobile applications within the scope of the French government. Any other use is strictly prohibited. For further information, please consult [`the DSFR terms and conditions of use`](https://www.systeme-de-design.gouv.fr/a-propos/conditions-generales-d-utilisation).*
