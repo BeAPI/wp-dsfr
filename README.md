@@ -38,3 +38,5 @@ npm run destroy
 ## En savoir plus
 
 Veuillez consulter le [`site de démonstration`](https://www.wp-dsfr.fr/demo/) pour découvrir les fonctionnalités et possibilités de contribution offertes par le thème.
+
+*AVERTISSEMENT : conçu pour faciliter l’identification des sites de l’État français, le DSFR est destiné uniquement aux sites Internet et applications mobiles relevant du périmètre de l’État. Toute autre utilisation est strictement interdite. Pour plus d’informations, consultez les [`conditions générales d’utilisation du DSFR`](https://www.systeme-de-design.gouv.fr/a-propos/conditions-generales-d-utilisation).*
