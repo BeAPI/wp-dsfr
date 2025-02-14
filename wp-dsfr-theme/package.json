@@ -1,6 +1,7 @@
 {
   "name": "wp-dsfr-theme",
-  "version": "5.1.0",
+  "version": "1.0.0",
+  "description": "DSFR theme for WordPress",
   "author": "Be API",
   "repository": {
     "type": "git",

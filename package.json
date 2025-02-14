@@ -1,4 +1,12 @@
 {
+  "name": "wp-dsfr",
+	"version": "1.0.0",
+	"description": "DSFR theme and blocks for WordPress",
+  "author": "Be API",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BeAPI/dsfr"
+  },
   "scripts": {
     "start": "wp-env start",
     "stop": "wp-env stop",
