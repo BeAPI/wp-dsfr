@@ -38,19 +38,15 @@ jobs:
         name: "WP DSFR Blocks : Build project CSS and JS"
         uses: actions/setup-node@v4
         with:
-          node-version-file: 'package.json'
-      - run: npm install
-      - run: npm run build
-        working-directory: ./wp-dsfr-blocks
+          node-version-file: './wp-dsfr-blocks/package.json'
+      - run: cd ./wp-dsfr-blocks/ && npm install && npm run build && cd ../
 
       - id: dsfr-theme-build-node
         name: "WP DSFR Theme : Build project CSS and JS"
         uses: actions/setup-node@v4
         with:
-          node-version-file: 'package.json'
-      - run: npm install
-      - run: npm run build
-        working-directory: ./wp-dsfr-theme
+          node-version-file: './wp-dsfr-theme/package.json'
+      - run: cd ./wp-dsfr-theme/ && npm install && npm run build && cd ../
 
       - id: commit-and-push
         name: "Commit and push new TAG"
