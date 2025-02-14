@@ -59,7 +59,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: 'package.json'
-        run: |
+      - run: |
           npm ci
           npm run plugin-zip
         working-directory: "./wp-dsfr-blocks"
@@ -69,7 +69,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: 'package.json'
-        run: |
+      - run: |
           npm ci
           npm run plugin-zip
         working-directory: "./wp-dsfr-theme"
