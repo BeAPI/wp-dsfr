@@ -15,11 +15,8 @@ jobs:
       - id: extract-plugin-version
         name: "Extract plugin version number from package.json file."
         run: |
-          # Path to the version data file
-          DSFR_BLOCKS_VERSION_FILE="${GITHUB_WORKSPACE}/wp-dsfr-blocks/package.json"
-
-          # Parse the file and extract the version
-          DSFR_BLOCKS_VERSION=$(cat DSFR_BLOCKS_VERSION_FILE | jq .version)
+          # Parse package.json file and extract the version
+          DSFR_BLOCKS_VERSION=$(cat ./wp-dsfr-blocks/package.json | jq .version)
 
           # Send the version to the output
           echo "dsfr-blocks-version=$DSFR_BLOCKS_VERSION" >> "$GITHUB_OUTPUT"
@@ -27,11 +24,8 @@ jobs:
       - id: extract-theme-version
         name: "Extract theme version number from package.json file."
         run: |
-          # Path to the version data file
-          DSFR_THEME_VERSION_FILE="${GITHUB_WORKSPACE}/wp-dsfr-theme/package.json"
-
-          # Parse the file and extract the version
-          DSFR_THEME_VERSION=$(cat DSFR_THEME_VERSION_FILE | jq .version)
+          # Parse package.json file and extract the version
+          DSFR_THEME_VERSION=$(cat ./wp-dsfr-theme/package.json | jq .version)
 
           # Send the version to the output
           echo "dsfr-theme-version=$DSFR_THEME_VERSION" >> "$GITHUB_OUTPUT"

@@ -17,11 +17,8 @@ jobs:
       - id: parse
         name: "Extract version number from package.json file."
         run: |
-          # Path to the version data file
-          DSFR_VERSION_FILE="${GITHUB_WORKSPACE}/package.json"
-
-          # Parse the file and extract the version
-          DSFR_VERSION=$(cat DSFR_VERSION_FILE | jq .version)
+          # Parse package.json file and extract the version
+          DSFR_VERSION=$(cat ./package.json | jq .version)
 
           # Send the version to the output
           echo "dsfr-project-version=$DSFR_VERSION" >> "$GITHUB_OUTPUT"
@@ -55,25 +52,25 @@ jobs:
       - run: npm run build
         working-directory: ./wp-dsfr-theme
 
-      - id: commit-and-push
-        name: "Commit and push new TAG"
-        run: |
-          # Get the version.
-          VERSION=${{ steps.parse.outputs.dsfr-project-version }}
-
-          echo "Copy .distignore to .gitignore"
-          cp .distignore .gitignore
-
-          echo "Configure git"
-          git config --local user.email "$(git log --format='%ae' HEAD^!)"
-          git config --local user.name "$(git log --format='%an' HEAD^!)"
-
-          echo "Creating branch"
-          git checkout -b release/${VERSION}
-
-          echo "Creating tag ${VERSION}"
-          git add .
-          git add -u
-          git commit -m "Release version ${VERSION}"
-          git tag ${VERSION}
-          git push --tags
+#      - id: commit-and-push
+#        name: "Commit and push new TAG"
+#        run: |
+#          # Get the version.
+#          VERSION=${{ steps.parse.outputs.dsfr-project-version }}
+#
+#          echo "Copy .distignore to .gitignore"
+#          cp .distignore .gitignore
+#
+#          echo "Configure git"
+#          git config --local user.email "$(git log --format='%ae' HEAD^!)"
+#          git config --local user.name "$(git log --format='%an' HEAD^!)"
+#
+#          echo "Creating branch"
+#          git checkout -b release/${VERSION}
+#
+#          echo "Creating tag ${VERSION}"
+#          git add .
+#          git add -u
+#          git commit -m "Release version ${VERSION}"
+#          git tag ${VERSION}
+#          git push --tags

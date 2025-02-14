@@ -17,11 +17,8 @@ jobs:
       - id: parse
         name: "Extract version number from package.json file."
         run: |
-          # Path to the version data file
-          DSFR_VERSION_FILE="${GITHUB_WORKSPACE}/package.json"
-          
-          # Parse the file and extract the version
-          DSFR_VERSION=$(cat DSFR_VERSION_FILE | jq .version)
+          # Parse package.json file and extract the version
+          DSFR_VERSION=$(cat ./package.json | jq .version)
           
           # Send the version to the output
           echo "dsfr-project-version=$DSFR_VERSION" >> $GITHUB_OUTPUT
