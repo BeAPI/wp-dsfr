@@ -15,10 +15,10 @@ jobs:
           fetch-depth: 0
 
       - id: parse
-        name: "Extract version number from .version-data.json file."
+        name: "Extract version number from package.json file."
         run: |
           # Path to the version data file
-          DSFR_VERSION_FILE="$GITHUB_WORKSPACE/.version-data.json"
+          DSFR_VERSION_FILE="$GITHUB_WORKSPACE/package.json"
           
           # Parse the file and extract the version
           DSFR_VERSION=$(cat DSFR_VERSION_FILE | jq .version)
@@ -33,6 +33,6 @@ jobs:
           VERSION=${{ steps.parse.outputs.dsfr-project-version }}
 
           if git rev-parse "$VERSION" >/dev/null 2>&1; then
-            echo "A tag aleady exists for this version, please update the .version-data.json file to a new version.";
+            echo "A tag aleady exists for this version, please update the package.json file to a new version.";
             exit 1;
           fi
