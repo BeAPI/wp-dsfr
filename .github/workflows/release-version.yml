@@ -52,25 +52,25 @@ jobs:
       - run: npm run build
         working-directory: ./wp-dsfr-theme
 
-#      - id: commit-and-push
-#        name: "Commit and push new TAG"
-#        run: |
-#          # Get the version.
-#          VERSION=${{ steps.parse.outputs.dsfr-project-version }}
-#
-#          echo "Copy .distignore to .gitignore"
-#          cp .distignore .gitignore
-#
-#          echo "Configure git"
-#          git config --local user.email "$(git log --format='%ae' HEAD^!)"
-#          git config --local user.name "$(git log --format='%an' HEAD^!)"
-#
-#          echo "Creating branch"
-#          git checkout -b release/${VERSION}
-#
-#          echo "Creating tag ${VERSION}"
-#          git add .
-#          git add -u
-#          git commit -m "Release version ${VERSION}"
-#          git tag ${VERSION}
-#          git push --tags
+      - id: commit-and-push
+        name: "Commit and push new TAG"
+        run: |
+          # Get the version.
+          VERSION=${{ steps.parse.outputs.dsfr-project-version }}
+
+          echo "Copy .distignore to .gitignore"
+          cp .distignore .gitignore
+
+          echo "Configure git"
+          git config --local user.email "$(git log --format='%ae' HEAD^!)"
+          git config --local user.name "$(git log --format='%an' HEAD^!)"
+
+          echo "Creating branch"
+          git checkout -b release/${VERSION}
+
+          echo "Creating tag ${VERSION}"
+          git add .
+          git add -u
+          git commit -m "Release version ${VERSION}"
+          git tag ${VERSION}
+          git push --tags
