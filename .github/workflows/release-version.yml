@@ -42,7 +42,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: 'package.json'
-      - run: npm ci
+      - run: npm install
       - run: npm run build
         working-directory: ./wp-dsfr-blocks
 
@@ -51,7 +51,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: 'package.json'
-      - run: npm ci
+      - run: npm install
       - run: npm run build
         working-directory: ./wp-dsfr-theme
 
