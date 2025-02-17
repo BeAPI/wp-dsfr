@@ -4,6 +4,13 @@
 
 WP DSFR is a WordPress port of the French Design System (or DSFR) in the form of a WordPress theme.
 
+## WordPress theme and Blocks plugin installation
+
+You can download the latest archive [here](https://github.com/BeAPI/wp-dsfr/tags). It contains two folders:
+
+1. The wp-dsfr-theme folder to place in the `themes` directory.
+2. The wp-dsfr-blocks folder to place in the `plugins` directory and activate in your site's admin panel.
+
 ## How to use it
 
 This repository use [`@wordpress/env`](https://www.npmjs.com/package/@wordpress/env) package to easily setup a local
