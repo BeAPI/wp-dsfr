@@ -49,19 +49,19 @@ jobs:
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            upload_url: ${{ github.event.release.upload_url }}
-            asset_path: ./wp-dsfr-blocks/wp-dsfr-blocks.zip
-            asset_name: wp-dsfr-blocks-${{ steps.extract-plugin-version.outputs.dsfr-blocks-version }}.zip
-            asset_content_type: application/zip
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./wp-dsfr-blocks/wp-dsfr-blocks.zip
+          asset_name: wp-dsfr-blocks-${{ steps.extract-plugin-version.outputs.dsfr-blocks-version }}.zip
+          asset_content_type: application/zip
 
       - id: upload-wp-dsfr-theme-asset
         name: "Upload WP DSFR Theme archive to the release"
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            upload_url: ${{ github.event.release.upload_url }}
-            asset_path: ./wp-dsfr-theme/wp-dsfr-theme.zip
-            asset_name: wp-dsfr-theme-${{ steps.extract-theme-version.outputs.dsfr-theme-version }}.zip
-            asset_content_type: application/zip
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./wp-dsfr-theme/wp-dsfr-theme.zip
+          asset_name: wp-dsfr-theme-${{ steps.extract-theme-version.outputs.dsfr-theme-version }}.zip
+          asset_content_type: application/zip
