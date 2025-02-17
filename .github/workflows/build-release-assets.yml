@@ -31,14 +31,14 @@ jobs:
           echo "dsfr-theme-version=$DSFR_THEME_VERSION" >> "$GITHUB_OUTPUT"
 
       - id: dsfr-blocks-build-node
-        name: "WP DSFR Blocks : Build project CSS and JS"
+        name: "WP DSFR Blocks : Build project CSS and JS. Zip wp-dsfr-blocks folder."
         uses: actions/setup-node@v4
         with:
           node-version-file: './wp-dsfr-blocks/package.json'
       - run: cd ./wp-dsfr-blocks/ && npm install && npm run build && npm run plugin-zip && cd ../
 
       - id: dsfr-theme-build-node
-        name: "WP DSFR Theme : Build project CSS and JS"
+        name: "WP DSFR Theme : Build project CSS and JS. Zip wp-dsfr-theme folder."
         uses: actions/setup-node@v4
         with:
           node-version-file: './wp-dsfr-theme/package.json'
