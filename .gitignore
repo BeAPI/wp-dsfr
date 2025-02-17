@@ -6,6 +6,7 @@
 
 # Repository
 /node_modules
+package-lock.json
 
 # DSFR Theme
 /wp-dsfr-theme/node_modules

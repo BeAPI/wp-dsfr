@@ -1,8 +1,12 @@
 {
 	"name": "wp-dsfr-blocks",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "DSFR Gutenberg blocks for wp-dsfr-theme",
-	"author": "BeAPI",
+	"author": "Be API",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BeAPI/wp-dsfr"
+  },
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
@@ -14,6 +18,10 @@
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "wp-scripts format && wp-scripts start"
 	},
+	"files": [
+		"build",
+		"wp-dsfr-blocks.php"
+	],
 	"devDependencies": {
 		"@wordpress/scripts": "^26.13.0",
 		"classnames": "^2.3.1",
