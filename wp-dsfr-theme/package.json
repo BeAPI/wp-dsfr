@@ -46,7 +46,7 @@
     "oneloop.js": "^5.0.2"
   },
   "devDependencies": {
-    "@wordpress/blocks": "^13.5.0",
+    "@wordpress/blocks": "^14.7.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^4.0.0",
     "@wordpress/dom-ready": "^3.17.0",
     "@wordpress/env": "^9.8.0",
