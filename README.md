@@ -4,6 +4,13 @@
 
 WP DSFR est un portage en WordPress du Système de Design Français (ou DSFR) sous forme de thème WordPress porté par [`l'agence WordPress Be API`](https://beapi.fr/).
 
+## Installation du thème WordPress et du plugin de Blocks
+
+Vous pouvez télécharger la dernière archive [ici](https://github.com/BeAPI/wp-dsfr/tags). Celle ci contient deux dossiers :
+
+1. Le dossier wp-dsfr-theme à placer dans le dossier `themes`.
+2. Le dossier wp-dsfr-blocks à placer dans le dossier `plugins` et à activer dans le backoffice de votre site.
+
 ## Comment l'utiliser
 
 Ce dépôt utilise le package [`@wordpress/env`](https://www.npmjs.com/package/@wordpress/env) pour configurer facilement un environnement local pour travailler sur le thème DSFR et les plugins associés.
