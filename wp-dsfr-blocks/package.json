@@ -3,10 +3,10 @@
 	"version": "1.0.0",
 	"description": "DSFR Gutenberg blocks for wp-dsfr-theme",
 	"author": "Be API",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BeAPI/wp-dsfr"
-  },
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BeAPI/wp-dsfr"
+	},
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {

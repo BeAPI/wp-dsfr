@@ -1,5 +1,5 @@
-export default function (blockProps, searchSuffix, replacement) {
-	if (!blockProps.className) {
+export default function ( blockProps, searchSuffix, replacement ) {
+	if ( ! blockProps.className ) {
 		blockProps.className = '';
 	}
 
@@ -8,5 +8,5 @@ export default function (blockProps, searchSuffix, replacement) {
 		typeof replacement !== 'undefined' ? replacement : searchSuffix
 	);
 
-	blockProps.className = blockProps.className.replace('wp-block', '');
+	blockProps.className = blockProps.className.replace( 'wp-block', '' );
 }

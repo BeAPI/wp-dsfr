@@ -5,8 +5,8 @@ import metadata from './block.json';
 
 import { Icon, navigation } from '@beapi/icons';
 
-registerBlockType(metadata.name, {
-	icon: <Icon icon={navigation} />,
+registerBlockType( metadata.name, {
+	icon: <Icon icon={ navigation } />,
 	/**
 	 * @see ./edit.js
 	 */
@@ -16,4 +16,4 @@ registerBlockType(metadata.name, {
 	 * @see ./save.js
 	 */
 	save,
-});
+} );

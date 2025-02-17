@@ -3,26 +3,26 @@ import classNames from 'classnames';
 import isValidURL from '../common/js/utils/isValidURL';
 import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
 	const hasImage = attributes.displayImage && attributes.imageUrl;
-	const cite = isValidURL(attributes.cite) ? attributes.cite : '';
+	const cite = isValidURL( attributes.cite ) ? attributes.cite : '';
 	const classes = {
 		'fr-quote--column': attributes.displayImage,
 	};
 
-	if (attributes.color) {
-		classes['fr-quote--' + attributes.color] = true;
+	if ( attributes.color ) {
+		classes[ 'fr-quote--' + attributes.color ] = true;
 	}
 
-	const blockProps = useBlockProps.save({
-		className: classNames(classes),
-	});
+	const blockProps = useBlockProps.save( {
+		className: classNames( classes ),
+	} );
 
-	setDSFRBlockClassName(blockProps, 'fr-quote');
+	setDSFRBlockClassName( blockProps, 'fr-quote' );
 
 	return (
-		<figure {...blockProps}>
-			<blockquote cite={cite}>
+		<figure { ...blockProps }>
+			<blockquote cite={ cite }>
 				<RichText.Content
 					tagName="p"
 					className={
@@ -30,41 +30,41 @@ export default function save({ attributes }) {
 							? 'fr-text--' + attributes.quoteSize
 							: ''
 					}
-					value={attributes.quote}
+					value={ attributes.quote }
 				/>
 			</blockquote>
 			<figcaption>
 				<RichText.Content
 					tagName="p"
 					className="fr-quote__author"
-					value={attributes.author}
+					value={ attributes.author }
 				/>
-				{attributes.sources.length ? (
+				{ attributes.sources.length ? (
 					<ul className="fr-quote__source">
-						{attributes.sources.map((source, index) =>
+						{ attributes.sources.map( ( source, index ) =>
 							source ? (
 								<RichText.Content
 									tagName="li"
-									value={source}
-									key={index}
+									value={ source }
+									key={ index }
 								/>
 							) : (
 								''
 							)
-						)}
+						) }
 					</ul>
 				) : (
 					''
-				)}
-				{hasImage && (
+				) }
+				{ hasImage && (
 					<div className="fr-quote__image">
 						<img
 							className="fr-responsive-img"
-							src={attributes.imageUrl}
-							alt={attributes.imageAlt}
+							src={ attributes.imageUrl }
+							alt={ attributes.imageAlt }
 						/>
 					</div>
-				)}
+				) }
 			</figcaption>
 		</figure>
 	);

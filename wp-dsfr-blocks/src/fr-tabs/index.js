@@ -6,8 +6,8 @@ import edit from './edit';
 import save from './save';
 import metadata from './block.json';
 
-registerBlockType(metadata.name, {
-	icon: <Icon icon={tabs} />,
+registerBlockType( metadata.name, {
+	icon: <Icon icon={ tabs } />,
 	edit,
 	save,
-});
+} );
