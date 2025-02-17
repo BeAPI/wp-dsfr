@@ -17,11 +17,8 @@ jobs:
       - id: parse
         name: "Extract version number from .version-data.json file."
         run: |
-          # Path to the version data file
-          DSFR_VERSION_FILE="$GITHUB_WORKSPACE/.version-data.json"
-
-          # Parse the file and extract the version
-          DSFR_VERSION=$(cat DSFR_VERSION_FILE | jq .version)
+          # Parse .version-data.json file and extract the version
+          DSFR_VERSION=$(cat ./.version-data.json | jq .version)
 
           # Send the version to the output
           echo "dsfr-project-version=$DSFR_VERSION" >> "$GITHUB_OUTPUT"
@@ -41,19 +38,15 @@ jobs:
         name: "WP DSFR Blocks : Build project CSS and JS"
         uses: actions/setup-node@v4
         with:
-          node-version-file: 'package.json'
-      - run: npm ci
-      - run: npm run build
-        working-directory: ./wp-dsfr-blocks
+          node-version-file: './wp-dsfr-blocks/package.json'
+      - run: cd ./wp-dsfr-blocks/ && npm install && npm run build && cd ../
 
       - id: dsfr-theme-build-node
         name: "WP DSFR Theme : Build project CSS and JS"
         uses: actions/setup-node@v4
         with:
-          node-version-file: 'package.json'
-      - run: npm ci
-      - run: npm run build
-        working-directory: ./wp-dsfr-theme
+          node-version-file: './wp-dsfr-theme/package.json'
+      - run: cd ./wp-dsfr-theme/ && npm install && npm run build && cd ../
 
       - id: commit-and-push
         name: "Commit and push new TAG"
