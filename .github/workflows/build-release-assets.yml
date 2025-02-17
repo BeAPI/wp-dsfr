@@ -13,19 +13,19 @@ jobs:
         uses: actions/checkout@v4
 
       - id: extract-plugin-version
-        name: "Extract plugin version number from package.json file."
+        name: "Extract plugin version number from .version-data.json file."
         run: |
-          # Parse package.json file and extract the version
-          DSFR_BLOCKS_VERSION=$(cat ./wp-dsfr-blocks/package.json | jq .version)
+          # Parse .version-data.json file and extract the version
+          DSFR_BLOCKS_VERSION=$(cat ./wp-dsfr-blocks/.version-data.json | jq .version)
 
           # Send the version to the output
           echo "dsfr-blocks-version=$DSFR_BLOCKS_VERSION" >> "$GITHUB_OUTPUT"
 
       - id: extract-theme-version
-        name: "Extract theme version number from package.json file."
+        name: "Extract theme version number from .version-data.json file."
         run: |
-          # Parse package.json file and extract the version
-          DSFR_THEME_VERSION=$(cat ./wp-dsfr-theme/package.json | jq .version)
+          # Parse .version-data.json file and extract the version
+          DSFR_THEME_VERSION=$(cat ./wp-dsfr-theme/.version-data.json | jq .version)
 
           # Send the version to the output
           echo "dsfr-theme-version=$DSFR_THEME_VERSION" >> "$GITHUB_OUTPUT"
