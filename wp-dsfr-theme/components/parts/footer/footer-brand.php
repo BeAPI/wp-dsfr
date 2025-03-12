@@ -9,7 +9,7 @@ if ( empty( $official_title ) ) {
 <div class="fr-footer__brand fr-enlarge-link">
 	<a
 		href="<?php echo esc_url( home_url( '/' ) ); ?>"
-		title="<?php echo esc_attr(
+		aria-label="<?php echo esc_attr(
 			/* translators: nom du site */
 			sprintf( __( 'Retour à l’accueil du site - %s', 'wp-dsfr-theme' ), get_bloginfo( 'name' ) )
 		); ?>">
