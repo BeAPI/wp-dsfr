@@ -42,7 +42,7 @@
   ],
   "license": "GPL-2.0",
   "dependencies": {
-    "@gouvfr/dsfr": "1.12.1",
+    "@gouvfr/dsfr": "1.13.0",
     "oneloop.js": "^5.0.2"
   },
   "devDependencies": {
