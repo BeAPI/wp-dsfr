@@ -8,7 +8,7 @@
 	"description": "Bloc DSFR grille de tuiles.",
 	"supports": {
 		"html": false,
-		"align": ["wide", "full"],
+		"align": [ "wide", "full" ],
 		"color": {
 			"background": false,
 			"text": false

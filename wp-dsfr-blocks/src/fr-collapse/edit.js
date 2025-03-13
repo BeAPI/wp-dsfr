@@ -3,47 +3,47 @@ import { select } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
-export default function Edit({ setAttributes, context }) {
+export default function Edit( { setAttributes, context } ) {
 	let allowedBlocks = [];
-	const hasSupport = select('core/blocks').hasBlockSupport(
+	const hasSupport = select( 'core/blocks' ).hasBlockSupport(
 		'dsfr/fr-accordions-group',
 		'accordionPanelBlocks'
 	);
 	const blockProps = useBlockProps();
 
-	if (hasSupport) {
-		allowedBlocks = select('core/blocks').getBlockSupport(
+	if ( hasSupport ) {
+		allowedBlocks = select( 'core/blocks' ).getBlockSupport(
 			'dsfr/fr-accordions-group',
 			'accordionPanelBlocks'
 		);
 	} else {
-		allowedBlocks = select('core/blocks')
+		allowedBlocks = select( 'core/blocks' )
 			.getBlockTypes()
-			.map((block) => {
+			.map( ( block ) => {
 				return block.name;
-			})
-			.filter((blockName) => {
+			} )
+			.filter( ( blockName ) => {
 				return (
 					blockName !== 'dsfr/fr-accordions-group' &&
 					blockName !== 'dsfr/fr-accordion' &&
 					blockName !== 'dsfr/fr-accordion-title' &&
 					blockName !== 'dsfr/fr-collapse'
 				);
-			});
+			} );
 	}
 
-	useEffect(() => {
-		setAttributes({ id: context['dsfr/fr-accordion--id'] });
-	}, [context['dsfr/fr-accordion--id']]);
+	useEffect( () => {
+		setAttributes( { id: context[ 'dsfr/fr-accordion--id' ] } );
+	}, [ context[ 'dsfr/fr-accordion--id' ] ] );
 
-	setDSFRBlockClassName(blockProps, 'fr-collapse');
+	setDSFRBlockClassName( blockProps, 'fr-collapse' );
 
 	return (
-		<div {...blockProps}>
+		<div { ...blockProps }>
 			<InnerBlocks
-				allowedBlocks={allowedBlocks}
-				templateLock={false}
-				template={[['core/paragraph']]}
+				allowedBlocks={ allowedBlocks }
+				templateLock={ false }
+				template={ [ [ 'core/paragraph' ] ] }
 			/>
 		</div>
 	);

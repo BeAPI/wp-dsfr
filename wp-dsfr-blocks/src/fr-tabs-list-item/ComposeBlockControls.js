@@ -5,71 +5,71 @@ import { compose } from '@wordpress/compose';
 import { createBlock } from '@wordpress/blocks';
 import { ToolbarGroup } from '@wordpress/components';
 
-const ComposeBlockControls = ({
+const ComposeBlockControls = ( {
 	index,
 	count,
 	onMoveDown,
 	onMoveUp,
 	onRemoveBlocks,
 	onInsertBlock,
-}) => (
+} ) => (
 	<BlockControls key="toolbar">
 		<ToolbarGroup
-			controls={[
+			controls={ [
 				{
 					icon: 'arrow-left-alt2',
-					title: __("Placer l'item avant", 'wp-dsfr-blocks'),
+					title: __( "Placer l'item avant", 'wp-dsfr-blocks' ),
 					isDisabled: 0 === index,
 					onClick: () => {
-						onMoveUp(index);
+						onMoveUp( index );
 					},
 				},
 				{
 					icon: 'arrow-right-alt2',
-					title: __("Placer l'item après", 'wp-dsfr-blocks'),
+					title: __( "Placer l'item après", 'wp-dsfr-blocks' ),
 					isDisabled: count === index + 1,
 					onClick: () => {
-						onMoveDown(index);
+						onMoveDown( index );
 					},
 				},
-			]}
+			] }
 		/>
 		<ToolbarGroup
-			controls={[
+			controls={ [
 				{
 					icon: 'table-col-before',
-					title: __('Ajouter un item avant', 'wp-dsfr-blocks'),
+					title: __( 'Ajouter un item avant', 'wp-dsfr-blocks' ),
 					onClick: () => {
-						onInsertBlock(index);
+						onInsertBlock( index );
 					},
 				},
 				{
 					icon: 'table-col-after',
-					title: __('Ajouter un item après', 'wp-dsfr-blocks'),
+					title: __( 'Ajouter un item après', 'wp-dsfr-blocks' ),
 					onClick: () => {
-						onInsertBlock(index + 1);
+						onInsertBlock( index + 1 );
 					},
 				},
 				{
 					icon: 'trash',
-					title: __("Supprimer l'item", 'wp-dsfr-blocks'),
+					title: __( "Supprimer l'item", 'wp-dsfr-blocks' ),
 					onClick: () => {
-						onRemoveBlocks(index);
+						onRemoveBlocks( index );
 					},
 				},
-			]}
+			] }
 		/>
 	</BlockControls>
 );
 
-export default compose([
-	withSelect((select, ownProps) => {
+export default compose( [
+	withSelect( ( select, ownProps ) => {
 		const { getBlockOrder, getBlockRootClientId } =
-			select('core/block-editor');
-		const tabsListId = getBlockRootClientId(ownProps.clientId);
-		const tabsListItemIds = getBlockOrder(tabsListId);
-		const tabsId = getBlockRootClientId(tabsListId);
-		const tabsPanelIds = [...getBlockOrder(tabsId)];
+			select( 'core/block-editor' );
+		const tabsListId = getBlockRootClientId( ownProps.clientId );
+		const tabsListItemIds = getBlockOrder( tabsListId );
+		const tabsId = getBlockRootClientId( tabsListId );
+		const tabsPanelIds = [ ...getBlockOrder( tabsId ) ];
 
 		// remove tabs list id
 		tabsPanelIds.shift();
@@ -83,77 +83,77 @@ export default compose([
 			clientId: ownProps.clientId,
 			index: ownProps.index,
 		};
-	}),
+	} ),
 	withDispatch(
-		(dispatch, { tabsListItemIds, tabsListId, tabsPanelIds, tabsId }) => {
+		( dispatch, { tabsListItemIds, tabsListId, tabsPanelIds, tabsId } ) => {
 			const {
 				removeBlock,
 				moveBlocksDown,
 				moveBlocksUp,
 				insertBlock,
 				updateBlockAttributes,
-			} = dispatch('core/block-editor');
+			} = dispatch( 'core/block-editor' );
 
 			return {
-				onMoveDown(index) {
+				onMoveDown( index ) {
 					updateBlockAttributes(
-						[tabsListItemIds[index], tabsPanelIds[index]],
+						[ tabsListItemIds[ index ], tabsPanelIds[ index ] ],
 						{
 							lock: { move: false, remove: true },
 						}
 					);
 
-					moveBlocksDown([tabsPanelIds[index]], tabsId);
-					moveBlocksDown([tabsListItemIds[index]], tabsListId);
+					moveBlocksDown( [ tabsPanelIds[ index ] ], tabsId );
+					moveBlocksDown( [ tabsListItemIds[ index ] ], tabsListId );
 
 					updateBlockAttributes(
-						[tabsListItemIds[index], tabsPanelIds[index]],
+						[ tabsListItemIds[ index ], tabsPanelIds[ index ] ],
 						{
 							lock: { move: true, remove: true },
 						}
 					);
 				},
-				onMoveUp(index) {
+				onMoveUp( index ) {
 					updateBlockAttributes(
-						[tabsListItemIds[index], tabsPanelIds[index]],
+						[ tabsListItemIds[ index ], tabsPanelIds[ index ] ],
 						{
 							lock: { move: false, remove: true },
 						}
 					);
 
-					moveBlocksUp([tabsPanelIds[index]], tabsId);
-					moveBlocksUp([tabsListItemIds[index]], tabsListId);
+					moveBlocksUp( [ tabsPanelIds[ index ] ], tabsId );
+					moveBlocksUp( [ tabsListItemIds[ index ] ], tabsListId );
 
 					updateBlockAttributes(
-						[tabsListItemIds[index], tabsPanelIds[index]],
+						[ tabsListItemIds[ index ], tabsPanelIds[ index ] ],
 						{
 							lock: { move: true, remove: true },
 						}
 					);
 				},
-				onRemoveBlocks(index) {
+				onRemoveBlocks( index ) {
 					updateBlockAttributes(
-						[tabsListItemIds[index], tabsPanelIds[index]],
+						[ tabsListItemIds[ index ], tabsPanelIds[ index ] ],
 						{
 							lock: { move: true, remove: false },
 						}
 					);
 
-					removeBlock(tabsPanelIds[index]);
-					removeBlock(tabsListItemIds[index]);
+					removeBlock( tabsPanelIds[ index ] );
+					removeBlock( tabsListItemIds[ index ] );
 				},
-				onInsertBlock(index) {
-					const listItem = createBlock('dsfr/fr-tabs-list-item', {
+				onInsertBlock( index ) {
+					const listItem = createBlock( 'dsfr/fr-tabs-list-item', {
 						lock: { move: true, remove: true },
-					});
-					const panel = createBlock('dsfr/fr-tabs-panel', {
+					} );
+					const panel = createBlock( 'dsfr/fr-tabs-panel', {
 						lock: { move: true, remove: true },
-					});
+					} );
 
-					insertBlock(panel, index + 1, tabsId);
-					insertBlock(listItem, index, tabsListId);
+					insertBlock( panel, index + 1, tabsId );
+					insertBlock( listItem, index, tabsListId );
 				},
 			};
 		}
 	),
-])(ComposeBlockControls);
+] )( ComposeBlockControls );
