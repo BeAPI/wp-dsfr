@@ -61,14 +61,7 @@ if ( $is_card_horizontal ) {
 				?>
 				<div class="fr-card__start">
 					<?php
-					get_template_part(
-						'components/parts/common/tags-group',
-						'',
-						[
-							'list_label' => __( 'Catégorisé dans', 'wp-dsfr-theme' ),
-							'tags'       => $card_tags,
-						]
-					);
+					get_template_part( 'components/parts/common/tags-group', '', [ 'tags' => $card_tags ] );
 					get_template_part( 'components/parts/common/badges-group', '', [ 'badges' => $card_start_badges ] );
 					?>
 				</div>

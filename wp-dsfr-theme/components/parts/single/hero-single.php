@@ -14,8 +14,7 @@ $post_tags = Beapi\Theme\Dsfr\Helpers\Formatting\Term\get_the_terms_name( get_th
 				'components/parts/common/tags-group',
 				'',
 				[
-					'list_label' => __( 'Catégorisé dans', 'wp-dsfr-theme' ),
-					'tags'       => get_tags_group_arg( get_the_terms_array( get_the_ID(), 'category' ) ),
+					'tags' => get_tags_group_arg( get_the_terms_array( get_the_ID(), 'category' ) ),
 				]
 			);
 
