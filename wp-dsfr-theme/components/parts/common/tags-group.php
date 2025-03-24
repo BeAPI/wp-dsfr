@@ -51,6 +51,8 @@ if ( empty( $args['tags'] ) ) {
 					'title' => $fr_tag['title'],
 				],
 				[
+					'before' => '<li>',
+					'after'  => '</li>',
 					'content' => $fr_tag['label']
 				]
 			);
