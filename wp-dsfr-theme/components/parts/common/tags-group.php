@@ -16,6 +16,7 @@
  *          ],
  *          ...
  *     ]
+ *     'list_label' => '',
  * ]
  *
  */
@@ -25,8 +26,10 @@ use function Beapi\Theme\Dsfr\Helpers\Formatting\Text\the_text;
 if ( empty( $args['tags'] ) ) {
 	return;
 }
+
+$list_label = ! empty( $args['list_label'] ) ? $args['list_label'] : __( 'Liste des catégories', 'wp-dsfr-theme' );
 ?>
-<ul class="fr-tags-group">
+<ul class="fr-tags-group" aria-label="<?php echo esc_attr( $list_label ); ?>">
 	<?php
 	foreach ( $args['tags'] as $fr_tag ) :
 		$tag_classes = [ 'fr-tag' ];
