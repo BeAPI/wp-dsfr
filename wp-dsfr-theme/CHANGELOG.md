@@ -1,3 +1,6 @@
+# 5.1.1
+- Add missing <li> tag around links in tags-group.php
+
 # 5.1
 - Big update of the SCSS folder content and organization
 
