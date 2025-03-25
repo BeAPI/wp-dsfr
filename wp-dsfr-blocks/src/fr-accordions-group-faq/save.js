@@ -1,7 +1,7 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
 	const blockProps = useBlockProps.save();
 
 	setDSFRBlockClassName(
@@ -11,13 +11,13 @@ export default function save({ attributes }) {
 	);
 
 	return (
-		<div {...blockProps}>
-			{attributes.questions.map(
-				(item, i) =>
+		<div { ...blockProps }>
+			{ attributes.questions.map(
+				( item, i ) =>
 					item.question &&
 					item.answer && (
 						<div
-							key={i}
+							key={ i }
 							className="fr-accordion"
 							itemProp="mainEntity"
 							itemType="https://schema.org/Question"
@@ -27,15 +27,15 @@ export default function save({ attributes }) {
 									tagName="button"
 									className="fr-accordion__btn"
 									aria-expanded="false"
-									aria-controls={item.collapseId}
-									value={item.question}
+									aria-controls={ item.collapseId }
+									value={ item.question }
 									itemProp="name"
 								/>
 							</h3>
 							<div
 								className="fr-collapse"
 								role="region"
-								id={item.collapseId}
+								id={ item.collapseId }
 								itemScope
 								itemProp="acceptedAnswer"
 								itemType="https://schema.org/Answer"
@@ -43,14 +43,14 @@ export default function save({ attributes }) {
 								<div>
 									<RichText.Content
 										tagName="p"
-										value={item.answer}
+										value={ item.answer }
 										itemProp="text"
 									/>
 								</div>
 							</div>
 						</div>
 					)
-			)}
+			) }
 		</div>
 	);
 }

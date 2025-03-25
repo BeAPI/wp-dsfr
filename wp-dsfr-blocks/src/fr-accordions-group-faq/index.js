@@ -3,7 +3,7 @@ import './editor.scss';
 import Edit from './edit';
 import save from './save';
 
-registerBlockType('dsfr/fr-accordions-group-faq', {
+registerBlockType( 'dsfr/fr-accordions-group-faq', {
 	edit: Edit,
 	save,
-});
+} );

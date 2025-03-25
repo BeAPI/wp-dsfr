@@ -3,19 +3,19 @@ import { useEffect } from '@wordpress/element';
 import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 import uniqid from '../common/js/utils/uniqid';
 
-export default function Edit({ setAttributes }) {
+export default function Edit( { setAttributes } ) {
 	const blockProps = useBlockProps();
-	const innerBlocksProps = useInnerBlocksProps(blockProps, {
+	const innerBlocksProps = useInnerBlocksProps( blockProps, {
 		directInsert: false,
 		templateLock: 'all',
-		template: [['dsfr/fr-accordion-title'], ['dsfr/fr-collapse']],
-	});
+		template: [ [ 'dsfr/fr-accordion-title' ], [ 'dsfr/fr-collapse' ] ],
+	} );
 
-	useEffect(() => {
-		setAttributes({ id: uniqid('fr-collapse') });
-	}, []); // eslint-disable-line react-hooks/exhaustive-deps
+	useEffect( () => {
+		setAttributes( { id: uniqid( 'fr-collapse' ) } );
+	}, [] ); // eslint-disable-line react-hooks/exhaustive-deps
 
-	setDSFRBlockClassName(innerBlocksProps, 'fr-accordion');
+	setDSFRBlockClassName( innerBlocksProps, 'fr-accordion' );
 
-	return <div {...innerBlocksProps} />;
+	return <div { ...innerBlocksProps } />;
 }

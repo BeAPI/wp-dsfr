@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
 	"name": "dsfr/fr-accordion-title",
-	"parent": ["dsfr/fr-accordion"],
+	"parent": [ "dsfr/fr-accordion" ],
 	"version": "1.0.0",
 	"title": "Titre d'accordéon",
 	"category": "widgets",
@@ -29,7 +29,7 @@
 			"default": ""
 		}
 	},
-	"usesContext": ["dsfr/fr-accordion--id"],
+	"usesContext": [ "dsfr/fr-accordion--id" ],
 	"textdomain": "wp-dsfr-blocks",
 	"editorScript": "file:./index.js"
 }

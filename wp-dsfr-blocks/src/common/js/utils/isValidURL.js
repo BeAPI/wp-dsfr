@@ -1,6 +1,6 @@
-export default function (str) {
+export default function ( str ) {
 	try {
-		new URL(str);
+		new URL( str );
 	} catch {
 		return false;
 	}
