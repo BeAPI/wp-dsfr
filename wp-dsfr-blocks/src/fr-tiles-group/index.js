@@ -5,8 +5,8 @@ import metadata from './block.json';
 import './style.scss';
 import DSFRIcons from '../common/js/components/DSFRIcons';
 
-registerBlockType(metadata.name, {
+registerBlockType( metadata.name, {
 	icon: DSFRIcons.tilesGroup,
 	edit: Edit,
 	save,
-});
+} );

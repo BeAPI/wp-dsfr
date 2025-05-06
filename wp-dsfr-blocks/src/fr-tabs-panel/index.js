@@ -5,8 +5,8 @@ import metadata from './block.json';
 
 import { Icon, plus } from '@beapi/icons';
 
-registerBlockType(metadata.name, {
-	icon: <Icon icon={plus} />,
+registerBlockType( metadata.name, {
+	icon: <Icon icon={ plus } />,
 	edit,
 	save,
-});
+} );
