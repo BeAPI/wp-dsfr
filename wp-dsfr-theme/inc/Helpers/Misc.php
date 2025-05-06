@@ -107,6 +107,7 @@ function get_archive_tags_group_arg( string $taxonomy, ?\WP_Term $active_term = 
 		return [];
 	}
 
+	$terms          = array_values( $terms );
 	$tags_group_arg = get_tags_group_arg( $terms, $color );
 
 	if ( $active_term instanceof \WP_Term ) {
