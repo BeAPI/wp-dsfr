@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "dsfr/fr-latest-posts",
+	"version": "1.0.0",
+	"title": "Derniers articles",
+	"category": "widgets",
+	"description": "Bloc DSFR derniers articles.",
+	"textdomain": "wp-dsfr-blocks",
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php"
+}
