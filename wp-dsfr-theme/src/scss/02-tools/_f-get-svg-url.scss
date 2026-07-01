@@ -1,3 +1,6 @@
+@use "../01-abstract/variables" as *;
+@use "sass:color";
+@use "sass:list";
 @use "sass:map";
 
 /**
@@ -18,7 +21,7 @@
         "download": ("0 0 24 24","%3Cpath d='M3 19h18v2H3v-2Zm10-5.8L19 7l1.5 1.4L12 17 3.5 8.5 5 7.1l6.1 6V2h2v11.2Z'/%3E")
     );
 
-    @if not map-has-key($svgs, $name) {
+    @if not map.has-key($svgs, $name) {
         @return "";
     }
 
@@ -27,8 +30,8 @@
     }
 
     @if ($fill != "") {
-        $fill: " fill='rgba(#{red($fill), green($fill), blue($fill), $opacity})'";
+        $fill: " fill='rgba(#{color.channel($fill, 'red'), color.channel($fill, 'green'), color.channel($fill, 'blue'), $opacity})'";
     }
 
-    @return url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg'" + $fill + $style + " viewBox='" + nth(map.get($svgs, $name), 1) + "'%3E%" + nth(map.get($svgs, $name), 2) + "%3C/svg%3E");  /* stylelint-disable-line */
+    @return url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg'" + $fill + $style + " viewBox='" + list.nth(map.get($svgs, $name), 1) + "'%3E%" + list.nth(map.get($svgs, $name), 2) + "%3C/svg%3E");  /* stylelint-disable-line */
 }

@@ -1,67 +1,87 @@
-$entry-file-name: "editor";
-
 /**
  * Abstract
  * == Contain SCSS and CSS variables and webfonts declarations.
  */
 
-@import "./01-abstract/abstract";
+@use "01-abstract/constants";
+@use "01-abstract/variables";
 
-/**
- * Tools
- * == Contains functions and mixins.
- */
-
-@import "./02-tools/tools";
+variables.$entry-file-name: "editor";
 
 /**
  * Base
  * == Contain generic styles such as normalize or reset.
  */
 
-@import "./03-base/variables-css";
-@import "./03-base/svg-icons";
-@import "./03-base/text";
-
-/**
- * Utilities
- * == Utility classes that are not assigned to a specific component.
- */
-
-// @import "./04-utilities/utilities";
+@use "03-base/variables-css";
+@use "03-base/svg-icons";
+@use "06-blocks/core/paragraph";
+@use "03-base/text";
 
 /**
  * Blocks
  * == Gutenberg core blocks styles, style for front-end layout and editor.
  */
 
-@import "./05-components/components";
+@use "06-blocks/block-spacings";
+@use "05-components/fr-btn";
+@use "05-components/fr-link";
+@use "05-components/fr-accordion";
+@use "05-components/fr-accordions-group";
+@use "05-components/fr-callout";
+@use "05-components/fr-card";
+@use "05-components/fr-highlight";
+@use "05-components/fr-pagination";
+@use "05-components/fr-quote";
+@use "05-components/fr-ratio";
+@use "05-components/fr-tabs";
 
 /**
  * Gutenberg
  * == Gutenberg core/custom blocks and patterns styles, style for front-end layout and editor.
  */
 
-@import "./06-blocks/gutenberg";
-@import "./06-blocks/blocks";
+@use "06-blocks/gutenberg";
+@use "06-blocks/core/audio";
+@use "06-blocks/core/buttons";
+@use "06-blocks/core/columns";
+@use "06-blocks/core/cover";
+@use "06-blocks/core/embed";
+@use "06-blocks/core/file";
+@use "06-blocks/core/gallery";
+@use "06-blocks/core/group";
+@use "06-blocks/core/heading";
+@use "06-blocks/core/html";
+@use "06-blocks/core/image";
+@use "06-blocks/core/list";
+@use "06-blocks/core/media-text";
+@use "06-blocks/core/separator";
+@use "06-blocks/core/table";
+@use "06-blocks/core/video";
 
 /**
  * Patterns
  * == Contains styles for gutenberg patterns.
  */
 
-@import "./07-patterns/patterns";
+@use "07-patterns/wp-block-group--arguments";
+@use "07-patterns/wp-block-group--hero";
+@use "07-patterns/wp-block-group--how-to-use";
+@use "07-patterns/wp-block-group-fr-alert";
+@use "07-patterns/wp-block-group-fr-callout";
+@use "07-patterns/wp-block-group-fr-highlight";
+@use "07-patterns/wp-block-media-text--description";
 
 /**
  * Template parts
  * == If you want to add custom styles for specific page templates parts.
  */
 
-@import "./08-template-parts/grid";
+@use "08-template-parts/grid";
 
 /**
  * Vendor
  * == Plugins or libraries custom styles.
  */
 
-// @import "./10-vendor/vendor";
+// @use "10-vendor/...";

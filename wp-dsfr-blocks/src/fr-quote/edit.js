@@ -21,29 +21,29 @@ import DSFRColorSelectControl from '../common/js/components/DSFRColorSelectContr
 
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes, isSelected }) {
+export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const classes = {
 		'fr-quote--column': attributes.displayImage,
 	};
 
-	if (attributes.color) {
-		classes['fr-quote--' + attributes.color] = true;
+	if ( attributes.color ) {
+		classes[ 'fr-quote--' + attributes.color ] = true;
 	}
 
-	const blockProps = useBlockProps({
-		className: classNames(classes),
-	});
+	const blockProps = useBlockProps( {
+		className: classNames( classes ),
+	} );
 
 	// replace wp-block-dsfr-fr-quote by fr-quote
-	setDSFRBlockClassName(blockProps, 'fr-quote');
+	setDSFRBlockClassName( blockProps, 'fr-quote' );
 
 	/**
 	 * Add a new RichText to the sources list
 	 */
 	function addSourceField() {
-		const sources = [...attributes.sources];
-		sources.push('');
-		setAttributes({ sources });
+		const sources = [ ...attributes.sources ];
+		sources.push( '' );
+		setAttributes( { sources } );
 	}
 
 	/**
@@ -52,7 +52,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 	function hasEmptySourceField() {
 		return (
 			attributes.sources.length > 1 &&
-			attributes.sources.filter((source) => !source).length > 0
+			attributes.sources.filter( ( source ) => ! source ).length > 0
 		);
 	}
 
@@ -60,96 +60,104 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 	 * Remove all empty fields, add 1 field if sources is empty
 	 */
 	function cleanSources() {
-		const sources = attributes.sources.filter((source) => !!source);
+		const sources = attributes.sources.filter( ( source ) => !! source );
 
-		if (sources.length === 0) {
-			sources.push('');
+		if ( sources.length === 0 ) {
+			sources.push( '' );
 		}
 
-		if (sources.length !== attributes.sources.length) {
-			setAttributes({ sources });
+		if ( sources.length !== attributes.sources.length ) {
+			setAttributes( { sources } );
 		}
 	}
 
 	/**
 	 * Update the sources attribute (see block.json)
 	 */
-	function updateSources(source, index) {
-		const sources = [...attributes.sources];
-		sources[index] = source;
-		setAttributes({ sources });
+	function updateSources( source, index ) {
+		const sources = [ ...attributes.sources ];
+		sources[ index ] = source;
+		setAttributes( { sources } );
 	}
 
 	/**
 	 * Update attributes imageId, imageUrl, imageAlt (see block.json)
 	 */
-	function onSelectMedia(media) {
-		setAttributes({
+	function onSelectMedia( media ) {
+		setAttributes( {
 			imageId: media.id,
 			imageUrl: media?.sizes?.medium?.url
 				? media.sizes.medium.url
 				: media.url,
 			imageAlt: media.alt,
-		});
+		} );
 	}
 
 	/**
 	 * Reset attributes imageId, imageUrl, imageAlt (see block.json)
 	 */
 	function removeMedia() {
-		setAttributes({
+		setAttributes( {
 			imageId: 0,
 			imageUrl: '',
 			imageAlt: '',
-		});
+		} );
 	}
 
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Options', 'wp-dsfr-blocks')}
-					initialOpen={true}
+					title={ __( 'Options', 'wp-dsfr-blocks' ) }
+					initialOpen={ true }
 				>
 					<DSFRColorSelectControl
-						label={__('Couleur du pictogramme', 'wp-dsfr-blocks')}
-						value={attributes.color}
-						onChange={(color) => setAttributes({ color })}
+						label={ __(
+							'Couleur du pictogramme',
+							'wp-dsfr-blocks'
+						) }
+						value={ attributes.color }
+						onChange={ ( color ) => setAttributes( { color } ) }
 					/>
 					<ToggleControl
-						label={__(
+						label={ __(
 							"Afficher le portrait de l'auteur",
 							'wp-dsfr-blocks'
-						)}
-						checked={attributes.displayImage}
-						onChange={(displayImage) => {
+						) }
+						checked={ attributes.displayImage }
+						onChange={ ( displayImage ) => {
 							removeMedia();
-							setAttributes({ displayImage });
-						}}
+							setAttributes( { displayImage } );
+						} }
 					/>
 					<RadioControl
-						label={__('Taille de la citation', 'wp-dsfr-blocks')}
-						selected={attributes.quoteSize}
-						options={[
+						label={ __(
+							'Taille de la citation',
+							'wp-dsfr-blocks'
+						) }
+						selected={ attributes.quoteSize }
+						options={ [
 							{
-								label: __('LG', 'wp-dsfr-blocks'),
+								label: __( 'LG', 'wp-dsfr-blocks' ),
 								value: 'lg',
 							},
 							{
-								label: __('Défaut (XL)', 'wp-dsfr-blocks'),
+								label: __( 'Défaut (XL)', 'wp-dsfr-blocks' ),
 								value: '',
 							},
-						]}
-						onChange={(quoteSize) => setAttributes({ quoteSize })}
+						] }
+						onChange={ ( quoteSize ) =>
+							setAttributes( { quoteSize } )
+						}
 					/>
 					<TextControl
-						value={attributes.cite}
-						label={__('Source', 'wp-dsfr-blocks')}
-						onChange={(cite) => setAttributes({ cite })}
-						placeholder={'https://www.foo.com'}
+						value={ attributes.cite }
+						label={ __( 'Source', 'wp-dsfr-blocks' ) }
+						onChange={ ( cite ) => setAttributes( { cite } ) }
+						placeholder={ 'https://www.foo.com' }
 						type="url"
 						help={
-							attributes.cite && !isValidURL(attributes.cite)
+							attributes.cite && ! isValidURL( attributes.cite )
 								? __(
 										'Cette URL est invalide et ne sera pas intégrée au bloc',
 										'wp-dsfr-blocks'
@@ -162,8 +170,8 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<figure {...blockProps}>
-				<blockquote cite={attributes.cite}>
+			<figure { ...blockProps }>
+				<blockquote cite={ attributes.cite }>
 					<RichText
 						tagName="p"
 						className={
@@ -171,83 +179,83 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 								? 'fr-text--' + attributes.quoteSize
 								: ''
 						}
-						placeholder={__('Citation', 'wp-dsfr-blocks')}
-						value={attributes.quote}
-						onChange={(quote) => setAttributes({ quote })}
-						allowedFormats={[]}
+						placeholder={ __( 'Citation', 'wp-dsfr-blocks' ) }
+						value={ attributes.quote }
+						onChange={ ( quote ) => setAttributes( { quote } ) }
+						allowedFormats={ [] }
 					/>
 				</blockquote>
 				<figcaption>
 					<RichText
 						tagName="p"
 						className="fr-quote__author"
-						placeholder={__('Auteur', 'wp-dsfr-blocks')}
-						value={attributes.author}
-						onChange={(author) => setAttributes({ author })}
-						allowedFormats={[]}
+						placeholder={ __( 'Auteur', 'wp-dsfr-blocks' ) }
+						value={ attributes.author }
+						onChange={ ( author ) => setAttributes( { author } ) }
+						allowedFormats={ [] }
 					/>
 					<ul className="fr-quote__source">
-						{attributes.sources.map((source, index) => (
+						{ attributes.sources.map( ( source, index ) => (
 							<RichText
-								key={index}
+								key={ index }
 								tagName="li"
-								value={source}
-								placeholder={__('Ajouter une source')}
-								onChange={(source) => {
-									updateSources(source, index);
-								}}
-								allowedFormats={['core/link']}
+								value={ source }
+								placeholder={ __( 'Ajouter une source' ) }
+								onChange={ ( source ) => {
+									updateSources( source, index );
+								} }
+								allowedFormats={ [ 'core/link' ] }
 								disableLineBreaks="false"
 							/>
-						))}
+						) ) }
 						<li>
-							{hasEmptySourceField() && (
+							{ hasEmptySourceField() && (
 								<Button
-									icon={trash}
-									label={__(
+									icon={ trash }
+									label={ __(
 										'Supprimer le(s) champ(s) source(s) vide(s)',
 										'wp-dsfr-blocks'
-									)}
-									onClick={cleanSources}
+									) }
+									onClick={ cleanSources }
 								/>
-							)}
+							) }
 							<Button
-								icon={plus}
-								label={__(
+								icon={ plus }
+								label={ __(
 									'Ajouter un champ source',
 									'wp-dsfr-blocks'
-								)}
-								onClick={addSourceField}
+								) }
+								onClick={ addSourceField }
 							/>
 						</li>
 					</ul>
-					{attributes.displayImage && (
+					{ attributes.displayImage && (
 						<div className="fr-quote__image">
 							<MediaUploadCheck>
 								<MediaUpload
-									allowedTypes={['image']}
-									onSelect={onSelectMedia}
-									value={attributes.imageId}
-									render={({ open }) => (
-										<Button onClick={open}>
-											{attributes.imageUrl ? (
+									allowedTypes={ [ 'image' ] }
+									onSelect={ onSelectMedia }
+									value={ attributes.imageId }
+									render={ ( { open } ) => (
+										<Button onClick={ open }>
+											{ attributes.imageUrl ? (
 												<img
 													className="fr-responsive-img"
-													src={attributes.imageUrl}
-													alt={attributes.imageAlt}
+													src={ attributes.imageUrl }
+													alt={ attributes.imageAlt }
 												/>
 											) : (
 												__(
 													'Ajouter une image',
 													'wp-dsfr-blocks'
 												)
-											)}
+											) }
 										</Button>
-									)}
+									) }
 								/>
 							</MediaUploadCheck>
 						</div>
-					)}
+					) }
 				</figcaption>
 			</figure>
 		</>

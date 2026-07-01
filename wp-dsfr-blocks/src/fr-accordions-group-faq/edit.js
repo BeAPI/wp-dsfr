@@ -8,7 +8,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 import FaqList from './FaqList';
 import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
-export default function Edit({ attributes, setAttributes, isSelected }) {
+export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const { questions } = attributes;
 	const blockProps = useBlockProps();
 
@@ -19,12 +19,12 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 	);
 
 	return (
-		<div {...blockProps}>
+		<div { ...blockProps }>
 			<FaqList
-				isBlockSelected={isSelected}
-				questions={questions}
-				onChange={(newQuestions) =>
-					setAttributes({ questions: newQuestions })
+				isBlockSelected={ isSelected }
+				questions={ questions }
+				onChange={ ( newQuestions ) =>
+					setAttributes( { questions: newQuestions } )
 				}
 			/>
 		</div>

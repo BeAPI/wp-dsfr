@@ -1,3 +1,7 @@
+@use "../../02-tools/f-context-selector" as *;
+@use "../../02-tools/m-breakpoint" as *;
+@use "../block-spacings" as *;
+
 .wp-block-columns {
     gap: var(--row-gap) var(--column-gap);
 

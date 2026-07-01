@@ -1,3 +1,7 @@
+@use "../01-abstract/variables" as *;
+@use "f-get-svg-url" as *;
+@use "m-hover" as *;
+
 @mixin fr-link {
     --underline-img: linear-gradient(0deg, currentColor, currentColor);
     --text-spacing: 0;

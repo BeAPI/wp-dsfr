@@ -1,3 +1,7 @@
+@use "../01-abstract/variables" as *;
+@use "../02-tools/m-breakpoint" as *;
+@use "../02-tools/m-container" as *;
+
 .page-top {
     > div {
         @include container;
