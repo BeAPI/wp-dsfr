@@ -1,0 +1,14 @@
+{
+  "app.js": "app-min.js",
+  "app.css": "app.9d59e0ec.min.css",
+  "app.php": "app-min.asset.php",
+  "editor.js": "editor-min.js",
+  "editor.css": "editor.46199cc3.min.css",
+  "editor.php": "editor-min.asset.php",
+  "post-build.js": "post-build-min.js",
+  "post-build.php": "post-build-min.asset.php",
+  "login.js": "login-min.js",
+  "login.css": "login.4ecbf569.min.css",
+  "login.php": "login-min.asset.php",
+  "images/logo-marianne.svg": "images/logo-marianne.svg"
+}
