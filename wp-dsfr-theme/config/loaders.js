@@ -83,6 +83,7 @@ module.exports = {
               sassOptions: function (loaderContext) {
                 let obj = {
                   quietDeps: true,
+                  silenceDeprecations: ['legacy-js-api'],
                   sourceMap: true,
                 }
 

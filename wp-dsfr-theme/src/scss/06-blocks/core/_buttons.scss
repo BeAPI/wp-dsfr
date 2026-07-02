@@ -1,3 +1,7 @@
+@use "../../01-abstract/variables" as *;
+@use "../../05-components/fr-btn" as *;
+@use "../../05-components/fr-link" as *;
+
 .wp-block {
     &-buttons {
         gap: 16px;

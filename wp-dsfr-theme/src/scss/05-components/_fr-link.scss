@@ -1,3 +1,6 @@
+@use "../02-tools/f-get-svg-url" as *;
+@use "../02-tools/m-fr-link" as *;
+
 %fr-link {
     @include fr-link;
 }

@@ -1,3 +1,9 @@
+@use "../../01-abstract/variables" as *;
+@use "../../02-tools/f-context-selector" as *;
+@use "../../02-tools/m-breakpoint" as *;
+@use "../../02-tools/m-container" as *;
+@use "../block-spacings" as *;
+
 .wp-block-group {
     $el: &;
 

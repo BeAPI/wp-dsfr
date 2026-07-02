@@ -1,5 +1,7 @@
 @use "sass:map";
 
+$entry-file-name: "undefined" !default;
+
 /**
  * Variables
  */
@@ -15,6 +17,10 @@ $color-light: #fff;
 $color-dark: #000;
 $color-dark-010: rgba(0, 0, 0, .1);
 $color-dark-005: rgba(0, 0, 0, .05);
+$color-primary: #000091;
+$color-text: #161616;
+$color-grey-100: #eee;
+$color-grey-500: #929292;
 
 // ==========
 // Sizes

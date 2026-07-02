@@ -2,8 +2,7 @@
  * Imports
  */
 
-@import "./01-abstract/abstract";
-@import "./02-tools/tools";
+@use "02-tools/m-fr-btn" as *;
 
 // SCSS variables to customise the login page styles
 // The CSS file generated in dist/ by webpack is called automatically thanks to the WP Login Page mu-plugin present in the WP Skeleton.

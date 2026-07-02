@@ -1,3 +1,8 @@
+@use "../../02-tools/m-editor-only" as *;
+@use "../../02-tools/m-fr-link" as *;
+@use "../../05-components/fr-link" as *;
+@use "../block-spacings" as *;
+
 .wp-block-file {
     $el: &;
 

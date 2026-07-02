@@ -1,3 +1,6 @@
+@use "../02-tools/f-context-selector" as *;
+@use "../06-blocks/block-spacings" as *;
+
 .wp-block-group {
     $el: &;
 

@@ -1,0 +1,64 @@
+@use "../01-abstract/variables" as *;
+@use "../02-tools/m-breakpoint" as *;
+
+%no-first-and-last-child-vertical-margin {
+    :first-child:where(:not(:is([class*="fr-"] :first-child))) {
+        margin-top: 0;
+    }
+
+    :last-child:where(:not(:is([class*="fr-"] :last-child))) {
+        margin-bottom: 0;
+    }
+}
+
+%block-spacing-xs {
+    margin-bottom: $spacing-6;
+}
+
+%block-spacing-sm {
+    margin-top: $spacing-6;
+    margin-bottom: $spacing-6;
+
+    @include breakpoints(md) {
+        margin-top: $spacing-8;
+        margin-bottom: $spacing-8;
+    }
+}
+
+%block-spacing-md {
+    margin-top: $spacing-10;
+    margin-bottom: $spacing-10;
+
+    @include breakpoints(md) {
+        margin-top: $spacing-12;
+        margin-bottom: $spacing-12;
+    }
+}
+
+%block-inner-spacing-md {
+    padding-top: $spacing-10;
+    padding-bottom: $spacing-10;
+
+    @include breakpoints(md) {
+        padding-top: $spacing-12;
+        padding-bottom: $spacing-12;
+    }
+}
+
+%block-spacing-lg {
+    margin-top: $spacing-12;
+    margin-bottom: $spacing-12;
+
+    @include breakpoints(md) {
+        margin-top: $spacing-14;
+        margin-bottom: $spacing-14;
+    }
+}
+
+%block-spacing-lg-reverse {
+    margin-top: -$spacing-12;
+
+    @include breakpoints(md) {
+        margin-top: -$spacing-14;
+    }
+}

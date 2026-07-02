@@ -4,8 +4,8 @@ import save from './save';
 import metadata from './block.json';
 import DSFRIcons from '../common/js/components/DSFRIcons';
 
-registerBlockType(metadata.name, {
+registerBlockType( metadata.name, {
 	icon: DSFRIcons.tile,
 	edit: Edit,
 	save,
-});
+} );

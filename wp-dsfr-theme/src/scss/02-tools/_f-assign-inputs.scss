@@ -10,7 +10,7 @@
 
     @each $input in $inputs {
         $input: string.unquote($input);
-        $input: if($pseudo, $input + ":" + $pseudo, $input);
+        $input: if(sass($pseudo): $input + ":" + $pseudo; else: $input);
         $list: list.append($list, $input, comma);
     }
 

@@ -1,3 +1,6 @@
+@use "../../02-tools/f-context-selector" as *;
+@use "../block-spacings" as *;
+
 .wp-block-image {
     @extend %block-spacing-sm;
 

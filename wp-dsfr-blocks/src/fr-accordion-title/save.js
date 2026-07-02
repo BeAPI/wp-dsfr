@@ -1,7 +1,7 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
-export default function save({ attributes: { label, ariaControls } }) {
+export default function save( { attributes: { label, ariaControls } } ) {
 	const blockProps = useBlockProps.save();
 
 	setDSFRBlockClassName(
@@ -11,13 +11,13 @@ export default function save({ attributes: { label, ariaControls } }) {
 	);
 
 	return (
-		<h3 {...blockProps}>
+		<h3 { ...blockProps }>
 			<button
 				aria-expanded="false"
 				className="fr-accordion__btn"
-				aria-controls={ariaControls}
+				aria-controls={ ariaControls }
 			>
-				{label}
+				{ label }
 			</button>
 		</h3>
 	);

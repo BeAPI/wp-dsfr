@@ -1,5 +1,9 @@
+@use "../01-abstract/variables" as *;
+@use "f-strip-units" as *;
+@use "f-to-number" as *;
 @use "sass:map";
 @use "sass:math";
+@use "sass:meta";
 
 /**
  * Column
@@ -32,7 +36,7 @@
 
 @function column($device, $nb-column: null, $nb-gutter: null, $total-column: null, $total-gutter: null) {
     // shift vars if $device is number
-    @if type-of($device) == "number" {
+    @if meta.type-of($device) == "number" {
         $total-gutter: $total-column;
         $total-column: $nb-gutter;
         $nb-gutter: $nb-column;
@@ -62,7 +66,7 @@
 
 @function column-px($device, $nb-column: null, $nb-gutter: null, $unitless: false) {
     // shift vars if $device is number
-    @if type-of($device) == "number" {
+    @if meta.type-of($device) == "number" {
         $nb-gutter: $nb-column;
         $nb-column: $device;
         $device: d;
@@ -89,7 +93,7 @@
 
 @function column-full($device, $nb-column: null, $nb-gutter: null) {
     // shift vars if $device is number
-    @if type-of($device) == "number" {
+    @if meta.type-of($device) == "number" {
         $nb-gutter: $nb-column;
         $nb-column: $device;
         $device: d;
@@ -110,5 +114,5 @@
 // ----
 
 @function column-factor($device, $nb-column: null, $nb-gutter: null, $total-column: null, $total-gutter: null) {
-    @return math.div(to-number(strip-unit(column($device, $nb-column, $nb-gutter, $total-column, $total-gutter))), 100);
+    @return math.div(to-number(strip-units(column($device, $nb-column, $nb-gutter, $total-column, $total-gutter))), 100);
 }

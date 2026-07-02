@@ -27,342 +27,357 @@ import getSurtitleClasses from './getSurtitleClasses';
 
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes, isSelected }) {
-	const [popoverAnchor, setPopoverAnchor] = useState(null);
-	const [isEditingURL, setIsEditingURL] = useState(false);
-	const isURLSet = !!attributes.linkURL;
+export default function Edit( { attributes, setAttributes, isSelected } ) {
+	const [ popoverAnchor, setPopoverAnchor ] = useState( null );
+	const [ isEditingURL, setIsEditingURL ] = useState( false );
+	const isURLSet = !! attributes.linkURL;
 	const ref = useRef();
-	const blockProps = useBlockProps({
-		className: classNames({
+	const blockProps = useBlockProps( {
+		className: classNames( {
 			'fr-tile--horizontal': attributes.isHorizontal,
-			'fr-tile--no-icon': !attributes.displayIcon,
-			'fr-tile--no-border': !attributes.displayBorder,
+			'fr-tile--no-icon': ! attributes.displayIcon,
+			'fr-tile--no-border': ! attributes.displayBorder,
 			'fr-tile--shadow': attributes.displayShadow,
-			['fr-tile--' + attributes.background]: !!attributes.background,
+			[ 'fr-tile--' + attributes.background ]: !! attributes.background,
 			'fr-enlarge-link': attributes.title && attributes.linkURL,
-		}),
-		ref: useMergeRefs([setPopoverAnchor, ref]),
-	});
+		} ),
+		ref: useMergeRefs( [ setPopoverAnchor, ref ] ),
+	} );
 	const linkValue = useMemo(
-		() => ({
+		() => ( {
 			url: attributes.linkURL,
 			opensInNewTab: attributes.target === '_blank',
 			title: attributes.linkTitle,
-		}),
-		[attributes.linkURL, attributes.linkTarget, attributes.linkTitle]
+		} ),
+		[ attributes.linkURL, attributes.linkTarget, attributes.linkTitle ]
 	);
 
 	/**
 	 * Update attributes imageId, imageURL, imageAlt (see block.json)
 	 */
-	function onSelectMedia(media) {
-		if (media.mime === 'image/svg+xml') {
-			fetch(media.url)
-				.then((response) => response.text())
-				.then((svg) => {
-					setAttributes({
+	function onSelectMedia( media ) {
+		if ( media.mime === 'image/svg+xml' ) {
+			fetch( media.url )
+				.then( ( response ) => response.text() )
+				.then( ( svg ) => {
+					setAttributes( {
 						imageURL: '',
 						imageAlt: '',
 						imageSvg: svg,
-					});
-				});
+					} );
+				} );
 		}
 
-		setAttributes({
+		setAttributes( {
 			imageId: media.id,
 			imageURL: media?.sizes?.thumbnail?.url
 				? media.sizes.thumbnail.url
 				: media.url,
 			imageAlt: media.alt,
-		});
+		} );
 	}
 
 	/**
 	 * Reset attributes imageId, imageURL, imageAlt (see block.json)
 	 */
 	function removeMedia() {
-		setAttributes({
+		setAttributes( {
 			imageId: 0,
 			imageURL: '',
 			imageAlt: '',
 			imageSvg: '',
-		});
+		} );
 	}
 
 	/**
 	 * When user start editing link
 	 */
-	function startEditingURL(e) {
+	function startEditingURL( e ) {
 		e.preventDefault();
-		setIsEditingURL(true);
+		setIsEditingURL( true );
 	}
 
 	/**
 	 * Reset link attributes
 	 */
 	function unlink() {
-		setAttributes({
+		setAttributes( {
 			url: '',
 			linkTarget: '',
-		});
-		setIsEditingURL(false);
+		} );
+		setIsEditingURL( false );
 	}
 
-	useEffect(() => {
-		if (!isSelected) {
-			setIsEditingURL(false);
+	useEffect( () => {
+		if ( ! isSelected ) {
+			setIsEditingURL( false );
 		}
-	}, [isSelected]);
+	}, [ isSelected ] );
 
-	setDSFRBlockClassName(blockProps, 'fr-tile');
+	setDSFRBlockClassName( blockProps, 'fr-tile' );
 
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Paramètres de la Tuile', 'wp-dsfr-blocks')}
-					initialOpen={true}
+					title={ __( 'Paramètres de la Tuile', 'wp-dsfr-blocks' ) }
+					initialOpen={ true }
 				>
 					<ToggleControl
-						label={__('Afficher horizontalement', 'wp-dsfr-blocks')}
-						checked={attributes.isHorizontal}
-						onChange={(isHorizontal) =>
-							setAttributes({ isHorizontal })
+						label={ __(
+							'Afficher horizontalement',
+							'wp-dsfr-blocks'
+						) }
+						checked={ attributes.isHorizontal }
+						onChange={ ( isHorizontal ) =>
+							setAttributes( { isHorizontal } )
 						}
 					/>
 					<ToggleControl
-						label={__("Afficher l'icône du lien", 'wp-dsfr-blocks')}
-						checked={attributes.displayIcon}
-						onChange={(displayIcon) =>
-							setAttributes({ displayIcon })
+						label={ __(
+							"Afficher l'icône du lien",
+							'wp-dsfr-blocks'
+						) }
+						checked={ attributes.displayIcon }
+						onChange={ ( displayIcon ) =>
+							setAttributes( { displayIcon } )
 						}
 					/>
 					<ToggleControl
-						label={__("Afficher l'image", 'wp-dsfr-blocks')}
-						checked={attributes.displayImage}
-						onChange={(displayImage) => {
+						label={ __( "Afficher l'image", 'wp-dsfr-blocks' ) }
+						checked={ attributes.displayImage }
+						onChange={ ( displayImage ) => {
 							removeMedia();
-							setAttributes({ displayImage });
-						}}
+							setAttributes( { displayImage } );
+						} }
 					/>
 					<ToggleControl
-						label={__('Afficher les bordures', 'wp-dsfr-blocks')}
-						checked={attributes.displayBorder}
-						onChange={(displayBorder) =>
-							setAttributes({
+						label={ __(
+							'Afficher les bordures',
+							'wp-dsfr-blocks'
+						) }
+						checked={ attributes.displayBorder }
+						onChange={ ( displayBorder ) =>
+							setAttributes( {
 								displayShadow: displayBorder
 									? false
 									: attributes.displayShadow,
 								displayBorder,
-							})
+							} )
 						}
 					/>
 					<ToggleControl
-						label={__("Afficher l'ombre", 'wp-dsfr-blocks')}
-						checked={attributes.displayShadow}
-						onChange={(displayShadow) =>
-							setAttributes({
+						label={ __( "Afficher l'ombre", 'wp-dsfr-blocks' ) }
+						checked={ attributes.displayShadow }
+						onChange={ ( displayShadow ) =>
+							setAttributes( {
 								displayBorder: displayShadow
 									? false
 									: attributes.displayBorder,
 								displayShadow,
-							})
+							} )
 						}
 					/>
 					<RadioControl
-						label={__('Fond', 'wp-dsfr-blocks')}
-						selected={attributes.background}
-						options={[
+						label={ __( 'Fond', 'wp-dsfr-blocks' ) }
+						selected={ attributes.background }
+						options={ [
 							{
-								label: __('Gris', 'wp-dsfr-blocks'),
+								label: __( 'Gris', 'wp-dsfr-blocks' ),
 								value: 'grey',
 							},
 							{
-								label: __('Transparent', 'wp-dsfr-blocks'),
+								label: __( 'Transparent', 'wp-dsfr-blocks' ),
 								value: 'no-background',
 							},
 							{
-								label: __('Défaut', 'wp-dsfr-blocks'),
+								label: __( 'Défaut', 'wp-dsfr-blocks' ),
 								value: '',
 							},
-						]}
-						onChange={(background) => setAttributes({ background })}
+						] }
+						onChange={ ( background ) =>
+							setAttributes( { background } )
+						}
 					/>
 					<RadioControl
-						label={__('Type de surtitre', 'wp-dsfr-blocks')}
-						selected={attributes.surtitleType}
-						options={[
+						label={ __( 'Type de surtitre', 'wp-dsfr-blocks' ) }
+						selected={ attributes.surtitleType }
+						options={ [
 							{
-								label: __('Tag', 'wp-dsfr-blocks'),
+								label: __( 'Tag', 'wp-dsfr-blocks' ),
 								value: 'tag',
 							},
 							{
-								label: __('Badge', 'wp-dsfr-blocks'),
+								label: __( 'Badge', 'wp-dsfr-blocks' ),
 								value: 'badge',
 							},
 							{
-								label: __('Aucun', 'wp-dsfr-blocks'),
+								label: __( 'Aucun', 'wp-dsfr-blocks' ),
 								value: '',
 							},
-						]}
-						onChange={(surtitleType) => {
-							if (!surtitleType) {
-								setAttributes({ surtitleText: '' });
+						] }
+						onChange={ ( surtitleType ) => {
+							if ( ! surtitleType ) {
+								setAttributes( { surtitleText: '' } );
 							}
-							setAttributes({ surtitleType });
-						}}
+							setAttributes( { surtitleType } );
+						} }
 					/>
-					{attributes.surtitleType === 'badge' && (
+					{ attributes.surtitleType === 'badge' && (
 						<DSFRColorSelectControl
-							label={__('Couleur du badge', 'wp-dsfr-blocks')}
-							value={attributes.badgeColor}
-							onChange={(badgeColor) =>
-								setAttributes({ badgeColor })
+							label={ __( 'Couleur du badge', 'wp-dsfr-blocks' ) }
+							value={ attributes.badgeColor }
+							onChange={ ( badgeColor ) =>
+								setAttributes( { badgeColor } )
 							}
 						/>
-					)}
+					) }
 				</PanelBody>
 			</InspectorControls>
 			<BlockControls group="block">
-				{!isURLSet && (
+				{ ! isURLSet && (
 					<ToolbarButton
 						name="link"
-						icon={link}
-						title={__('Link')}
-						onClick={startEditingURL}
+						icon={ link }
+						title={ __( 'Link' ) }
+						onClick={ startEditingURL }
 					/>
-				)}
-				{isURLSet && (
+				) }
+				{ isURLSet && (
 					<ToolbarButton
 						name="link"
-						icon={linkOff}
-						title={__('Unlink')}
-						onClick={unlink}
+						icon={ linkOff }
+						title={ __( 'Unlink' ) }
+						onClick={ unlink }
 						isActive
 					/>
-				)}
+				) }
 			</BlockControls>
-			{isSelected && (isEditingURL || isURLSet) && (
+			{ isSelected && ( isEditingURL || isURLSet ) && (
 				<Popover
 					placement="bottom"
-					onClose={() => {
-						setIsEditingURL(false);
-					}}
-					anchor={popoverAnchor}
-					focusOnMount={isEditingURL ? 'firstElement' : false}
+					onClose={ () => {
+						setIsEditingURL( false );
+					} }
+					anchor={ popoverAnchor }
+					focusOnMount={ isEditingURL ? 'firstElement' : false }
 					__unstableSlotName="__unstable-block-tools-after"
 					shift
 				>
 					<LinkControl
-						value={linkValue}
-						onChange={(value) => {
-							setAttributes({
+						value={ linkValue }
+						onChange={ ( value ) => {
+							setAttributes( {
 								linkURL: value.url,
 								linkTarget: value.opensInNewTab
 									? '_blank'
 									: '_self',
-							});
-						}}
-						onRemove={unlink}
-						forceIsEditingLink={isEditingURL}
+							} );
+						} }
+						onRemove={ unlink }
+						forceIsEditingLink={ isEditingURL }
 					/>
 				</Popover>
-			)}
-			<div {...blockProps}>
+			) }
+			<div { ...blockProps }>
 				<div className="fr-tile__body">
 					<div className="fr-tile__content">
 						<h3 className="fr-tile__title">
-							{isURLSet ? (
+							{ isURLSet ? (
 								<a
-									href={attributes.linkURL}
-									onClick={(e) => e.preventDefault()}
+									href={ attributes.linkURL }
+									onClick={ ( e ) => e.preventDefault() }
 									rel="noopener"
 								>
 									<RichText
 										tagName="span"
-										placeholder={__(
+										placeholder={ __(
 											'Ajouter un titre',
 											'wp-dsfr-blocks'
-										)}
-										value={attributes.title}
-										onChange={(title) =>
-											setAttributes({ title })
+										) }
+										value={ attributes.title }
+										onChange={ ( title ) =>
+											setAttributes( { title } )
 										}
-										allowedFormats={[]}
+										allowedFormats={ [] }
 									/>
 								</a>
 							) : (
 								<RichText
 									tagName="span"
-									placeholder={__(
+									placeholder={ __(
 										'Ajouter un titre',
 										'wp-dsfr-blocks'
-									)}
-									value={attributes.title}
-									onChange={(title) =>
-										setAttributes({ title })
+									) }
+									value={ attributes.title }
+									onChange={ ( title ) =>
+										setAttributes( { title } )
 									}
-									allowedFormats={[]}
+									allowedFormats={ [] }
 								/>
-							)}
+							) }
 						</h3>
 
 						<RichText
 							tagName="p"
 							className="fr-tile__desc"
-							placeholder={__(
+							placeholder={ __(
 								'Ajouter une description',
 								'wp-dsfr-blocks'
-							)}
-							value={attributes.description}
-							onChange={(description) =>
-								setAttributes({ description })
+							) }
+							value={ attributes.description }
+							onChange={ ( description ) =>
+								setAttributes( { description } )
 							}
-							allowedFormats={[]}
+							allowedFormats={ [] }
 						/>
 
 						<RichText
 							tagName="p"
 							className="fr-tile__detail"
-							placeholder={__(
+							placeholder={ __(
 								'Ajouter des détails',
 								'wp-dsfr-blocks'
-							)}
-							value={attributes.detail}
-							onChange={(detail) => setAttributes({ detail })}
-							allowedFormats={[]}
+							) }
+							value={ attributes.detail }
+							onChange={ ( detail ) =>
+								setAttributes( { detail } )
+							}
+							allowedFormats={ [] }
 						/>
 
-						{attributes.surtitleType && (
+						{ attributes.surtitleType && (
 							<div className="fr-tile__start">
 								<RichText
 									tagName="p"
-									className={getSurtitleClasses(attributes)}
-									placeholder={__(
+									className={ getSurtitleClasses(
+										attributes
+									) }
+									placeholder={ __(
 										'Ajouter un texte',
 										'wp-dsfr-blocks'
-									)}
-									value={attributes.surtitleText}
-									onChange={(surtitleText) =>
-										setAttributes({ surtitleText })
+									) }
+									value={ attributes.surtitleText }
+									onChange={ ( surtitleText ) =>
+										setAttributes( { surtitleText } )
 									}
-									allowedFormats={[]}
+									allowedFormats={ [] }
 								/>
 							</div>
-						)}
+						) }
 					</div>
 				</div>
-				{attributes.displayImage && (
+				{ attributes.displayImage && (
 					<div className="fr-tile__header">
 						<div className="fr-tile__pictogram">
 							<MediaUploadCheck>
 								<MediaUpload
-									allowedTypes={['image']}
-									onSelect={onSelectMedia}
-									value={attributes.imageId}
-									render={({ open }) => (
-										<Button onClick={open}>
-											{attributes.imageId ? (
+									allowedTypes={ [ 'image' ] }
+									onSelect={ onSelectMedia }
+									value={ attributes.imageId }
+									render={ ( { open } ) => (
+										<Button onClick={ open }>
+											{ attributes.imageId ? (
 												attributes.imageURL ? (
 													<img
 														className="fr-ratio-1x1"
@@ -385,14 +400,14 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 													'Choisir une image',
 													'wp-dsfr-blocks'
 												)
-											)}
+											) }
 										</Button>
-									)}
+									) }
 								/>
 							</MediaUploadCheck>
 						</div>
 					</div>
-				)}
+				) }
 			</div>
 		</>
 	);

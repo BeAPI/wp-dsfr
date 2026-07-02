@@ -7,7 +7,7 @@
 	"category": "widgets",
 	"icon": "button",
 	"description": "Bloc DSFR onglet.",
-	"parent": ["dsfr/fr-tabs-list"],
+	"parent": [ "dsfr/fr-tabs-list" ],
 	"supports": {
 		"html": false,
 		"anchor": false,
@@ -45,7 +45,7 @@
 			"value": false
 		}
 	},
-	"usesContext": ["dsfr/fr-tabs--id", "dsfr/fr-tabs--active-tab-index"],
+	"usesContext": [ "dsfr/fr-tabs--id", "dsfr/fr-tabs--active-tab-index" ],
 	"textdomain": "wp-dsfr-blocks",
 	"editorScript": "file:./index.js"
 }
