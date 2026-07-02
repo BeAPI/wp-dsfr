@@ -1,3 +1,5 @@
+@use "../../02-tools/m-editor-only" as *;
+
 @include editor-only {
     [data-type="core/html"] textarea {
         // style

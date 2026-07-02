@@ -1,3 +1,6 @@
+@use "../01-abstract/variables" as *;
+@use "../02-tools/m-fr-btn" as *;
+
 %fr-btn {
     @include fr-btn;
 }

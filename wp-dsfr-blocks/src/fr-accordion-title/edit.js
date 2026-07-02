@@ -3,13 +3,13 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import setDSFRBlockClassName from '../common/js/utils/setDSFRBlockClassName';
 
-export default function Edit({ attributes, setAttributes, context }) {
+export default function Edit( { attributes, setAttributes, context } ) {
 	const blockProps = useBlockProps();
 	const { label } = attributes;
 
-	useEffect(() => {
-		setAttributes({ ariaControls: context['dsfr/fr-accordion--id'] });
-	}, [context['dsfr/fr-accordion--id']]);
+	useEffect( () => {
+		setAttributes( { ariaControls: context[ 'dsfr/fr-accordion--id' ] } );
+	}, [ context[ 'dsfr/fr-accordion--id' ] ] );
 
 	setDSFRBlockClassName(
 		blockProps,
@@ -18,16 +18,16 @@ export default function Edit({ attributes, setAttributes, context }) {
 	);
 
 	return (
-		<h3 {...blockProps}>
+		<h3 { ...blockProps }>
 			<RichText
 				tagName="span"
 				className="fr-accordion__btn"
-				allowedFormats={[]}
-				value={label}
-				placeholder={__("Titre de l'accordéon", 'wp-dsfr-blocks')}
-				onChange={(content) => {
-					setAttributes({ label: content });
-				}}
+				allowedFormats={ [] }
+				value={ label }
+				placeholder={ __( "Titre de l'accordéon", 'wp-dsfr-blocks' ) }
+				onChange={ ( content ) => {
+					setAttributes( { label: content } );
+				} }
 			/>
 		</h3>
 	);

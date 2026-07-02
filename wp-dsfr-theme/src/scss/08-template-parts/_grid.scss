@@ -1,3 +1,6 @@
+@use "../01-abstract/variables" as *;
+@use "../02-tools/m-breakpoint" as *;
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;

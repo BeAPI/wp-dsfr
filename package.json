@@ -1,7 +1,7 @@
 {
   "name": "wp-dsfr",
-	"version": "1.0.0",
-	"description": "DSFR theme and blocks for WordPress",
+  "version": "1.0.0",
+  "description": "DSFR theme and blocks for WordPress",
   "author": "Be API",
   "repository": {
     "type": "git",
@@ -14,9 +14,9 @@
     "destroy": "wp-env destroy"
   },
   "dependencies": {
-    "@wordpress/env": "^9.8.0"
+    "@wordpress/env": "^11.9.0"
   },
   "volta": {
-    "node": "20.13.1"
+    "node": "24.11.0"
   }
 }

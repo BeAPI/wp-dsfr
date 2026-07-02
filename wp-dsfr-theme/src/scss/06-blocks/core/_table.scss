@@ -1,3 +1,8 @@
+@use "../../01-abstract/variables" as *;
+@use "../../02-tools/m-style-only" as *;
+@use "../block-spacings" as *;
+@use "paragraph" as *;
+
 .wp-block-table {
     @extend %block-spacing-sm;
 
