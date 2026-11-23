@@ -4,6 +4,14 @@
 
 WP DSFR is a WordPress port of the French Design System (or DSFR) in the form of a WordPress theme.
 
+## Licence and terms of use
+
+> ⚠️ **Prohibited Use Outside Government Websites**
+>
+> The DSFR code is licensed under the Etalab 2.0 licence (excluding assets subject to specific conditions, such as the Marianne fonts), but its use is restricted by specific terms of use. Given its role as a marker of the French State's visual identity, the DSFR must not be used by entities outside the public administration. It cannot be used outside a .gouv.fr domain name.
+>
+> [See terms](https://github.com/GouvernementFR/dsfr/blob/main/doc/legal/cgu.md)
+
 ## WordPress theme and Blocks plugin installation
 
 You can download the latest archive [here](https://github.com/BeAPI/wp-dsfr/tags). It contains two folders:
@@ -45,5 +53,3 @@ npm run destroy
 ## To find out more
 
 Please visit the [`demonstration site`](https://www.wp-dsfr.fr/demo/) to discover the features and contribution possibilities offered by the theme.
-
-*WARNING: designed to facilitate the identification of French government sites, the DSFR is intended only for websites and mobile applications within the scope of the French government. Any other use is strictly prohibited. For further information, please consult [`the DSFR terms and conditions of use`](https://www.systeme-de-design.gouv.fr/a-propos/conditions-generales-d-utilisation).*

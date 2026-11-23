@@ -4,6 +4,14 @@
 
 WP DSFR est un portage en WordPress du Système de Design Français (ou DSFR) sous forme de thème WordPress porté par [`l'agence WordPress Be API`](https://beapi.fr/).
 
+## Licence et droit d'utilisation
+
+> ⚠️ **Utilisation interdite en dehors des sites Internet de l'État.**
+>
+> Le code du DSFR est sous licence Etalab 2.0 (à l'exception d'éléments soumis à des conditions spécifiques, comme les fontes Marianne), mais son utilisation est encadrée par des Modalités d'Utilisation. En raison de son rôle de marqueur d'identité visuelle de l'État, le DSFR ne doit pas être utilisé par des entités extérieures à l'administration, et limite sa réplicabilité en dehors d'un nom de domaine en .gouv.fr. En cas d'usage à des fins trompeuses ou frauduleuses, l'État se réserve le droit d'entreprendre les actions nécessaires pour y mettre un terme.
+>
+> Voir les [Modalités d'Utilisation](https://github.com/GouvernementFR/dsfr/blob/main/doc/legal/cgu.md).
+
 ## Installation du thème WordPress et du plugin de Blocks
 
 Vous pouvez télécharger la dernière archive [ici](https://github.com/BeAPI/wp-dsfr/tags). Celle ci contient deux dossiers :
@@ -45,5 +53,3 @@ npm run destroy
 ## En savoir plus
 
 Veuillez consulter le [`site de démonstration`](https://www.wp-dsfr.fr/demo/) pour découvrir les fonctionnalités et possibilités de contribution offertes par le thème.
-
-*AVERTISSEMENT : conçu pour faciliter l’identification des sites de l’État français, le DSFR est destiné uniquement aux sites Internet et applications mobiles relevant du périmètre de l’État. Toute autre utilisation est strictement interdite. Pour plus d’informations, consultez les [`conditions générales d’utilisation du DSFR`](https://www.systeme-de-design.gouv.fr/a-propos/conditions-generales-d-utilisation).*
